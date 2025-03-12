@@ -7,6 +7,7 @@ def main():
     analyzer = PythonProjectAnalyzer(directory)
     analyzer.analize()
 
+
 def get_directory():
     ''' ask user for filepath '''
     path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
