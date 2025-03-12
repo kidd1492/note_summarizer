@@ -8,6 +8,8 @@ class BaseAnalyzer:
         self.output_file = output_file
         self.files = []
         self.lines = []
+        self.comments = []
+
 
     def gather_files(self, allowed_extensions=None):
         '''Gather all .py files in directory'''
@@ -33,3 +35,11 @@ class BaseAnalyzer:
                         continue
                     else:
                         self.lines.append(stripped_line)
+
+
+    def gather_comments(self):
+        comment_pattern = r"^#|^[\"']{3}"    
+        for line in self.lines:      
+            if re.match(comment_pattern, line):
+                self.comments.append(line)
+                #print(self.comments)

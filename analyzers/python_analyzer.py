@@ -46,15 +46,13 @@ class PythonProjectAnalyzer(BaseAnalyzer):
                             output.write(f"{line}\n")
 
 
-    #TODO funtion to get comments and docstring append to report
-    def get_comments(self):
-        comment_pattern = r"^#|^[\"']{3}"
+    def write_comments(self):
+        '''funtion to get comments and docstring append to report'''
         with open(self.output_file, "a") as output:
             output.write("\n\n")
             output.write("Python Comments:\n")
-            for line in self.lines:      
-                if re.match(comment_pattern, line):
-                    output.write(f"{line}\n")
+            for line in self.comments:      
+                output.write(f"{line}\n")
 
 
     def get_functions(self):
@@ -79,7 +77,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         '''
         self.gather_files()
         self.clean_file()
-        self.get_functions()
-        self.get_imports()
+        self.gather_comments()
+        
         self.write_report()
-        self.get_comments()
+        self.write_comments()

@@ -43,6 +43,7 @@ class BaseAnalyzer:
 def __init__(self, directory, output_file="output.txt"):
 def gather_files(self, allowed_extensions=None):
 def clean_file(self):
+def gather_comments(self):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py
@@ -54,7 +55,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 def __init__(self, directory, output_file="output.txt"):
 def gather_files(self, allowed_extensions=None):
 def write_report(self):
-def get_comments(self):
+def write_comments(self):
 def get_functions(self):
 def get_imports(self):
 def analize(self):
@@ -84,9 +85,10 @@ Python Comments:
 # Check if the file's extension is in the allowed list
 '''
 '''
+#print(self.comments)
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.py) files'''
-#TODO funtion to get comments and docstring append to report
+'''funtion to get comments and docstring append to report'''
 """gather all function decorators in files"""
 '''gathers all import statements from files'''
 ''''
