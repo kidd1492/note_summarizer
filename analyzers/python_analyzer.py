@@ -1,4 +1,4 @@
-from base_analyzer import BaseAnalyzer
+from .base_analyzer import BaseAnalyzer
 import re, os
 
 class PythonProjectAnalyzer(BaseAnalyzer):

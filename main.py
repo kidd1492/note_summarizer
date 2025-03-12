@@ -1,4 +1,4 @@
-from python_analyzer import PythonProjectAnalyzer
+from analyzers import PythonProjectAnalyzer
 import os, re
 
 

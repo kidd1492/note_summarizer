@@ -1,44 +1,20 @@
 
 Analyzed Files:
-C:/Users/chris/Desktop/note_summarizer\base_analyzer.py
-
-Imports:
-
-import os, re
-def __init__(self, directory, output_file="output.txt"):
-def gather_files(self, allowed_extensions=None):
-def clean_file(self):
-
-Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\main.py
 
 Imports:
 
-from python_analyzer import PythonProjectAnalyzer
+from analyzers import PythonProjectAnalyzer
 import os, re
 def main():
 def get_directory():
-
-Analyzed Files:
-C:/Users/chris/Desktop/note_summarizer\python_analyzer.py
-
-Imports:
-
-from base_analyzer import BaseAnalyzer
-import re, os
-def __init__(self, directory, output_file="output.txt"):
-def gather_files(self, allowed_extensions=None):
-def write_report(self):
-def get_functions(self):
-def get_imports(self):
-def analize(self):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\test.py
 
 Imports:
 
-from base_analyzer import BaseAnalyzer
+from analyzers import BaseAnalyzer
 import re, os
 def __init__(self, directory, output_file="output.txt"):
 def gather_files(self, allowed_extensions=None):
@@ -55,3 +31,32 @@ C:/Users/chris/Desktop/note_summarizer\tokenizer.py
 Imports:
 
 import nltk
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py
+
+Imports:
+
+import os, re
+def __init__(self, directory, output_file="output.txt"):
+def gather_files(self, allowed_extensions=None):
+def clean_file(self):
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py
+
+Imports:
+
+import re, os
+def __init__(self, directory, output_file="output.txt"):
+def gather_files(self, allowed_extensions=None):
+def write_report(self):
+def get_functions(self):
+def get_imports(self):
+def analize(self):
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py
+
+Imports:
+

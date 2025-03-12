@@ -1,8 +1,8 @@
-# -File Summarizer Tool
+#File Summarizer Tool
 ## -Overview
 The File Summarizer Tool is a Python-based utility designed to gather and process files from a directory structure. It allows users to filter files by extension, exclude specific directories (e.g., .git, env, enve), and prepares the groundwork for summarizing or analyzing the content of those files.
 
--Features
+#Features
 -Directory Traversal: Recursively walks through a specified directory and its subdirectories.
 -File Filtering: Gathers only files with specified extensions (e.g., .py, .txt, .js).
 -Exclusion of Directories: Automatically skips directories like .git, env, and enve to streamline processing.
