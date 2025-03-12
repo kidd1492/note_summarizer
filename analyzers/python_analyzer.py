@@ -48,23 +48,12 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
     #TODO funtion to get comments and docstring append to report
     def get_comments(self):
-        comment_pattern = r"^#"
-        in_docstring = False
-
+        comment_pattern = r"^#|^[\"']{3}"
         with open(self.output_file, "a") as output:
             output.write("\n\n")
-            output.write("Python Comments and Docstrings:\n")
-            for line in self.lines:
-                stripped_line = line.strip()
-                if stripped_line.startswith("#"):  # Match comments
-                    output.write(f"{line}\n")
-                elif stripped_line.startswith(("'''", '"""')):  # Start or end of a docstring
-                    if not in_docstring:
-                        in_docstring = True
-                    else:
-                        in_docstring = False
-                    output.write(f"{line}\n")
-                elif in_docstring:  # Capture lines inside docstrings
+            output.write("Python Comments:\n")
+            for line in self.lines:      
+                if re.match(comment_pattern, line):
                     output.write(f"{line}\n")
 
 
