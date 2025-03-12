@@ -1,5 +1,15 @@
 
 Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\base_analyzer.py
+
+Imports:
+
+import os, re
+def __init__(self, directory, output_file="output.txt"):
+def gather_files(self, allowed_extensions=None):
+def clean_file(self):
+
+Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\main.py
 
 Imports:
@@ -14,10 +24,10 @@ C:/Users/chris/Desktop/note_summarizer\python_analyzer.py
 
 Imports:
 
-import os, re
+from base_analyzer import BaseAnalyzer
+import re, os
 def __init__(self, directory, output_file="output.txt"):
 def gather_files(self, allowed_extensions=None):
-def clean_file(self):
 def write_report(self):
 def get_functions(self):
 def get_imports(self):
@@ -28,10 +38,10 @@ C:/Users/chris/Desktop/note_summarizer\test.py
 
 Imports:
 
-import os, re
+from base_analyzer import BaseAnalyzer
+import re, os
 def __init__(self, directory, output_file="output.txt"):
 def gather_files(self, allowed_extensions=None):
-def clean_file(self):
 def write_report(self):
 def get_functions(self):
 def get_imports(self):
