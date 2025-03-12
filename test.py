@@ -38,7 +38,6 @@ class PythonProjectAnalyzer:
                         self.lines.append(stripped_line)
                     
 
-    #TODO transfer this into my class
     def write_report(self):
 
         import_pattern = r"^(import\s+|from\s+\w+\s+import\s+)"
@@ -81,6 +80,9 @@ class PythonProjectAnalyzer:
                 self.imports.append(line)
    
 
+    #TODO funtion to get comments and docstring append to report
+
+
     def analize(self):
         ''''
         Perform full analysis workflow
@@ -93,6 +95,24 @@ class PythonProjectAnalyzer:
         
 
 
-analyzer = PythonProjectAnalyzer(r"C:/Users/chris/Desktop/note_summarizer")
-analyzer.analize()
+def main():
+    directory = get_directory()
+    analyzer = PythonProjectAnalyzer(directory)
+    analyzer.analize()
 
+def get_directory():
+    ''' ask user for filepath '''
+    path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
+
+    while True:
+        directory_name = input("ex. C:/Desktop/file_name\nFile Path Name:").replace("\\", "/")  
+        if re.match(path_pattern, directory_name):
+            try:
+                if os.path.isdir(directory_name):
+                    return directory_name
+            except Exception as e:
+                print(f"An error occurred: {e}. Please try again.")      
+
+
+if __name__ == "__main__":
+    main()

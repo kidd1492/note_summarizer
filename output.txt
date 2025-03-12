@@ -1,0 +1,48 @@
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\main.py
+
+Imports:
+
+import os, re
+import inspect
+def main():
+def gather_files(directory, allowed_extensions):
+def write_report(paths):
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\python_analyzer.py
+
+Imports:
+
+import os, re
+def __init__(self, directory, output_file="output.txt"):
+def gather_files(self, allowed_extensions=None):
+def clean_file(self):
+def write_report(self):
+def get_functions(self):
+def get_imports(self):
+def analize(self):
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\test.py
+
+Imports:
+
+import os, re
+def __init__(self, directory, output_file="output.txt"):
+def gather_files(self, allowed_extensions=None):
+def clean_file(self):
+def write_report(self):
+def get_functions(self):
+def get_imports(self):
+def analize(self):
+def main():
+def get_directory():
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\tokenizer.py
+
+Imports:
+
+import nltk
