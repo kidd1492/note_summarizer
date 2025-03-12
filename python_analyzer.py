@@ -38,7 +38,6 @@ class PythonProjectAnalyzer:
                         self.lines.append(stripped_line)
                     
 
-    #TODO transfer this into my class
     def write_report(self):
 
         import_pattern = r"^(import\s+|from\s+\w+\s+import\s+)"
@@ -81,6 +80,9 @@ class PythonProjectAnalyzer:
                 self.imports.append(line)
    
 
+    #TODO funtion to get comments and docstring append to report
+
+
     def analize(self):
         ''''
         Perform full analysis workflow
@@ -90,9 +92,3 @@ class PythonProjectAnalyzer:
         self.get_functions()
         self.get_imports()
         self.write_report()
-        
-
-
-analyzer = PythonProjectAnalyzer(r"C:/Users/chris/Desktop/note_summarizer")
-analyzer.analize()
-

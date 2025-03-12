@@ -4,11 +4,10 @@ C:/Users/chris/Desktop/note_summarizer\main.py
 
 Imports:
 
+from python_analyzer import PythonProjectAnalyzer
 import os, re
-import inspect
 def main():
-def gather_files(directory, allowed_extensions):
-def write_report(paths):
+def get_directory():
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\python_analyzer.py
