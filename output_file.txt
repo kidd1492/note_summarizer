@@ -10,23 +10,6 @@ def main():
 def get_directory():
 
 Analyzed Files:
-C:/Users/chris/Desktop/note_summarizer\output_file.txt
-
-Imports:
-
-
-Analyzed Files:
-C:/Users/chris/Desktop/note_summarizer\README.md
-
-Imports:
-
-import os, re
-import inspect
-def main():
-def gather_files(directory, allowed_extensions):
-def write_report(paths): ...
-
-Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\test.py
 
 Imports:
@@ -50,6 +33,7 @@ import os, re
 class BaseAnalyzer:
 def __init__(self, directory):
 def gather_files(self):
+def send_files_analyzer():
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py
@@ -79,26 +63,18 @@ Imports:
 
 
 Python Comments:
+#python_files = analyze.python_files
+#print(python_files)
 '''
 '''
 ''' ask user for filepath '''
-# File Summarizer Tool
-## -Overview
-## Features
-## Current Project Structure
-## output.txt
-''' ask user for filepath '''
-''' Initialize the analyzer with a target directory'''
-'''Gather only Python (.py) files'''
-"""gather all function decorators in files"""
-'''gathers all import statements from files'''
-## Next Steps
 #Create object lemmatizer
 # Example: Frequency-based summarization
 ''' Initialize the analyzer with a target directory'''
 '''Gather all .py files in directory'''
 # Skip .git directories entirely and enve
 # Check if the file's extension is in the allowed list
+#add to list for file types
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.py) files'''
 # Check if the file's extension is in the allowed list

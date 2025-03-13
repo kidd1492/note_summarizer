@@ -4,18 +4,20 @@ import os, re
 
 def main():
     directory = get_directory()
+    
     analyze = PythonProjectAnalyzer(directory)
     analyze.analize()
     analyze.full_report()
-
-    files = analyze.files
-    print(files)
+    #python_files = analyze.python_files
+    #print(python_files)
 
     '''
     analyzer = BaseAnalyzer(directory)
     analyzer.gather_files()
     files = analyzer.files
     print(files)
+    file_type_list = analyzer.file_type_list
+    print(file_type_list)
     '''
 
 

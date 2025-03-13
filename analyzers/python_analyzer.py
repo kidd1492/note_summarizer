@@ -14,10 +14,9 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
     def gather_python_files(self):
         '''Gather only Python (.py) files'''
-        allowed_extensions = [".py"]
         for file in self.files:
             # Check if the file's extension is in the allowed list
-            if any(file.endswith(ext) for ext in allowed_extensions):
+            if file.endswith(".py"):
                 self.python_files.append(file)
 
 
@@ -25,7 +24,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         '''
         Read all files and remove blank lines
         '''
-        for file in self.files: 
+        for file in self.python_files: 
             with open(file, "r") as f:
                 for line in f:
                     stripped_line = line.strip()
@@ -49,7 +48,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         with open(out_file, "a") as output:
             output.write("\n")
             output.write(f"All File Paths\n")
-            for file in self.files:
+            for file in self.python_files:
                 output.write(f"{file}\n")
 
 
@@ -95,7 +94,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         function_pattern = r"^def\s+"
         class_pattern = r"^class\s+"
         with open(out_file, "w") as output:
-            for full_path in self.files:
+            for full_path in self.python_files:
                 output.write("\n")
                 output.write("Analyzed Files:\n")
                 output.write(f"{full_path}\n\n")
