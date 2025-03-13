@@ -45,12 +45,14 @@ import re, os
 class PythonProjectAnalyzer(BaseAnalyzer):
 def __init__(self, directory):
 def gather_files(self, allowed_extensions=None):
-def get_functions(self):
-def get_imports(self):
-def write_report(self):
+def write_files(self, out_file):
+def write_functions(self, out_file):
+def write_imports(self, out_file):
 def write_comments(self, out_file):
+def write_report(self, out_file):
 def analize(self):
 def full_report(self):
+def summary_report(self):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py
@@ -72,11 +74,12 @@ Python Comments:
 '''TODO get better doc string
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.py) files'''
+"""all file paths in project folder"""
 """gather all function decorators in files"""
 '''gathers all import statements from files'''
-'''TODO write function for get classes
 '''funtion to get comments and docstring append to report'''
+'''TODO write function for get classes
+''' outputs all files, imports, def, comments'''
 ''''
 '''
 '''Full reort file, imports, functions for each file'''
-#self.write_comments(self.summary_report)

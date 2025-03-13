@@ -1,4 +1,12 @@
 
+All File Paths
+C:/Users/chris/Desktop/note_summarizer\main.py
+C:/Users/chris/Desktop/note_summarizer\test.py
+C:/Users/chris/Desktop/note_summarizer\tokenizer.py
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py
+C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py
+C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py
+
 
 Python Comments:
 ''' ask user for filepath '''
@@ -13,11 +21,41 @@ Python Comments:
 '''TODO get better doc string
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.py) files'''
+"""all file paths in project folder"""
 """gather all function decorators in files"""
 '''gathers all import statements from files'''
-'''TODO write function for get classes
 '''funtion to get comments and docstring append to report'''
+'''TODO write function for get classes
+''' outputs all files, imports, def, comments'''
 ''''
 '''
 '''Full reort file, imports, functions for each file'''
-#self.write_report()
+
+
+All Functions
+def main():
+def get_directory():
+def __init__(self, directory):
+def gather_files(self, allowed_extensions=None):
+def clean_file(self):
+def gather_comments(self):
+def __init__(self, directory):
+def gather_files(self, allowed_extensions=None):
+def write_files(self, out_file):
+def write_functions(self, out_file):
+def write_imports(self, out_file):
+def write_comments(self, out_file):
+def write_report(self, out_file):
+def analize(self):
+def full_report(self):
+def summary_report(self):
+
+
+All Imports
+from analyzers import PythonProjectAnalyzer
+import os, re
+from analyzers import BaseAnalyzer
+import re, os
+import nltk
+import os, re
+import re, os
