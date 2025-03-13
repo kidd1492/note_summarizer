@@ -66,6 +66,9 @@ Imports:
 
 Python Comments:
 ''' ask user for filepath '''
+#Uses BaseAnalyzer to get file types and decied what analizer to run
+#if file type in list call analyzer
+#functions to call the analyzers
 #Create object lemmatizer
 # Example: Frequency-based summarization
 ''' Initialize the analyzer with a target directory'''

@@ -27,7 +27,10 @@ def gather_file_types(directory):
     analyzer = BaseAnalyzer(directory)
     analyzer.gather_files()
     file_type_list = analyzer.file_type_list
-    print(file_type_list)
+
+    #if file type in list call analyzer
+    if ".py" in file_type_list:
+        call_python_analyzer(directory) 
 
 
 #functions to call the analyzers 
