@@ -4,20 +4,13 @@ C:/Users/chris/Desktop/note_summarizer\main.py
 
 Imports:
 
-from analyzers import PythonProjectAnalyzer, BaseAnalyzer
+from analyzers import PythonProjectAnalyzer, BaseAnalyzer, HTMLAnalyzer
 import os, re
 def main():
 def get_directory():
 def gather_file_types(directory):
 def call_python_analyzer(directory):
-
-Analyzed Files:
-C:/Users/chris/Desktop/note_summarizer\test.py
-
-Imports:
-
-from analyzers import BaseAnalyzer
-import re, os
+def call_html_analyzer(directory):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\tokenizer.py
@@ -35,7 +28,18 @@ import os, re
 class BaseAnalyzer:
 def __init__(self, directory):
 def gather_files(self):
-def send_files_analyzer():
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py
+
+Imports:
+
+import re, os
+class HTMLAnalyzer(BaseAnalyzer):
+def __init__(self, directory):
+def gather_html_files(self):
+def clean_file(self):
+def analyze(self):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py
@@ -53,7 +57,7 @@ def write_functions(self, out_file):
 def write_imports(self, out_file):
 def write_comments(self, out_file):
 def write_report(self, out_file):
-def analize(self):
+def analyze(self):
 def full_report(self):
 def summary_report(self):
 
@@ -76,6 +80,11 @@ Python Comments:
 # Skip .git directories entirely and enve
 # Check if the file's extension is in the allowed list
 #add to list for file types
+''' Initialize the analyzer with a target directory'''
+'''Gather only Python (.html) files'''
+# Check if the file's extension is in the allowed list
+'''
+'''
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.py) files'''
 # Check if the file's extension is in the allowed list

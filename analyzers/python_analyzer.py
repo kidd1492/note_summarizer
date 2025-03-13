@@ -6,8 +6,8 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         ''' Initialize the analyzer with a target directory'''
         super().__init__(directory)
 
-        self.output_file = "output_file.txt"
-        self.summary_file = "summary_report.txt"
+        self.python_output_file = "output_file.txt"
+        self.python_summary_file = "summary_report.txt"
         self.python_files = []
         self.lines = []
         self.comments = []
@@ -118,7 +118,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
                             output.write(f"{line}\n")
 
 
-    def analize(self):
+    def analyze(self):
         ''''
         Perform full analysis workflow
         '''
@@ -130,12 +130,12 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
     def full_report(self):
         '''Full reort file, imports, functions for each file'''
-        self.write_report(self.output_file)
-        self.write_comments(self.output_file)
+        self.write_report(self.python_output_file)
+        self.write_comments(self.python_output_file)
 
 
     def summary_report(self):
-        self.write_files(self.summary_file)
-        self.write_comments(self.summary_file)
-        self.write_functions(self.summary_file)
-        self.write_imports(self.summary_file)
+        self.write_files(self.python_summary_file)
+        self.write_comments(self.python_summary_file)
+        self.write_functions(self.python_summary_file)
+        self.write_imports(self.python_summary_file)
