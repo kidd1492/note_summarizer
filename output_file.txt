@@ -35,7 +35,15 @@ import os, re
 class BaseAnalyzer:
 def __init__(self, directory):
 def gather_files(self):
-def send_files_analyzer():
+
+Analyzed Files:
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py
+
+Imports:
+
+import re, os
+class HTMLAnalyzer(BaseAnalyzer):
+def __init__(self, directory):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py
@@ -76,6 +84,7 @@ Python Comments:
 # Skip .git directories entirely and enve
 # Check if the file's extension is in the allowed list
 #add to list for file types
+''' Initialize the analyzer with a target directory'''
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.py) files'''
 # Check if the file's extension is in the allowed list

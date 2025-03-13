@@ -26,6 +26,3 @@ class BaseAnalyzer:
                     if ext not in self.file_type_list:
                         self.file_type_list.append(ext)
     
-
-    def send_files_analyzer():
-        ...
