@@ -12,7 +12,7 @@ class BaseAnalyzer:
 
     def gather_files(self):
         '''Gather all .py files in directory'''
-        allowed_extensions = [".py", ".md", ".txt"]
+        allowed_extensions = [".py", ".md", ".txt", ".html"]
         for root, dirs, files in os.walk(self.directory):
             # Skip .git directories entirely and enve
             dirs[:] = [d for d in dirs if d not in [".git", "env", "enve"]]
