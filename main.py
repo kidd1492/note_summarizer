@@ -1,4 +1,4 @@
-from analyzers import PythonProjectAnalyzer, BaseAnalyzer
+from analyzers import PythonProjectAnalyzer, BaseAnalyzer, HTMLAnalyzer
 import os, re
 
 
