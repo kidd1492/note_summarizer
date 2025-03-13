@@ -14,6 +14,7 @@ The File Summarizer Tool is a Python-based utility designed to gather and proces
     - \__init__.py
     - base_analyzer.py
     - python_analyzer.py
+    - html_analyzer.py
   
   - main.py
 
@@ -43,7 +44,6 @@ Python Comments:
 
 - Enhance error handling.
 - Add support for saving summarized content to a new directory or database.
-- Add support for other file types.
 - Add method to create a json file.
 
 License
