@@ -16,6 +16,23 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         super().gather_files(allowed_extensions)
 
 
+    def get_functions(self):
+        """gather all function decorators in files"""
+        function_pattern = r"^def\s+"
+        for line in self.lines:
+            if re.match(function_pattern, line):
+                self.functions.append(line)
+  
+
+    def get_imports(self):
+        '''gathers all import statements from files'''
+        import_pattern = r"^(import\s+|from\s+\w+\s+import\s+)"
+        for line in self.lines:
+            if re.match(import_pattern, line):
+                self.imports.append(line)
+
+
+
     def write_report(self):
 
         import_pattern = r"^(import\s+|from\s+\w+\s+import\s+)"
@@ -55,22 +72,6 @@ class PythonProjectAnalyzer(BaseAnalyzer):
                 output.write(f"{line}\n")
 
 
-    def get_functions(self):
-        """gather all function decorators in files"""
-        function_pattern = r"^def\s+"
-        for line in self.lines:
-            if re.match(function_pattern, line):
-                self.functions.append(line)
-  
-
-    def get_imports(self):
-        '''gathers all import statements from files'''
-        import_pattern = r"^(import\s+|from\s+\w+\s+import\s+)"
-        for line in self.lines:
-            if re.match(import_pattern, line):
-                self.imports.append(line)
-   
-
     def analize(self):
         ''''
         Perform full analysis workflow
@@ -78,6 +79,8 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         self.gather_files()
         self.clean_file()
         self.gather_comments()
-        
+
+        '''TODO make full analize and have reports how to brake up into
+        functions for diff reports...'''
         self.write_report()
         self.write_comments()

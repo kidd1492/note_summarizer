@@ -38,8 +38,10 @@ class BaseAnalyzer:
 
 
     def gather_comments(self):
+        '''TODO get better doc string
+        next line until end'''
         comment_pattern = r"^#|^[\"']{3}"    
         for line in self.lines:      
             if re.match(comment_pattern, line):
                 self.comments.append(line)
-                #print(self.comments)
+                
