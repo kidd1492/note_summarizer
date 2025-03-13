@@ -1,11 +1,10 @@
 import os, re
 
 class BaseAnalyzer:
-    def __init__(self, directory, output_file="output.txt"):
+    def __init__(self, directory):
         ''' Initialize the analyzer with a target directory'''
 
         self.directory = directory
-        self.output_file = output_file
         self.files = []
         self.lines = []
         self.comments = []

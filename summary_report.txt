@@ -1,0 +1,23 @@
+
+
+Python Comments:
+''' ask user for filepath '''
+#Create object lemmatizer
+# Example: Frequency-based summarization
+''' Initialize the analyzer with a target directory'''
+'''Gather all .py files in directory'''
+# Skip .git directories entirely and enve
+# Check if the file's extension is in the allowed list
+'''
+'''
+'''TODO get better doc string
+''' Initialize the analyzer with a target directory'''
+'''Gather only Python (.py) files'''
+"""gather all function decorators in files"""
+'''gathers all import statements from files'''
+'''TODO write function for get classes
+'''funtion to get comments and docstring append to report'''
+''''
+'''
+'''Full reort file, imports, functions for each file'''
+#self.write_report()

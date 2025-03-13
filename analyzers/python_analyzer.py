@@ -2,10 +2,13 @@ from .base_analyzer import BaseAnalyzer
 import re, os
 
 class PythonProjectAnalyzer(BaseAnalyzer):
-    def __init__(self, directory, output_file="output.txt"):
+    def __init__(self, directory):
         ''' Initialize the analyzer with a target directory'''
-        super().__init__(directory, output_file)
-        self.output_file = output_file
+        super().__init__(directory)
+
+        self.output_file = "output_file.txt"
+        self.summary_report = "summary_report.txt"
+
         self.imports = []
         self.functions = []
 
@@ -64,9 +67,9 @@ class PythonProjectAnalyzer(BaseAnalyzer):
                             output.write(f"{line}\n")
 
 
-    def write_comments(self):
+    def write_comments(self, out_file):
         '''funtion to get comments and docstring append to report'''
-        with open(self.output_file, "a") as output:
+        with open(out_file, "a") as output:
             output.write("\n\n")
             output.write("Python Comments:\n")
             for line in self.comments:      
@@ -87,4 +90,5 @@ class PythonProjectAnalyzer(BaseAnalyzer):
     def full_report(self):
         '''Full reort file, imports, functions for each file'''
         self.write_report()
-        self.write_comments()
+        #self.write_comments(self.summary_report)
+        self.write_comments(self.output_file)
