@@ -88,8 +88,7 @@ Python Comments:
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.py) files'''
 # Check if the file's extension is in the allowed list
-'''
-'''
+''' Read all files and remove blank lines'''
 '''TODO get better doc string
 """all file paths in project folder"""
 """gather all function decorators in files"""

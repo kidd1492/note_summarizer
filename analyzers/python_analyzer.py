@@ -6,8 +6,8 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         ''' Initialize the analyzer with a target directory'''
         super().__init__(directory)
 
-        self.python_output_file = "output_file.txt"
-        self.python_summary_file = "summary_report.txt"
+        self.python_output_file = "python_output.txt"
+        self.python_summary_file = "python_summary.txt"
         self.python_files = []
         self.lines = []
         self.comments = []
@@ -21,9 +21,8 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
 
     def clean_file(self):
-        '''
-        Read all files and remove blank lines
-        '''
+        ''' Read all files and remove blank lines'''
+
         for file in self.python_files: 
             with open(file, "r") as f:
                 for line in f:
