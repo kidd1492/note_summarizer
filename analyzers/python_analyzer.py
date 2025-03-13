@@ -118,7 +118,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
                             output.write(f"{line}\n")
 
 
-    def analize(self):
+    def analyze(self):
         ''''
         Perform full analysis workflow
         '''
