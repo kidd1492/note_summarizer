@@ -8,6 +8,8 @@ from analyzers import PythonProjectAnalyzer, BaseAnalyzer
 import os, re
 def main():
 def get_directory():
+def gather_file_types(directory):
+def call_python_analyzer(directory):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\test.py
@@ -63,10 +65,6 @@ Imports:
 
 
 Python Comments:
-#python_files = analyze.python_files
-#print(python_files)
-'''
-'''
 ''' ask user for filepath '''
 #Create object lemmatizer
 # Example: Frequency-based summarization
