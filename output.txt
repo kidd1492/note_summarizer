@@ -50,6 +50,7 @@ def get_imports(self):
 def write_report(self):
 def write_comments(self):
 def analize(self):
+def full_report(self):
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py
@@ -73,7 +74,8 @@ Python Comments:
 '''Gather only Python (.py) files'''
 """gather all function decorators in files"""
 '''gathers all import statements from files'''
+'''TODO write function for get classes
 '''funtion to get comments and docstring append to report'''
 ''''
 '''
-'''TODO make full analize and have reports how to brake up into
+'''Full reort file, imports, functions for each file'''

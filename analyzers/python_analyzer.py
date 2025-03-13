@@ -31,7 +31,8 @@ class PythonProjectAnalyzer(BaseAnalyzer):
             if re.match(import_pattern, line):
                 self.imports.append(line)
 
-
+    '''TODO write function for get classes
+    get lines with class, self,'''
 
     def write_report(self):
 
@@ -79,8 +80,11 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         self.gather_files()
         self.clean_file()
         self.gather_comments()
+        self.get_functions()
+        self.get_imports()
 
-        '''TODO make full analize and have reports how to brake up into
-        functions for diff reports...'''
+
+    def full_report(self):
+        '''Full reort file, imports, functions for each file'''
         self.write_report()
         self.write_comments()

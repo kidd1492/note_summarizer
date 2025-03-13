@@ -6,6 +6,7 @@ def main():
     directory = get_directory()
     analyzer = PythonProjectAnalyzer(directory)
     analyzer.analize()
+    analyzer.full_report()
 
 
 def get_directory():
