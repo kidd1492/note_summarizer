@@ -1,12 +1,22 @@
-from analyzers import PythonProjectAnalyzer
+from analyzers import PythonProjectAnalyzer, BaseAnalyzer
 import os, re
 
 
 def main():
     directory = get_directory()
-    analyzer = PythonProjectAnalyzer(directory)
-    analyzer.analize()
-    analyzer.full_report()
+    analyze = PythonProjectAnalyzer(directory)
+    analyze.analize()
+    analyze.full_report()
+
+    files = analyze.files
+    print(files)
+
+    '''
+    analyzer = BaseAnalyzer(directory)
+    analyzer.gather_files()
+    files = analyzer.files
+    print(files)
+    '''
 
 
 def get_directory():

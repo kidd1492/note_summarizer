@@ -8,12 +8,40 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
         self.output_file = "output_file.txt"
         self.summary_file = "summary_report.txt"
+        self.python_files = []
+        self.lines = []
+        self.comments = []
 
-
-    def gather_files(self, allowed_extensions=None):
+    def gather_python_files(self):
         '''Gather only Python (.py) files'''
-        allowed_extensions = allowed_extensions or [".py"]
-        super().gather_files(allowed_extensions)
+        allowed_extensions = [".py"]
+        for file in self.files:
+            # Check if the file's extension is in the allowed list
+            if any(file.endswith(ext) for ext in allowed_extensions):
+                self.python_files.append(file)
+
+
+    def clean_file(self):
+        '''
+        Read all files and remove blank lines
+        '''
+        for file in self.files: 
+            with open(file, "r") as f:
+                for line in f:
+                    stripped_line = line.strip()
+                    if stripped_line == '':
+                        continue
+                    else:
+                        self.lines.append(stripped_line)
+
+
+    def gather_comments(self):
+        '''TODO get better doc string
+        next line until end'''
+        comment_pattern = r"^#|^[\"']{3}"    
+        for line in self.lines:      
+            if re.match(comment_pattern, line):
+                self.comments.append(line)
 
 
     def write_files(self, out_file):
@@ -96,6 +124,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         Perform full analysis workflow
         '''
         self.gather_files()
+        self.gather_python_files()
         self.clean_file()
         self.gather_comments()
 
