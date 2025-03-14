@@ -13,9 +13,6 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         self.comments = []
 
 
- 
-
-
     def clean_file(self):
         ''' Read Python files, remove blank lines, and process content. '''   
         for file in self.python_files:
@@ -116,8 +113,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         ''''
         Perform full analysis workflow
         '''
-        #self.gather_files()
-        #self.gather_python_files()
+        self.gather_files()
         self.clean_file()
         self.gather_comments()
 

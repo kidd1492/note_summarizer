@@ -45,10 +45,8 @@ def call_python_analyzer(directory):
 def call_html_analyzer(directory):
     html_analyzer = HTMLAnalyzer(directory)
     html_analyzer.analyze()
-    html_files = html_analyzer.html_files
-    print(html_files)
-
-
+    
+    
 
 if __name__ == "__main__":
     main()

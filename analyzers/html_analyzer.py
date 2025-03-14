@@ -25,10 +25,8 @@ class HTMLAnalyzer(BaseAnalyzer):
                     else:
                         self.lines.append(stripped_line)
 
-        print(self.html_files)
 
-        
     def analyze(self):
-        #self.gather_files()
-        #self.gather_html_files()
+        self.gather_files()
         self.clean_file()
+        print(self.html_files)

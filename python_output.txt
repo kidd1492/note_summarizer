@@ -37,7 +37,6 @@ Imports:
 import re, os
 class HTMLAnalyzer(BaseAnalyzer):
 def __init__(self, directory):
-def gather_html_files(self):
 def clean_file(self):
 def analyze(self):
 
@@ -49,7 +48,6 @@ Imports:
 import re, os
 class PythonProjectAnalyzer(BaseAnalyzer):
 def __init__(self, directory):
-def gather_python_files(self):
 def clean_file(self):
 def gather_comments(self):
 def write_files(self, out_file):
@@ -71,7 +69,6 @@ Imports:
 Python Comments:
 ''' ask user for filepath '''
 #Uses BaseAnalyzer to get file types and decied what analizer to run
-#if file type in list call analyzer
 #functions to call the analyzers
 #Create object lemmatizer
 # Example: Frequency-based summarization
@@ -80,14 +77,11 @@ Python Comments:
 # Skip .git directories entirely and enve
 # Check if the file's extension is in the allowed list
 #add to list for file types
-''' Initialize the analyzer with a target directory'''
-'''Gather only Python (.html) files'''
 # Check if the file's extension is in the allowed list
+''' Initialize the analyzer with a target directory'''
 '''
 '''
 ''' Initialize the analyzer with a target directory'''
-'''Gather only Python (.py) files'''
-# Check if the file's extension is in the allowed list
 ''' Read Python files, remove blank lines, and process content. '''
 '''TODO get better doc string
 """all file paths in project folder"""

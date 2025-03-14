@@ -5,27 +5,14 @@ class BaseAnalyzer:
         ''' Initialize the analyzer with a target directory'''
 
         self.directory = directory
-        self.file_count = 0
         self.files = []
         self.file_type_list = []
         
         self.python_files = []
         self.html_files = []
 
-
-    def sep_file_paths(self):
-        for file in self.files:
-            #if file type in list call analyzer
-            if "py" in self.file_type_list:  
-                # Check if the file's extension is in the allowed list
-                if file.endswith(".py"):
-                    self.python_files.append(file)
-
-                if "html" in self.file_type_list:
-                    self.html_files.append(file)
-
-
-
+        
+    
     def gather_files(self):
         '''Gather all .py files in directory'''
         allowed_extensions = [".py", ".md", ".txt", ".html"]
@@ -35,12 +22,18 @@ class BaseAnalyzer:
             for file in files:
                 # Check if the file's extension is in the allowed list
                 if any(file.endswith(ext) for ext in allowed_extensions):
-                    self.file_count += 1
                     self.files.append(os.path.join(root, file))
                     #add to list for file types
                     ext = file.split('.')[-1]
                     if ext not in self.file_type_list:
                         self.file_type_list.append(ext)
-        self.sep_file_paths()
+
+        for file in self.files:    
+            # Check if the file's extension is in the allowed list
+            if file.endswith(".py"):
+                self.python_files.append(file)
+
+            if file.endswith(".html"):
+                self.html_files.append(file)
 
     
