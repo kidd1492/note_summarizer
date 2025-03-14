@@ -12,20 +12,19 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         self.all_file_paths = all_file_paths
 
         self.python_files = []
-        #self.lines = []
-
+    
 
     def gather_python_files(self):    
         for file in self.all_file_paths:      
             if file.endswith(".py"):
                 self.python_files.append(file)
+                self.p_file_count += 1
 
 
     def clean_file(self, output):
         """Process files and write results directly to output."""
         for file in self.python_files:
-            self.p_file_count += 1
-            output.write("\n")
+            output.write(" \n")
             output.write(f"{file}\n\n")
             with open(file, 'r', encoding='utf-8') as f:
                 for line in f:
@@ -44,7 +43,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         elif line.startswith("class "):
             output.write(f"[CLASS]: {line}\n")      
         elif re.match(comment_pattern, line):     
-            output.write(f"{line}\n")
+            output.write(f"\n{line}\n")
             
 
    
@@ -54,6 +53,5 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         self.gather_python_files()
         with open(self.python_output_file, "w") as output:
             output.write(f"Total Files Analyzed: {self.total_file_count}\n")
-            output.write(f"Python Files Analyzed: {self.p_file_count}\n\n")
             self.clean_file(output)
-        
+            output.write(f"\nPython Files Analyzed:{self.p_file_count}")
