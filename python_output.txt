@@ -1,3 +1,5 @@
+Total Files Analyzered: 11
+
 All File Paths
 C:/Users/chris/Desktop/note_summarizer\main.py
 C:/Users/chris/Desktop/note_summarizer\tokenizer.py
@@ -13,7 +15,7 @@ import os, re
 import nltk
 import os, re
 import re, os
-import re, os
+import re
 
 
 All Functions
@@ -24,6 +26,7 @@ def start_analyzer(all_file_paths, file_type_list):
 def call_python_analyzer(all_file_paths):
 def call_html_analyzer(all_file_paths):
 def __init__(self, all_file_paths):
+def file_count(self):
 def __init__(self, all_file_paths):
 def gather_html_files(self):
 def clean_file(self):

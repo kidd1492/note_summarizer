@@ -38,4 +38,4 @@ class HTMLAnalyzer(BaseAnalyzer):
     def analyze(self):
         self.gather_html_files()
         self.clean_file()
-        print(self.html_files)
+        

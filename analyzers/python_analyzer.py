@@ -1,5 +1,5 @@
 from .base_analyzer import BaseAnalyzer
-import re, os
+import re
 
 class PythonProjectAnalyzer(BaseAnalyzer):
     def __init__(self, all_file_paths):
@@ -75,7 +75,9 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
     def full_report(self):
         '''Full reort file, imports, functions for each file'''
+        self.file_count()
         with open(self.python_output_file, "w") as output:
+            output.write(f"Total Files Analyzered: {self.total_file_count}\n\n")
             self.write_files(output)
             self.write_imports(output)
             self.write_functions(output)
