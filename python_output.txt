@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Analyzed Files:
 C:/Users/chris/Desktop/note_summarizer\main.py
@@ -76,10 +77,54 @@ Python Comments:
 #Create object lemmatizer
 # Example: Frequency-based summarization
 ''' Initialize the analyzer with a target directory'''
+=======
+All File Paths
+C:/Users/chris/Desktop/note_summarizer\main.py
+C:/Users/chris/Desktop/note_summarizer\tokenizer.py
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py
+C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py
+C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py
+
+
+All Imports
+from analyzers import PythonProjectAnalyzer, BaseAnalyzer, HTMLAnalyzer
+import os, re
+import nltk
+import os, re
+import re, os
+import re, os
+
+
+All Functions
+def main():
+def get_directory():
+def gather_files(directory):
+def start_analyzer(all_file_paths, file_type_list):
+def call_python_analyzer(all_file_paths):
+def call_html_analyzer(all_file_paths):
+def __init__(self, all_file_paths):
+def __init__(self, all_file_paths):
+def gather_html_files(self):
+def clean_file(self):
+def analyze(self):
+def __init__(self, all_file_paths):
+def gather_python_files(self):
+def clean_file(self):
+def write_files(self, output):
+def write_functions(self, output):
+def write_imports(self, output):
+def write_comments(self, output):
+def analyze(self):
+def full_report(self):
+
+''' ask user for filepath '''
+>>>>>>> html_analyzer
 '''Gather all .py files in directory'''
 # Skip .git directories entirely and enve
 # Check if the file's extension is in the allowed list
 #add to list for file types
+<<<<<<< HEAD
 ''' Initialize the analyzer with a target directory'''
 '''Gather only Python (.html) files'''
 # Check if the file's extension is in the allowed list
@@ -98,4 +143,20 @@ Python Comments:
 ''' outputs all files, imports, def, comments'''
 ''''
 '''
+=======
+#Uses BaseAnalyzer to get file types and decied what analizer to run
+#functions to call the analyzers
+#Create object lemmatizer
+# Example: Frequency-based summarization
+''' Initialize the analyzer with a target directory'''
+''' Initialize the analyzer with a target directory'''
+'''
+'''
+''' Initialize the analyzer with a target directory'''
+''' Read Python files, remove blank lines, and process content. '''
+"""all file paths in project folder"""
+"""gather all function decorators in files"""
+'''gathers all import statements from files'''
+#Perform full analysis workflow
+>>>>>>> html_analyzer
 '''Full reort file, imports, functions for each file'''
