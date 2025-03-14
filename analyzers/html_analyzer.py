@@ -2,16 +2,25 @@ from .base_analyzer import BaseAnalyzer
 import re, os
 
 class HTMLAnalyzer(BaseAnalyzer):
-    def __init__(self, directory):
+    def __init__(self, all_file_paths):
         ''' Initialize the analyzer with a target directory'''
-        super().__init__(directory)
+        super().__init__(all_file_paths)
 
         self.html_output_file = "html_output_file.txt"
         self.html_summary_file = "html_summary_file.txt"
-        
+        self.all_file_paths = all_file_paths
+        self.html_files = []
         self.lines = []
-        
-        
+
+
+    def gather_html_files(self):    
+        for file in self.all_file_paths:      
+            if file.endswith(".html"):
+                self.html_files.append(file)
+
+
+
+
     def clean_file(self):
         '''
         Read all files and remove blank lines
@@ -27,6 +36,6 @@ class HTMLAnalyzer(BaseAnalyzer):
 
 
     def analyze(self):
-        self.gather_files()
+        self.gather_html_files()
         self.clean_file()
         print(self.html_files)
