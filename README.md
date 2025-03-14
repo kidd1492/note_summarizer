@@ -1,50 +1,43 @@
-# File Summarizer Tool
-## -Overview
-The File Summarizer Tool is a Python-based utility designed to gather and process files from a directory structure. It allows users to filter files by extension, exclude specific directories (e.g., .git, env, enve), and prepares the groundwork for summarizing or analyzing the content of those files.
+# General Structure:
+### Main Script (main.py):
+
+- Central file for running the program.
+
+- Includes functions to gather file types and invoke specific analyzers (call_python_analyzer and call_html_analyzer).
+
+### Analyzers Module:
+
+A well-structured set of Python files under the analyzers directory.
+
+- BaseAnalyzer (base_analyzer.py): The foundational class for shared functionality.
+
+- HTMLAnalyzer (html_analyzer.py): Specialized analyzer for handling HTML files.
+
+- PythonProjectAnalyzer (python_analyzer.py): Handles Python-specific file analysis, including imports, functions      comments, and generating reports.
+
+### Key Highlights:
+Classes and Functions:
+
+- Each analyzer extend the BaseAnalyzer class and implements specific methods (gather_files, analyze, etc.).
+
+- The PythonProjectAnalyzer is robust, covering various aspects of Python code, such as comments, imports, functions, and reports.
 
 
-## Features
-- Directory Traversal: Recursively walks through a specified directory and its subdirectories.
-- File Filtering: Gathers only files with specified extensions (e.g., .py, .txt, .js).
-- Exclusion of Directories: Automatically skips directories like .git, env, and enve to streamline processing.
 
-## Current Project Structure
-- note_summarizer/
-  - analyzers/
-    - \__init__.py
-    - base_analyzer.py
-    - python_analyzer.py
-    - html_analyzer.py
-  
-  - main.py
+## Next Steps:
 
-## output.txt
-- Output.txt: The script will print the following...
-- 
-Analyzed Files:
-C:/Users/chris/Desktop/note_summarizer\main.py
+1. Exception Handling:
 
-Imports:
+- Ensure robust error-handling mechanisms, especially when analyzing files, to avoid crashes with unexpected inputs.
 
-import os, re
-import inspect
-def main():
-def gather_files(directory, allowed_extensions):
-def write_report(paths): ...
+2. Enhance Modularity:
 
-...
-Python Comments:
-''' ask user for filepath '''
-''' Initialize the analyzer with a target directory'''
-'''Gather only Python (.py) files'''
-"""gather all function decorators in files"""
-'''gathers all import statements from files'''
+- If there are repetitive patterns across analyzers, consider abstracting them into reusable functions or methods in BaseAnalyzer.
 
-## Next Steps
+3. Docstring Improvement:
 
-- Enhance error handling.
-- Add support for saving summarized content to a new directory or database.
-- Add method to create a json file.
+- Revise the TODO areas to add comprehensive docstrings for better code readability and maintenance.
 
-License
-This project is licensed under the MIT License. See LICENSE for more details.
+4. Testing:
+
+- Incorporate unit tests to verify that each analyzer's methods (e.g., gather_files, clean_file) work as intended.

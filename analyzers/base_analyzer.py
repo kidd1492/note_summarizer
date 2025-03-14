@@ -15,7 +15,7 @@ class BaseAnalyzer:
         allowed_extensions = [".py", ".md", ".txt", ".html"]
         for root, dirs, files in os.walk(self.directory):
             # Skip .git directories entirely and enve
-            dirs[:] = [d for d in dirs if d not in [".git", "env", "enve"]]
+            dirs[:] = [d for d in dirs if d not in [".git", "env", "enve", "venv"]]
             for file in files:
                 # Check if the file's extension is in the allowed list
                 if any(file.endswith(ext) for ext in allowed_extensions):
