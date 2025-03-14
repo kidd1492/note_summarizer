@@ -19,8 +19,6 @@ class HTMLAnalyzer(BaseAnalyzer):
                 self.html_files.append(file)
 
 
-
-
     def clean_file(self):
         '''
         Read all files and remove blank lines
@@ -38,4 +36,6 @@ class HTMLAnalyzer(BaseAnalyzer):
     def analyze(self):
         self.gather_html_files()
         self.clean_file()
+        for file in self.html_files:
+            print(file)
         

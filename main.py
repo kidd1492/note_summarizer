@@ -58,8 +58,7 @@ def call_python_analyzer(all_file_paths):
     ...
     python_analyzer = PythonProjectAnalyzer(all_file_paths)
     python_analyzer.analyze()
-    python_analyzer.full_report()
-
+    
 
 def call_html_analyzer(all_file_paths):
     html_analyzer = HTMLAnalyzer(all_file_paths)
