@@ -8,17 +8,12 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
         self.python_output_file = "python_output.txt"
         self.python_summary_file = "python_summary.txt"
-        self.python_files = []
+        
         self.lines = []
         self.comments = []
 
 
-    def gather_python_files(self):
-        '''Gather only Python (.py) files'''
-        for file in self.files:
-            # Check if the file's extension is in the allowed list
-            if file.endswith(".py"):
-                self.python_files.append(file)
+ 
 
 
     def clean_file(self):
@@ -121,8 +116,8 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         ''''
         Perform full analysis workflow
         '''
-        self.gather_files()
-        self.gather_python_files()
+        #self.gather_files()
+        #self.gather_python_files()
         self.clean_file()
         self.gather_comments()
 
