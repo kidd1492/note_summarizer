@@ -12,6 +12,7 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         self.lines = []
         self.comments = []
 
+
     def gather_python_files(self):
         '''Gather only Python (.py) files'''
         for file in self.files:
@@ -21,17 +22,16 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
 
     def clean_file(self):
-        ''' Read all files and remove blank lines'''
-
-        for file in self.python_files: 
-            with open(file, "r") as f:
+        ''' Read Python files, remove blank lines, and process content. '''   
+        for file in self.python_files:
+            with open(file, 'r', encoding='utf-8') as f:
                 for line in f:
                     stripped_line = line.strip()
                     if stripped_line == '':
                         continue
                     else:
                         self.lines.append(stripped_line)
-
+            
 
     def gather_comments(self):
         '''TODO get better doc string
