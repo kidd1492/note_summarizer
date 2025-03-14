@@ -32,43 +32,39 @@ class PythonProjectAnalyzer(BaseAnalyzer):
                         self.lines.append(stripped_line)
             
 
-    def write_files(self, out_file):
+    def write_files(self, output):
         """all file paths in project folder"""
-        with open(out_file, "w") as output:
-            output.write(f"All File Paths\n")
-            for file in self.python_files:
-                output.write(f"{file}\n")
+        output.write(f"All File Paths\n")
+        for file in self.python_files:
+            output.write(f"{file}\n")
 
 
-    def write_functions(self, out_file):
+    def write_functions(self, output):
         """gather all function decorators in files"""
         function_pattern = r"^def\s+"
-        with open(out_file, "a") as output:
-            output.write("\n")
-            output.write(f"\nAll Functions\n")
-            for line in self.lines:
-                if re.match(function_pattern, line):
-                    output.write(f"{line}\n")
+        output.write("\n")
+        output.write(f"\nAll Functions\n")
+        for line in self.lines:
+            if re.match(function_pattern, line):
+                output.write(f"{line}\n")
   
 
-    def write_imports(self, out_file):
+    def write_imports(self, output):
         '''gathers all import statements from files'''
         import_pattern = r"^(import\s+|from\s+\w+\s+import\s+)"
-        with open(out_file, "a") as output:
-            output.write("\n")
-            output.write(f"\nAll Imports\n")
-            for line in self.lines:
-                if re.match(import_pattern, line):
-                    output.write(f"{line}\n")
+        output.write("\n")
+        output.write(f"\nAll Imports\n")
+        for line in self.lines:
+            if re.match(import_pattern, line):
+                output.write(f"{line}\n")
 
 
-    def write_comments(self, out_file):
-        with open(out_file, "a") as output:
-            comment_pattern = r"^#|^[\"']{3}"
-            output.write("\n")    
-            for line in self.lines:      
-                if re.match(comment_pattern, line):
-                    output.write(f"{line}\n")
+    def write_comments(self, output):
+        comment_pattern = r"^#|^[\"']{3}"
+        output.write("\n")    
+        for line in self.lines:      
+            if re.match(comment_pattern, line):
+                output.write(f"{line}\n")
 
 
    
@@ -79,7 +75,8 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
     def full_report(self):
         '''Full reort file, imports, functions for each file'''
-        self.write_files(self.python_output_file)
-        self.write_imports(self.python_output_file)
-        self.write_functions(self.python_output_file)
-        self.write_comments(self.python_output_file)
+        with open(self.python_output_file, "w") as output:
+            self.write_files(output)
+            self.write_imports(output)
+            self.write_functions(output)
+            self.write_comments(output)

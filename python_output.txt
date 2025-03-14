@@ -31,10 +31,10 @@ def analyze(self):
 def __init__(self, all_file_paths):
 def gather_python_files(self):
 def clean_file(self):
-def write_files(self, out_file):
-def write_functions(self, out_file):
-def write_imports(self, out_file):
-def write_comments(self, out_file):
+def write_files(self, output):
+def write_functions(self, output):
+def write_imports(self, output):
+def write_comments(self, output):
 def analyze(self):
 def full_report(self):
 
