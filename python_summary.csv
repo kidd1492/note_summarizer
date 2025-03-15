@@ -1,6 +1,7 @@
 File,Type,Content
 C:/Users/chris/Desktop/note_summarizer\main.py,import,"from analyzers import PythonProjectAnalyzer, BaseAnalyzer, HTMLAnalyzer"
-C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re"
+C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re, csv"
+C:/Users/chris/Desktop/note_summarizer\main.py,import,from test import *
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def main():
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def get_directory():
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,''' ask user for filepath '''
@@ -15,14 +16,23 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,#functions to call the an
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def call_python_analyzer(all_file_paths):
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def call_html_analyzer(all_file_paths):
 C:/Users/chris/Desktop/note_summarizer\test.py,import,import csv
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def main():
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def gather_python_files(df):
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,#collect file names in python_files.
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def comments(df):
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,#collect all comments from all files.
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def p_files(python_files):
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def open_python_summary():
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def imports(df):
+C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Load data into a list of dictionaries
+C:/Users/chris/Desktop/note_summarizer\test.py,comment,#TODO change main function to test call it from main.py
+C:/Users/chris/Desktop/note_summarizer\test.py,function,def test():
+C:/Users/chris/Desktop/note_summarizer\test.py,import,imports()
+C:/Users/chris/Desktop/note_summarizer\test.py,function,def p_files():
+C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Collect file names in python_files
+C:/Users/chris/Desktop/note_summarizer\test.py,comment,"#print(f""File List:\n"")"
+C:/Users/chris/Desktop/note_summarizer\test.py,function,def imports():
+C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list = []
+C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Collect all imports in a list
+C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list.append(i)
+C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list.append(row[1:])
+C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list.append(row[1])
+C:/Users/chris/Desktop/note_summarizer\test.py,function,def classes():
+C:/Users/chris/Desktop/note_summarizer\test.py,function,def functions():
+C:/Users/chris/Desktop/note_summarizer\test.py,function,def comments():
+C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Collect all comments from all files
 C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,import nltk
 C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,from nltk.tokenize import word_tokenize
 C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,from nltk.corpus import stopwords
@@ -46,6 +56,8 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def c
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,'''
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,'''
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def analyze(self):
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#for file in self.html_files:
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#print(file)
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,from .base_analyzer import BaseAnalyzer
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import re

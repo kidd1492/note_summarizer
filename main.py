@@ -1,11 +1,12 @@
 from analyzers import PythonProjectAnalyzer, BaseAnalyzer, HTMLAnalyzer
-import os, re
-
+import os, re, csv
+from test import *
 
 def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
     start_analyzer(all_file_paths, file_type_list)
+    test()
    
    
 def get_directory():

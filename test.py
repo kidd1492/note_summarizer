@@ -6,9 +6,9 @@ with open("python_summary.csv", mode='r') as file:
 
 
 #TODO change main function to test call it from main.py
-def main():
-    imports()
+def test():
     p_files()
+    imports()
     classes()
     functions() 
     comments()
@@ -16,11 +16,12 @@ def main():
     
 def p_files():
     python_files = []
+    print()
     # Collect file names in python_files
     for row in data:
         if row["File"] not in python_files:
             python_files.append(row["File"])
-    print(f"File List:\n")
+    #print(f"File List:\n")
     print(f"{python_files}\n")
 
 
@@ -78,5 +79,6 @@ def comments():
 
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__test__":
+    test()
+ 
