@@ -6,7 +6,7 @@ with open("python_summary.csv", mode='r') as file:
 
 
 #TODO change main function to test call it from main.py
-def test():
+def main():
     p_files()
     imports()
     classes()
@@ -79,6 +79,6 @@ def comments():
 
 
 
-if __name__ == "__test__":
-    test()
+if __name__ == "__main__":
+    main()
  

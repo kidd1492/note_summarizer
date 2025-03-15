@@ -1,14 +1,12 @@
-from analyzers import PythonProjectAnalyzer, BaseAnalyzer, HTMLAnalyzer
-import os, re, csv
-from test import *
+from analyzers import PythonProjectAnalyzer, HTMLAnalyzer
+import os, re
 
 def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
     start_analyzer(all_file_paths, file_type_list)
-    test()
-   
-   
+    
+
 def get_directory():
     ''' ask user for filepath '''
     path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
@@ -48,24 +46,13 @@ def gather_files(directory):
 def start_analyzer(all_file_paths, file_type_list):
      
     if "py" in file_type_list:
-        call_python_analyzer(all_file_paths)
+        python_analyzer = PythonProjectAnalyzer(all_file_paths)
+        python_analyzer.analyze()
 
     if "html" in file_type_list:
-        call_html_analyzer(all_file_paths)
-    
+        html_analyzer = HTMLAnalyzer(all_file_paths)
+        html_analyzer.analyze()
 
-#functions to call the analyzers 
-def call_python_analyzer(all_file_paths):
-    ...
-    python_analyzer = PythonProjectAnalyzer(all_file_paths)
-    python_analyzer.analyze()
-    
-
-def call_html_analyzer(all_file_paths):
-    html_analyzer = HTMLAnalyzer(all_file_paths)
-    html_analyzer.analyze()
-    
-    
 
 if __name__ == "__main__":
     main()

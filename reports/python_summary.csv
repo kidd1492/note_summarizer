@@ -1,7 +1,6 @@
 File,Type,Content
-C:/Users/chris/Desktop/note_summarizer\main.py,import,"from analyzers import PythonProjectAnalyzer, BaseAnalyzer, HTMLAnalyzer"
-C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re, csv"
-C:/Users/chris/Desktop/note_summarizer\main.py,import,from test import *
+C:/Users/chris/Desktop/note_summarizer\main.py,import,"from analyzers import PythonProjectAnalyzer, HTMLAnalyzer"
+C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re"
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def main():
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def get_directory():
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,''' ask user for filepath '''
@@ -12,42 +11,13 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Check if the file's ext
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,#add to list for file types
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,#Uses BaseAnalyzer to get file types and decied what analizer to run
 C:/Users/chris/Desktop/note_summarizer\main.py,function,"def start_analyzer(all_file_paths, file_type_list):"
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,#functions to call the analyzers
-C:/Users/chris/Desktop/note_summarizer\main.py,function,def call_python_analyzer(all_file_paths):
-C:/Users/chris/Desktop/note_summarizer\main.py,function,def call_html_analyzer(all_file_paths):
-C:/Users/chris/Desktop/note_summarizer\test.py,import,import csv
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Load data into a list of dictionaries
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,#TODO change main function to test call it from main.py
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def test():
-C:/Users/chris/Desktop/note_summarizer\test.py,import,imports()
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def p_files():
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Collect file names in python_files
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,"#print(f""File List:\n"")"
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def imports():
-C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list = []
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Collect all imports in a list
-C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list.append(i)
-C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list.append(row[1:])
-C:/Users/chris/Desktop/note_summarizer\test.py,import,imports_list.append(row[1])
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def classes():
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def functions():
-C:/Users/chris/Desktop/note_summarizer\test.py,function,def comments():
-C:/Users/chris/Desktop/note_summarizer\test.py,comment,# Collect all comments from all files
-C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,import nltk
-C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,from nltk.tokenize import word_tokenize
-C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,from nltk.corpus import stopwords
-C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,from nltk.stem import WordNetLemmatizer
-C:/Users/chris/Desktop/note_summarizer\tokenizer.py,import,from nltk.probability import FreqDist
-C:/Users/chris/Desktop/note_summarizer\tokenizer.py,comment,#Create object lemmatizer
-C:/Users/chris/Desktop/note_summarizer\tokenizer.py,comment,# Example: Frequency-based summarization
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,"import os, re"
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,class,class BaseAnalyzer:
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def __init__(self, all_file_paths):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,''' Initialize the analyzer with a target directory'''
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def file_count(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,from .base_analyzer import BaseAnalyzer
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,"import re, os"
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,class,class HTMLAnalyzer(BaseAnalyzer):
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,class,class HTMLAnalyzer:
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,"def __init__(self, all_file_paths):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#Initialize the analyzer with a file paths list
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#gather all html files append them to list
@@ -58,10 +28,9 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,'''
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def analyze(self):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#for file in self.html_files:
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#print(file)
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,from .base_analyzer import BaseAnalyzer
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import re
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,class,class PythonProjectAnalyzer(BaseAnalyzer):
+C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,class,class PythonProjectAnalyzer:
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,"def __init__(self, all_file_paths):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# Lists to store CSV rows
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def gather_python_files(self):
@@ -77,3 +46,21 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .python_analyzer import PythonProjectAnalyzer
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .base_analyzer import BaseAnalyzer
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .html_analyzer import HTMLAnalyzer
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,import csv
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,# Load data into a list of dictionaries
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,#TODO change main function to test call it from main.py
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def main():
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports()
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def p_files():
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,# Collect file names in python_files
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,"#print(f""File List:\n"")"
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def imports():
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list = []
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,# Collect all imports in a list
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list.append(i)
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list.append(row[1:])
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list.append(row[1])
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def classes():
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def functions():
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def comments():
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,# Collect all comments from all files
