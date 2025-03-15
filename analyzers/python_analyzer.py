@@ -36,18 +36,18 @@ class PythonProjectAnalyzer(BaseAnalyzer):
         # Initialize a dictionary for each line's data
         row = {
             "File": file,
-            "Type": None,  # IMPORT, CLASS, FUNCTION, COMMENT
+            "Type": None,  # import, class, function, comment
             "Content": line
         }
 
         if line.startswith("import") or line.startswith("from"):
-            row["Type"] = "IMPORT"
+            row["Type"] = "import"
         elif line.startswith("class "):
-            row["Type"] = "CLASS"
+            row["Type"] = "class"
         elif re.match(function_pattern, line):
-            row["Type"] = "FUNCTION"
+            row["Type"] = "function"
         elif re.match(comment_pattern, line):
-            row["Type"] = "COMMENT"
+            row["Type"] = "comment"
         else:
             return  # Ignore lines that don't match any pattern
 
