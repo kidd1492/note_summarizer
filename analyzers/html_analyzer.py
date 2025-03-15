@@ -3,7 +3,7 @@ import re, os
 
 class HTMLAnalyzer(BaseAnalyzer):
     def __init__(self, all_file_paths):
-        ''' Initialize the analyzer with a target directory'''
+        #Initialize the analyzer with a file paths list
         super().__init__(all_file_paths)
 
         self.html_output_file = "html_output_file.txt"
@@ -12,13 +12,11 @@ class HTMLAnalyzer(BaseAnalyzer):
         self.html_files = []
         self.lines = []
 
-
+    #gather all html files append them to list
     def gather_html_files(self):    
         for file in self.all_file_paths:      
             if file.endswith(".html"):
                 self.html_files.append(file)
-
-
 
 
     def clean_file(self):
@@ -38,4 +36,6 @@ class HTMLAnalyzer(BaseAnalyzer):
     def analyze(self):
         self.gather_html_files()
         self.clean_file()
-        print(self.html_files)
+        for file in self.html_files:
+            print(file)
+        

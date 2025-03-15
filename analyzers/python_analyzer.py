@@ -1,82 +1,70 @@
 from .base_analyzer import BaseAnalyzer
-import re, os
+import csv
+import re
 
 class PythonProjectAnalyzer(BaseAnalyzer):
     def __init__(self, all_file_paths):
-        ''' Initialize the analyzer with a target directory'''
         super().__init__(all_file_paths)
-
-        self.python_output_file = "python_output.txt"
-        self.python_summary_file = "python_summary.txt"
-
+        self.python_summary_file = "python_summary.csv"
+        self.p_file_count = 0
         self.all_file_paths = all_file_paths
-
         self.python_files = []
-        self.lines = []
+
+        # Lists to store CSV rows
+        self.csv_data = []
 
     def gather_python_files(self):    
         for file in self.all_file_paths:      
             if file.endswith(".py"):
                 self.python_files.append(file)
-
+                self.p_file_count += 1
 
     def clean_file(self):
-        ''' Read Python files, remove blank lines, and process content. '''   
+        """Process files and store results in CSV format."""
         for file in self.python_files:
             with open(file, 'r', encoding='utf-8') as f:
                 for line in f:
                     stripped_line = line.strip()
-                    if stripped_line == '':
-                        continue
-                    else:
-                        self.lines.append(stripped_line)
-            
+                    if stripped_line:
+                        self.process_line_for_csv(stripped_line, file)
 
-    def write_files(self, output):
-        """all file paths in project folder"""
-        output.write(f"All File Paths\n")
-        for file in self.python_files:
-            output.write(f"{file}\n")
-
-
-    def write_functions(self, output):
-        """gather all function decorators in files"""
-        function_pattern = r"^def\s+"
-        output.write("\n")
-        output.write(f"\nAll Functions\n")
-        for line in self.lines:
-            if re.match(function_pattern, line):
-                output.write(f"{line}\n")
-  
-
-    def write_imports(self, output):
-        '''gathers all import statements from files'''
-        import_pattern = r"^(import\s+|from\s+\w+\s+import\s+)"
-        output.write("\n")
-        output.write(f"\nAll Imports\n")
-        for line in self.lines:
-            if re.match(import_pattern, line):
-                output.write(f"{line}\n")
-
-
-    def write_comments(self, output):
+    def process_line_for_csv(self, line, file):
+        """Process each line and store relevant data for CSV."""
         comment_pattern = r"^#|^[\"']{3}"
-        output.write("\n")    
-        for line in self.lines:      
-            if re.match(comment_pattern, line):
-                output.write(f"{line}\n")
+        function_pattern = r"^def\s+"
 
+        # Initialize a dictionary for each line's data
+        row = {
+            "File": file,
+            "Type": None,  # IMPORT, CLASS, FUNCTION, COMMENT
+            "Content": line
+        }
 
-   
+        if line.startswith("import") or line.startswith("from"):
+            row["Type"] = "IMPORT"
+        elif line.startswith("class "):
+            row["Type"] = "CLASS"
+        elif re.match(function_pattern, line):
+            row["Type"] = "FUNCTION"
+        elif re.match(comment_pattern, line):
+            row["Type"] = "COMMENT"
+        else:
+            return  # Ignore lines that don't match any pattern
+
+        self.csv_data.append(row)  # Add the row to the CSV data list
+
+    def write_csv_summary(self):
+        """Write the collected data to a CSV file."""
+        with open(self.python_summary_file, "w", newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=["File", "Type", "Content"])
+            writer.writeheader()  # Write column headers
+            writer.writerows(self.csv_data)  # Write all rows
+
     def analyze(self):
-        #Perform full analysis workflow   
+        """Perform the full analysis workflow and output to CSV."""
+        self.file_count()
         self.gather_python_files()
         self.clean_file()
-
-    def full_report(self):
-        '''Full reort file, imports, functions for each file'''
-        with open(self.python_output_file, "w") as output:
-            self.write_files(output)
-            self.write_imports(output)
-            self.write_functions(output)
-            self.write_comments(output)
+        self.write_csv_summary()
+        print(f"Python files analyzed: {self.p_file_count}")
+        print(f"Results saved in: {self.python_summary_file}")
