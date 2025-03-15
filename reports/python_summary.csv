@@ -1,5 +1,5 @@
 File,Type,Content
-C:/Users/chris/Desktop/note_summarizer\main.py,import,"from analyzers import PythonProjectAnalyzer, HTMLAnalyzer"
+C:/Users/chris/Desktop/note_summarizer\main.py,import,"from analyzers import PythonProjectAnalyzer, HTMLAnalyzer, BaseAnalyzer"
 C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re"
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def main():
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def get_directory():
@@ -11,11 +11,11 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Check if the file's ext
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,#add to list for file types
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,#Uses BaseAnalyzer to get file types and decied what analizer to run
 C:/Users/chris/Desktop/note_summarizer\main.py,function,"def start_analyzer(all_file_paths, file_type_list):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,"import os, re"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,from reports import test
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,class,class BaseAnalyzer:
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def __init__(self, all_file_paths):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,''' Initialize the analyzer with a target directory'''
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def file_count(self):
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def __init__(self):
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,''' Initialize the analyzer with a ??'''
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def reports(self):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,"import re, os"
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,class,class HTMLAnalyzer:
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,"def __init__(self, all_file_paths):"

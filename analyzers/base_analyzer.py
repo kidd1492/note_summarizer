@@ -1,13 +1,10 @@
-import os, re
+from reports import test
 
 class BaseAnalyzer:
-    def __init__(self, all_file_paths):
-        ''' Initialize the analyzer with a target directory'''
-        self.all_file_paths = all_file_paths
-        self.total_file_count = 0
-
-
-    def file_count(self):
-        for file in self.all_file_paths:
-            self.total_file_count += 1
-                   
+    def __init__(self):
+        ''' Initialize the analyzer with a ??'''
+       
+    def reports(self):
+        print()
+        print("ok")
+        test.main()
