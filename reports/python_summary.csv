@@ -13,8 +13,9 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,#Uses BaseAnalyzer to get
 C:/Users/chris/Desktop/note_summarizer\main.py,function,"def start_analyzer(all_file_paths, file_type_list):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,from reports import test
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,class,class BaseAnalyzer:
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def __init__(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,''' Initialize the analyzer with a ??'''
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def __init__(self, all_file_paths, file_type_list):"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,''' Initialize the analyzer with a types list and file list'''
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def count_files(self):
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def reports(self):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,"import re, os"
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,class,class HTMLAnalyzer:

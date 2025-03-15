@@ -5,7 +5,7 @@ def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
     start_analyzer(all_file_paths, file_type_list)
-    report = BaseAnalyzer()
+    report = BaseAnalyzer(all_file_paths, file_type_list)
     report.reports()
     
 
