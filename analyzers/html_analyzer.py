@@ -1,10 +1,8 @@
-from .base_analyzer import BaseAnalyzer
 import re, os
 
-class HTMLAnalyzer(BaseAnalyzer):
+class HTMLAnalyzer:
     def __init__(self, all_file_paths):
         #Initialize the analyzer with a file paths list
-        super().__init__(all_file_paths)
 
         self.html_output_file = "html_output_file.txt"
         self.html_summary_file = "html_summary_file.txt"
@@ -36,6 +34,6 @@ class HTMLAnalyzer(BaseAnalyzer):
     def analyze(self):
         self.gather_html_files()
         self.clean_file()
-        for file in self.html_files:
-            print(file)
+        #for file in self.html_files:
+            #print(file)
         

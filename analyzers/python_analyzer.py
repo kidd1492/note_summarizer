@@ -1,11 +1,9 @@
-from .base_analyzer import BaseAnalyzer
 import csv
 import re
 
-class PythonProjectAnalyzer(BaseAnalyzer):
+class PythonProjectAnalyzer:
     def __init__(self, all_file_paths):
-        super().__init__(all_file_paths)
-        self.python_summary_file = "python_summary.csv"
+        self.python_summary_file = "reports/python_summary.csv"
         self.p_file_count = 0
         self.all_file_paths = all_file_paths
         self.python_files = []
@@ -62,7 +60,6 @@ class PythonProjectAnalyzer(BaseAnalyzer):
 
     def analyze(self):
         """Perform the full analysis workflow and output to CSV."""
-        self.file_count()
         self.gather_python_files()
         self.clean_file()
         self.write_csv_summary()
