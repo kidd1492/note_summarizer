@@ -1,7 +1,7 @@
 import csv
 
 # Load data into a list of dictionaries
-with open("python_summary.csv", mode='r') as file:
+with open("reports/python_d/python_summary.csv", mode='r') as file:
     data = list(csv.DictReader(file))
 
 

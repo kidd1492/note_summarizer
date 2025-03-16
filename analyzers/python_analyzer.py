@@ -3,7 +3,7 @@ import re
 
 class PythonProjectAnalyzer:
     def __init__(self, all_file_paths):
-        self.python_summary_file = "reports/python_summary.csv"
+        self.python_summary_file = "reports/python_d/python_summary.csv"
         self.p_file_count = 0
         self.all_file_paths = all_file_paths
         self.python_files = []
