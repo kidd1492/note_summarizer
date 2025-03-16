@@ -1,6 +1,6 @@
 import re, os
 
-class HTMLAnalyzer:
+class HTML_Analyzer:
     def __init__(self, all_file_paths):
         #Initialize the analyzer with a file paths list
 

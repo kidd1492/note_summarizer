@@ -1,4 +1,7 @@
 from reports.python_d import test
+from analyzers import PythonProjectAnalyzer
+#from analyzers import HTML_Analyzer
+import re
 
 class BaseAnalyzer:
     def __init__(self, all_file_paths, file_type_list):
@@ -12,6 +15,51 @@ class BaseAnalyzer:
     def count_files(self):
         for file in self.all_file_paths: self.file_count += 1
 
+ 
+    
+    #TODO put this in base analyzer 
+    def start_analyzer(self):
+        
+        if "py" in self.file_type_list:
+            python_analyzer = PythonProjectAnalyzer(self.all_file_paths)
+            python_analyzer.analyze()
+
+        if "html" in self.file_type_list:
+            html_analyzer = HTML_Analyzer(self.all_file_paths)
+            html_analyzer.analyze()
+        
+
+
+    #TODO function for directory file tree for files analyzed
+    
+    def file_tree(self):
+        file_directory_list = []
+        file_struct = []
+        for file in self.all_file_paths:
+            file = file.replace("\\", "/").split("/")
+            if file[-1] not in file_directory_list:file_directory_list.append([file[-1], file[:-1]])
+        
+        for fd in file_directory_list:
+            file_name = fd[0]
+            directory_name = fd[1][-1]
+            sub_directory = fd[1][-2]
+
+            if sub_directory not in file_struct:file_struct.append(sub_directory)
+            if directory_name not in file_struct: file_struct.append(directory_name)
+            if file_name not in file_struct: file_struct.append(file_name)
+
+        
+        for item in file_struct:
+            if re.match(r".\w+$", item):
+                print(f"|-{item}\n")
+            else:
+                print(f"|---{item}")
+
+        
+        
+
+
+    #TODO Functions to handel reports interface and function callers can dedicate to class?
 
     def reports(self):
         self.count_files()
