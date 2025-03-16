@@ -1,4 +1,4 @@
-from reports import test
+from reports.python_d import test
 
 class BaseAnalyzer:
     def __init__(self, all_file_paths, file_type_list):
@@ -12,19 +12,17 @@ class BaseAnalyzer:
         for file in self.all_file_paths: self.file_count += 1
 
 
-
     def reports(self):
         self.count_files()
         print()
         print(f"Analyzed files {self.file_count} \n")
         print(f"what type of report would you like?")
 
-    
         while True:
-            report_type = input(f"File Type Report Oprions: {self.file_type_list}")
+            report_type = input(f"File Type Report Oprions: {self.file_type_list}: ")
             if report_type.lower() in self.file_type_list:
-                print("Exiting the loop. Goodbye!")
                 break
             
         if report_type == "py":
+            print(f"Python")
             test.main()
