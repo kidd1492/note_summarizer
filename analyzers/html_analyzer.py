@@ -34,6 +34,6 @@ class HTML_Analyzer:
     def analyze(self):
         self.gather_html_files()
         self.clean_file()
-        #for file in self.html_files:
-            #print(file)
+        for file in self.html_files:
+            print(file)
         

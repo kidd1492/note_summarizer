@@ -7,8 +7,8 @@ def main():
     start_analyzer(all_file_paths, file_type_list)
     report = BaseAnalyzer(all_file_paths, file_type_list)
     report.count_files()
-    report.file_tree()
-    #report.reports()
+    #report.file_tree()
+    report.reports()
     
 
 def get_directory():
