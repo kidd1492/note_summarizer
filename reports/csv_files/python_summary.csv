@@ -43,24 +43,24 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# In
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def write_csv_summary():
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .base_analyzer import BaseAnalyzer
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports.python_d import test
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import test
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,"import csv, sys"
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def type_of_report(file_type_list):
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,comment,#TODO need to make this a function one for each type of file
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,comment,#functions one for each type of file
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def python_reports(file_type_list):
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,import csv
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def main(data):
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports()
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def p_files(data):
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,# Collect file names in python_files
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,"#print(f""File List:\n"")"
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def imports(data):
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list = []
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,# Collect all imports in a list
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list.append(i)
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list.append(row[1:])
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list.append(row[1])
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def classes(data):
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def functions(data):
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def comments(data):
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,# Collect all comments from all files
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,import csv
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def main(data):
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports(data)
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def p_files(data):
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,# Collect file names in python_files
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,"#print(f""File List:\n"")"
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def imports(data):
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list = []
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,# Collect all imports in a list
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list.append(i)
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list.append(row[1:])
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,import,imports_list.append(row[1])
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def classes(data):
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def functions(data):
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,function,def comments(data):
+C:/Users/chris/Desktop/note_summarizer\reports\test.py,comment,# Collect all comments from all files

@@ -1,7 +1,7 @@
 import csv
 import re
 
-python_summary_file = "reports/python_d/python_summary.csv"
+python_summary_file = "reports/csv_files/python_summary.csv"
 #p_file_count = 0
 python_files = []
 

@@ -1,12 +1,11 @@
 import csv
 
 def main(data):
-    print(data)
     p_files(data)
-    imports()
-    classes()
-    functions() 
-    comments()
+    imports(data)
+    classes(data)
+    functions(data) 
+    comments(data)
 
     
 def p_files(data):

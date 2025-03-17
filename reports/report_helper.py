@@ -1,4 +1,4 @@
-from reports.python_d import test
+from reports import test
 import csv, sys
 
 
@@ -16,7 +16,7 @@ def type_of_report(file_type_list):
             sys.exit()
 
 
- #TODO need to make this a function one for each type of file 
+ #functions one for each type of file 
 def python_reports(file_type_list):      
     
         while True:
@@ -24,7 +24,7 @@ def python_reports(file_type_list):
             print("1. Full Report\n2. File List\n3. Unique Imports\n4. Classes\n5. Functions\n6. Comments\n")
             function_number = input("Enter Number for Report or exit: ")
             if function_number != "exit":
-                with open("reports\python_d\python_summary.csv", mode='r') as file:
+                with open("reports\csv_files/python_summary.csv", mode='r') as file:
                     data = list(csv.DictReader(file))
                     if function_number == "1": test.main(data)
                     if function_number == "2": test.p_files(data)
@@ -35,4 +35,3 @@ def python_reports(file_type_list):
             else:
                  type_of_report(file_type_list)
                 
-
