@@ -53,6 +53,17 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# In
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def write_csv_summary():
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .base_analyzer import BaseAnalyzer
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,import,import csv
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,function,def main(data):
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,comment,#classes(data)
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,comment,#functions(data)
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,function,def html_files(data):
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,comment,# Collect file names in python_files
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,comment,"#print(f""File List:\n"")"
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,function,def text(data):
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,comment,# Collect all comments from all files
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,function,def comments(data):
+C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,comment,# Collect all comments from all files
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,function,def main(data):
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,import,imports(data)
@@ -70,7 +81,9 @@ C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,function,def
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,function,def comments(data):
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,comment,# Collect all comments from all files
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import python_report_gen
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import html_report_gen
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,"import csv, sys"
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def type_of_report(file_type_list):
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,comment,#functions one for each type of file
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def python_reports(file_type_list):
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def html_reports(file_type_list):

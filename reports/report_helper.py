@@ -1,4 +1,5 @@
 from reports import python_report_gen
+from reports import html_report_gen
 import csv, sys
 
 
@@ -12,6 +13,8 @@ def type_of_report(file_type_list):
             if report_type.lower() in file_type_list:
                 if report_type == "py":
                     python_reports(file_type_list)
+                if report_type == "html":
+                    html_reports(file_type_list)
         else:
             sys.exit()
 
@@ -35,3 +38,19 @@ def python_reports(file_type_list):
             else:
                  type_of_report(file_type_list)
                 
+
+def html_reports(file_type_list):      
+    
+        while True:
+            print(f"\n HTML \n")
+            print("1. Full Report\n2. File List\n3. Comments\n4. Text\n")
+            function_number = input("Enter Number for Report or exit: ")
+            if function_number != "exit":
+                with open("reports\csv_files/html_summary.csv", mode='r') as file:
+                    data = list(csv.DictReader(file))
+                    if function_number == "1": html_report_gen.main(data)
+                    if function_number == "2": html_report_gen.html_files(data)
+                    if function_number == "3": html_report_gen.comments(data)
+                    if function_number == "4": html_report_gen.text(data)
+            else:
+                 type_of_report(file_type_list)
