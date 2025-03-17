@@ -44,9 +44,10 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .base_analyzer import BaseAnalyzer
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports.python_d import test
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,import csv
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,"import csv, sys"
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def type_of_report(file_type_list):
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,comment,#TODO need to make this a function one for each type of file
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def python_reports(file_type_list):
 C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def main(data):
 C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports()
