@@ -1,67 +1,47 @@
 File,Type,Content
-C:/Users/chris/Desktop/note_summarizer\main.py,import,"from analyzers import PythonProjectAnalyzer, HTMLAnalyzer, BaseAnalyzer"
-C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re"
-C:/Users/chris/Desktop/note_summarizer\main.py,function,def main():
-C:/Users/chris/Desktop/note_summarizer\main.py,function,def get_directory():
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,''' ask user for filepath '''
-C:/Users/chris/Desktop/note_summarizer\main.py,function,def gather_files(directory):
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,'''Gather all .py files in directory'''
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Skip .git directories entirely and enve
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Check if the file's extension is in the allowed list
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,#add to list for file types
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,#Uses BaseAnalyzer to get file types and decied what analizer to run
-C:/Users/chris/Desktop/note_summarizer\main.py,function,"def start_analyzer(all_file_paths, file_type_list):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,from reports.python_d import test
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,class,class BaseAnalyzer:
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def __init__(self, all_file_paths, file_type_list):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,''' Initialize the analyzer with a types list and file list'''
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def count_files(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def reports(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,"import re, os"
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,class,class HTMLAnalyzer:
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,"def __init__(self, all_file_paths):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#Initialize the analyzer with a file paths list
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#gather all html files append them to list
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def gather_html_files(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def clean_file(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,'''
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,'''
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def analyze(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#for file in self.html_files:
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#print(file)
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import csv
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import re
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,class,class PythonProjectAnalyzer:
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,"def __init__(self, all_file_paths):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# Lists to store CSV rows
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def gather_python_files(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def clean_file(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,"def process_line_for_csv(self, line, file):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# Initialize a dictionary for each line's data
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def write_csv_summary(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def analyze(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Perform the full analysis workflow and output to CSV."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .python_analyzer import PythonProjectAnalyzer
-C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .base_analyzer import BaseAnalyzer
-C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .html_analyzer import HTMLAnalyzer
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,import csv
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,# Load data into a list of dictionaries
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,#TODO change main function to test call it from main.py
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def main():
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports()
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def p_files():
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,# Collect file names in python_files
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,"#print(f""File List:\n"")"
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def imports():
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list = []
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,# Collect all imports in a list
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list.append(i)
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list.append(row[1:])
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,import,imports_list.append(row[1])
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def classes():
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def functions():
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,function,def comments():
-C:/Users/chris/Desktop/note_summarizer\reports\python_d\test.py,comment,# Collect all comments from all files
+C:/Users/chris/Desktop/test_flask\app.py,import,from updated_notes import create_app
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,import,from functools import wraps
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,import,"from flask import Blueprint, render_template, request, redirect, session"
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,import,"from werkzeug.security import check_password_hash, generate_password_hash"
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,import,from . import db
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,import,"from .models import User, Note"
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,import,"from .helper import apology, wiki_search"
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def login_required(f):
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,"def decorated_function(*args, **kwargs):"
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def after_request(response):
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,"""""""Ensure responses aren't cached"""""""
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def index():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def login():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,# Remember which user has logged in
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def register():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def logout():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,"""""""Log user out"""""""
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,# Redirect user home page
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def dashboard():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def wiki():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def notes():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,"""""""Show all notes"""""""
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def edit():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,# Render the edit.html template with the note data
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,# Commit the changes to the database
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def delete():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,function,def search_notes():
+C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,comment,"""""""Show all notes"""""""
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,import,from flask import render_template
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,import,import wikipedia as wk
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,function,"def apology(message, code=400):"
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,comment,"""""""Render message as an apology to user."""""""
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,function,def escape(s):
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,comment,""""""""
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,comment,""""""""
+C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,function,def wiki_search(term):
+C:/Users/chris/Desktop/test_flask\updated_notes\models.py,import,from . import db
+C:/Users/chris/Desktop/test_flask\updated_notes\models.py,import,from sqlalchemy import func
+C:/Users/chris/Desktop/test_flask\updated_notes\models.py,class,class Note(db.Model):
+C:/Users/chris/Desktop/test_flask\updated_notes\models.py,class,class User(db.Model):
+C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,import,from flask import Flask
+C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,import,from flask_sqlalchemy import SQLAlchemy
+C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,import,from flask_session import Session
+C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,function,def create_app():
+C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,import,from .auth import auth
+C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,import,"from .models import User, Note"

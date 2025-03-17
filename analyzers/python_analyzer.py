@@ -1,67 +1,71 @@
 import csv
 import re
 
-class PythonProjectAnalyzer:
-    def __init__(self, all_file_paths):
-        self.python_summary_file = "reports/python_d/python_summary.csv"
-        self.p_file_count = 0
-        self.all_file_paths = all_file_paths
-        self.python_files = []
+python_summary_file = "reports/python_d/python_summary.csv"
+#p_file_count = 0
+python_files = []
 
-        # Lists to store CSV rows
-        self.csv_data = []
+# Lists to store CSV rows
+csv_data = []
 
-    def gather_python_files(self):    
-        for file in self.all_file_paths:      
-            if file.endswith(".py"):
-                self.python_files.append(file)
-                self.p_file_count += 1
 
-    def clean_file(self):
-        """Process files and store results in CSV format."""
-        for file in self.python_files:
-            with open(file, 'r', encoding='utf-8') as f:
-                for line in f:
-                    stripped_line = line.strip()
-                    if stripped_line:
-                        self.process_line_for_csv(stripped_line, file)
+def analyze(all_file_paths):
+    """Perform the full analysis workflow and output to CSV."""
+    gather_python_files(all_file_paths)
+    clean_file()
+    write_csv_summary()
+    
+    print(f"Results saved in: {python_summary_file}")
 
-    def process_line_for_csv(self, line, file):
-        """Process each line and store relevant data for CSV."""
-        comment_pattern = r"^#|^[\"']{3}"
-        function_pattern = r"^def\s+"
 
-        # Initialize a dictionary for each line's data
-        row = {
-            "File": file,
-            "Type": None,  # import, class, function, comment
-            "Content": line
-        }
+def gather_python_files(all_file_paths):    
+    for file in all_file_paths:      
+        if file.endswith(".py"):
+            python_files.append(file)
+            
+            
 
-        if line.startswith("import") or line.startswith("from"):
-            row["Type"] = "import"
-        elif line.startswith("class "):
-            row["Type"] = "class"
-        elif re.match(function_pattern, line):
-            row["Type"] = "function"
-        elif re.match(comment_pattern, line):
-            row["Type"] = "comment"
-        else:
-            return  # Ignore lines that don't match any pattern
+def clean_file():
+    """Process files and store results in CSV format."""
+    for file in python_files:
+        with open(file, 'r', encoding='utf-8') as f:
+            for line in f:
+                stripped_line = line.strip()
+                if stripped_line:
+                    process_line_for_csv(stripped_line, file)
 
-        self.csv_data.append(row)  # Add the row to the CSV data list
 
-    def write_csv_summary(self):
-        """Write the collected data to a CSV file."""
-        with open(self.python_summary_file, "w", newline='', encoding='utf-8') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=["File", "Type", "Content"])
-            writer.writeheader()  # Write column headers
-            writer.writerows(self.csv_data)  # Write all rows
+def process_line_for_csv(line, file):
+    """Process each line and store relevant data for CSV."""
+    comment_pattern = r"^#|^[\"']{3}"
+    function_pattern = r"^def\s+"
 
-    def analyze(self):
-        """Perform the full analysis workflow and output to CSV."""
-        self.gather_python_files()
-        self.clean_file()
-        self.write_csv_summary()
-        print(f"Python files analyzed: {self.p_file_count}")
-        print(f"Results saved in: {self.python_summary_file}")
+    # Initialize a dictionary for each line's data
+    row = {
+        "File": file,
+        "Type": None,  # import, class, function, comment
+        "Content": line
+    }
+
+    if line.startswith("import") or line.startswith("from"):
+        row["Type"] = "import"
+    elif line.startswith("class "):
+        row["Type"] = "class"
+    elif re.match(function_pattern, line):
+        row["Type"] = "function"
+    elif re.match(comment_pattern, line):
+        row["Type"] = "comment"
+    else:
+        return  # Ignore lines that don't match any pattern
+
+    csv_data.append(row)  # Add the row to the CSV data list
+
+def write_csv_summary():
+    """Write the collected data to a CSV file."""
+    with open(python_summary_file, "w", newline='', encoding='utf-8') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["File", "Type", "Content"])
+        writer.writeheader()  # Write column headers
+        writer.writerows(csv_data)  # Write all rows
+
+if __name__ == "__analyze__":
+    analyze()

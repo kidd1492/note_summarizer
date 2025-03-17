@@ -1,11 +1,14 @@
-from analyzers import PythonProjectAnalyzer, HTMLAnalyzer, BaseAnalyzer
+from analyzers import BaseAnalyzer
 import os, re
 
 def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
-    start_analyzer(all_file_paths, file_type_list)
+    
     report = BaseAnalyzer(all_file_paths, file_type_list)
+    report.start_analyzers()
+    report.count_files()
+    #report.file_tree()
     report.reports()
     
 
@@ -41,19 +44,6 @@ def gather_files(directory):
                     file_type_list.append(ext)
     return [all_file_paths, file_type_list]
 
-
-
-
-#Uses BaseAnalyzer to get file types and decied what analizer to run
-def start_analyzer(all_file_paths, file_type_list):
-     
-    if "py" in file_type_list:
-        python_analyzer = PythonProjectAnalyzer(all_file_paths)
-        python_analyzer.analyze()
-
-    if "html" in file_type_list:
-        html_analyzer = HTMLAnalyzer(all_file_paths)
-        html_analyzer.analyze()
 
 
 if __name__ == "__main__":

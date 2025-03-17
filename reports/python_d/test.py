@@ -1,20 +1,18 @@
 import csv
 
 # Load data into a list of dictionaries
-with open("reports/python_d/python_summary.csv", mode='r') as file:
-    data = list(csv.DictReader(file))
-
-
+        
 #TODO change main function to test call it from main.py
-def main():
-    p_files()
-    imports()
-    classes()
-    functions() 
-    comments()
- 
+def main(data):
+    #print(data)
+    p_files(data)
+    #imports()
+    #classes()
+    #functions() 
+    #comments()
+
     
-def p_files():
+def p_files(data):
     python_files = []
     print()
     # Collect file names in python_files
@@ -25,7 +23,7 @@ def p_files():
     print(f"{python_files}\n")
 
 
-def imports():
+def imports(data):
     imports_list = []
     # Collect all imports in a list
     for row in data:
@@ -51,7 +49,7 @@ def imports():
     print()
 
 
-def classes():
+def classes(data):
     print(f"Class: \n")
     for row in data:
         if row["Type"] == "class":
@@ -59,7 +57,7 @@ def classes():
     print()
 
 
-def functions():
+def functions(data):
     print(f"Functions: \n")
     for row in data:
         if row["Type"] == "function":
@@ -67,7 +65,7 @@ def functions():
     print()
 
 
-def comments():
+def comments(data):
     # Collect all comments from all files
     print(f"Comments: \n")
     for row in data:
@@ -76,9 +74,5 @@ def comments():
     print()
 
 
-
-
-
 if __name__ == "__main__":
     main()
- 
