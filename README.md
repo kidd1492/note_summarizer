@@ -12,22 +12,27 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 ## Project Structure
 
 ```plaintext
-note_summarizer/
-├── analyzers/
-│   ├── __init__.py
-│   ├── base_analyzer.py         # Base class for all analyzers
-│   ├── html_analyzer.py         # Analyzer for HTML files
-│   ├── python_analyzer.py       # Analyzer for Python files
-│   └── (Add future analyzers here)
-├── main.py                      # Entry point for the program
-├── reports/                     # (Optional) Directory for report generation
-|   |__ test.py                  #python summary report displays on screen
-|   |
-│   └── (Add report-specific modules here)
-|   |__ python_summary.csv           # Generated CSV file with analysis results
-└── utils/                       # (Optional) Utilities used by the project
-    └── (Add helper functions or scripts here)
-```
+|-note_summarizer/
+
+|---main.py                ## Entry point for the program
+|---README.md
+|-analyzers/
+
+|---base_analyzer.py       # Base class for using to control flow
+|---html_analyzer.py       # Analyzer for HTML files
+|---python_analyzer.py     # Analyzer for Python files
+|---__init__.py
+|-reports/
+|
+|---base_report_gen.py    #has file tree gen used to make this one
+|---html_report_gen.py
+|---python_report_gen.py  # python summary report displays on screen
+|---report_helper.py
+|-----csv_files/
+|-------html_summary.csv
+|-------python_summary.csv
+
+
 
 ## Workflow
 Start the Program:
@@ -48,7 +53,7 @@ The program collects all file paths in the specified directory for the supported
 
 ## Output:
 
-- CSV reports are saved in the root directory with details about the analyzed files.
+- CSV reports are saved in the csv_file directory with details about the analyzed files.
 
 ## Process CSV Data:
 
