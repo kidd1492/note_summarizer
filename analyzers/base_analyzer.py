@@ -15,20 +15,6 @@ class BaseAnalyzer:
     def count_files(self):
         for file in self.all_file_paths: self.file_count += 1
 
- 
-    
-    #TODO put this in base analyzer 
-    def start_analyzer(self):
-        
-        if "py" in self.file_type_list:
-            python_analyzer = PythonProjectAnalyzer(self.all_file_paths)
-            python_analyzer.analyze()
-
-        if "html" in self.file_type_list:
-            html_analyzer = HTML_Analyzer(self.all_file_paths)
-            html_analyzer.analyze()
-        
-
 
     #TODO function for directory file tree for files analyzed
     
