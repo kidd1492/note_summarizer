@@ -26,7 +26,7 @@ def clean_file():
     #Read all files and remove blank lines
     
     for file in html_files: 
-        with open(file, "r") as f:
+        with open(file, 'r', encoding='utf-8') as f:
             for line in f:
                 stripped_line = line.strip()
                 if stripped_line == '':
