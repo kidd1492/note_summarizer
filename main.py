@@ -1,15 +1,13 @@
-from analyzers import BaseAnalyzer
+from reports import report_helper
+from analyzers import base_analyzer
 import os, re
+
 
 def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
-    
-    report = BaseAnalyzer(all_file_paths, file_type_list)
-    report.start_analyzers()
-    report.count_files()
-    #report.file_tree()
-    report.reports()
+    base_analyzer.start_analyzers(all_file_paths, file_type_list)
+    report_helper.type_of_report(all_file_paths, file_type_list)
     
 
 def get_directory():

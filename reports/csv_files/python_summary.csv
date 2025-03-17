@@ -1,8 +1,8 @@
 File,Type,Content
-C:/Users/chris/Desktop/note_summarizer\main.py,import,from analyzers import BaseAnalyzer
+C:/Users/chris/Desktop/note_summarizer\main.py,import,from reports import report_helper
+C:/Users/chris/Desktop/note_summarizer\main.py,import,from analyzers import base_analyzer
 C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re"
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def main():
-C:/Users/chris/Desktop/note_summarizer\main.py,comment,#report.file_tree()
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def get_directory():
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,''' ask user for filepath '''
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def gather_files(directory):
@@ -10,15 +10,8 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,'''Gather all .py files i
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Skip .git directories entirely and enve
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Check if the file's extension is in the allowed list
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,#add to list for file types
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,from reports import report_helper
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,import re
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,class,class BaseAnalyzer:
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def __init__(self, all_file_paths, file_type_list):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,''' Initialize the analyzer with a types list and file list'''
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def count_files(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def start_analyzers(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def reports(self):
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def start_analyzers(all_file_paths, file_type_list):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import re
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#p_file_count = 0
@@ -49,7 +42,6 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# Initialize a dictionary for each line's data
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def write_csv_summary():
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\__init__.py,import,from .base_analyzer import BaseAnalyzer
 C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,import,import re
 C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,function,def file_tree(all_file_paths):
 C:/Users/chris/Desktop/note_summarizer\reports\html_report_gen.py,import,import csv
@@ -83,8 +75,8 @@ C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from repo
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import html_report_gen
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import base_report_gen
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,"import csv, sys"
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def type_of_report(file_type_list, all_file_paths):"
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def type_of_report(all_file_paths, file_type_list):"
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,comment,#functions one for each type of file
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def python_reports(file_type_list, all_file_paths):"
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,def html_reports(file_type_list):
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def base_reports(file_type_list, all_file_paths):"
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def python_reports(all_file_paths, file_type_list):"
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def html_reports(all_file_paths, file_type_list):"
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def base_reports(all_file_paths, file_type_list):"
