@@ -6,7 +6,7 @@ import os, re
 def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
-    base_analyzer.start_analyzers(all_file_paths, file_type_list)
+    base_analyzer.gather_file_by_type(all_file_paths, file_type_list)
     report_helper.type_of_report(all_file_paths, file_type_list)
     
 

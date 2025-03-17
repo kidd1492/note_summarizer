@@ -11,15 +11,14 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Skip .git directories e
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Check if the file's extension is in the allowed list
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,#add to list for file types
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def start_analyzers(all_file_paths, file_type_list):"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#TODO make a function to seperate all the file types in one place.
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def gather_file_by_type(all_file_paths, file_type_list):"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def start_analyzers(file_type_list):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import re
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#p_file_count = 0
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,# Lists to store CSV rows
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def analyze(all_file_paths):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#gather all html files append them to list
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def gather_html_files(all_file_paths):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def clean_file():
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def analyze(html_files):
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def clean_file(html_files):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,"def process_line_for_csv(line, file):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
@@ -30,12 +29,10 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def w
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import re
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,#p_file_count = 0
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# Lists to store CSV rows
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def analyze(all_file_paths):
+C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def analyze(python_files):
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Perform the full analysis workflow and output to CSV."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def gather_python_files(all_file_paths):
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def clean_file():
+C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def clean_file(python_files):
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,"def process_line_for_csv(line, file):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
@@ -71,9 +68,7 @@ C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,function,def
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,function,def functions(data):
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,function,def comments(data):
 C:/Users/chris/Desktop/note_summarizer\reports\python_report_gen.py,comment,# Collect all comments from all files
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import python_report_gen
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import html_report_gen
-C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,from reports import base_report_gen
+C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,"from reports import python_report_gen, html_report_gen, base_report_gen"
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,import,"import csv, sys"
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,function,"def type_of_report(all_file_paths, file_type_list):"
 C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,comment,#functions one for each type of file

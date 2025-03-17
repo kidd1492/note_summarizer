@@ -1,6 +1,4 @@
-from reports import python_report_gen
-from reports import html_report_gen
-from reports import base_report_gen
+from reports import python_report_gen, html_report_gen, base_report_gen
 import csv, sys
 
 

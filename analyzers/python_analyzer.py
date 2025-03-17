@@ -2,29 +2,20 @@ import csv
 import re
 
 python_summary_file = "reports/csv_files/python_summary.csv"
-#p_file_count = 0
-python_files = []
 
 # Lists to store CSV rows
 csv_data = []
 
 
-def analyze(all_file_paths):
+def analyze(python_files):
     """Perform the full analysis workflow and output to CSV."""
-    gather_python_files(all_file_paths)
-    clean_file()
+    clean_file(python_files)
     write_csv_summary()
     
     print(f"Results saved in: {python_summary_file}")
 
-
-def gather_python_files(all_file_paths):    
-    for file in all_file_paths:      
-        if file.endswith(".py"):
-            python_files.append(file)
             
-            
-def clean_file():
+def clean_file(python_files):
     """Process files and store results in CSV format."""
     for file in python_files:
         with open(file, 'r', encoding='utf-8') as f:

@@ -2,29 +2,19 @@ import csv
 import re
 
 html_summary_file = "reports/csv_files/html_summary.csv"
-#p_file_count = 0
-html_files = []
 
 # Lists to store CSV rows
 csv_data = []
 
 
-def analyze(all_file_paths):
-    gather_html_files(all_file_paths)
-    clean_file()
+def analyze(html_files):
+    clean_file(html_files)
     write_csv_summary()
 
     print(f"Results saved in: {html_summary_file}")
 
 
-#gather all html files append them to list
-def gather_html_files(all_file_paths):    
-    for file in all_file_paths:      
-        if file.endswith(".html"):
-            html_files.append(file)
-
-
-def clean_file():
+def clean_file(html_files):
     """Process files and store results in CSV format."""
     for file in html_files:
         with open(file, 'r', encoding='utf-8') as f:
