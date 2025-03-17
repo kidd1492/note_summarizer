@@ -4,11 +4,12 @@ import os, re
 def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
+    
     report = BaseAnalyzer(all_file_paths, file_type_list)
     report.start_analyzers()
     report.count_files()
-    report.file_tree()
-    #report.reports()
+    #report.file_tree()
+    report.reports()
     
 
 def get_directory():
