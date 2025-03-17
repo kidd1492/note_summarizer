@@ -22,12 +22,22 @@ C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#TODO 
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def file_tree(self):
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#TODO Functions to handel reports interface and function callers can dedicate to class?
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def reports(self):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,"import re, os"
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import csv
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import re
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#p_file_count = 0
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,# Lists to store CSV rows
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def analyze(all_file_paths):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#gather all html files append them to list
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def gather_html_files(all_file_paths):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def clean_file():
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,#Read all files and remove blank lines
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,"def process_line_for_csv(line, file):"
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,# Initialize a dictionary for each line's data
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def process_html_file(file_path):
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Extract information from an HTML file."""""""
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def write_csv_summary():
+C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import re
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,#p_file_count = 0

@@ -24,7 +24,6 @@ def gather_python_files(all_file_paths):
             python_files.append(file)
             
             
-
 def clean_file():
     """Process files and store results in CSV format."""
     for file in python_files:
@@ -60,12 +59,14 @@ def process_line_for_csv(line, file):
 
     csv_data.append(row)  # Add the row to the CSV data list
 
+
 def write_csv_summary():
     """Write the collected data to a CSV file."""
     with open(python_summary_file, "w", newline='', encoding='utf-8') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=["File", "Type", "Content"])
         writer.writeheader()  # Write column headers
         writer.writerows(csv_data)  # Write all rows
+
 
 if __name__ == "__analyze__":
     analyze()
