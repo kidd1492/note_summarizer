@@ -1,5 +1,5 @@
 from reports import report_helper
-
+from analyzers import html_analyzer
 import re
 
 class BaseAnalyzer:
@@ -14,6 +14,14 @@ class BaseAnalyzer:
     def count_files(self):
         for file in self.all_file_paths: self.file_count += 1
 
+
+    def start_analyzers(self):
+        
+        #if "py" in self.file_type_list:
+            #python_analyzer.analyze(self.all_file_paths)
+
+        if "html" in self.file_type_list:
+            html_analyzer.analyze(self.all_file_paths)
 
     #TODO function for directory file tree for files analyzed
     
@@ -41,9 +49,6 @@ class BaseAnalyzer:
                 print(f"|---{item}")
 
         
-        
-
-
     #TODO Functions to handel reports interface and function callers can dedicate to class?
 
     def reports(self):
