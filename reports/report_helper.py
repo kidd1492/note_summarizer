@@ -9,7 +9,9 @@ def type_of_report(file_type_list):
         report_type = input(f"File Type Report Options: {file_type_list}: ")
         if report_type.lower() in file_type_list:
             break
-        
+
+
+ #TODO need to make this a function one for each type of file       
     if report_type == "py":
         while True:
             print(f"\n Python \n")
@@ -26,3 +28,4 @@ def type_of_report(file_type_list):
                     if function_number == "6": test.comments(data)
             else:
                 break
+

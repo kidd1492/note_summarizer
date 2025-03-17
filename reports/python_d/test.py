@@ -1,15 +1,12 @@
 import csv
 
-# Load data into a list of dictionaries
-        
-#TODO change main function to test call it from main.py
 def main(data):
-    #print(data)
+    print(data)
     p_files(data)
-    #imports()
-    #classes()
-    #functions() 
-    #comments()
+    imports()
+    classes()
+    functions() 
+    comments()
 
     
 def p_files(data):
