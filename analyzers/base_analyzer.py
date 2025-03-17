@@ -1,5 +1,5 @@
 from reports import report_helper
-from analyzers import html_analyzer
+from analyzers import html_analyzer, python_analyzer
 import re
 
 class BaseAnalyzer:
@@ -17,8 +17,8 @@ class BaseAnalyzer:
 
     def start_analyzers(self):
         
-        #if "py" in self.file_type_list:
-            #python_analyzer.analyze(self.all_file_paths)
+        if "py" in self.file_type_list:
+            python_analyzer.analyze(self.all_file_paths)
 
         if "html" in self.file_type_list:
             html_analyzer.analyze(self.all_file_paths)

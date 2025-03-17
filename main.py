@@ -1,15 +1,14 @@
-from analyzers import BaseAnalyzer, PythonProjectAnalyzer
+from analyzers import BaseAnalyzer
 import os, re
 
 def main():
     directory = get_directory()
     all_file_paths, file_type_list = gather_files(directory)
-    start_analyzer(all_file_paths, file_type_list)
     report = BaseAnalyzer(all_file_paths, file_type_list)
     report.start_analyzers()
     report.count_files()
-    #report.file_tree()
-    report.reports()
+    report.file_tree()
+    #report.reports()
     
 
 def get_directory():
@@ -45,16 +44,6 @@ def gather_files(directory):
     return [all_file_paths, file_type_list]
 
 
-def start_analyzer(all_file_paths, file_type_list):
-    
-    if "py" in file_type_list:
-        python_analyzer = PythonProjectAnalyzer(all_file_paths)
-        python_analyzer.analyze()
-    '''
-    if "html" in file_type_list:
-        html_analyzer = HTML_Analyzer(all_file_paths)
-        html_analyzer.analyze()
-    '''
 
 if __name__ == "__main__":
     main()
