@@ -1,4 +1,4 @@
-from reports import test
+from reports import python_report_gen
 import csv, sys
 
 
@@ -26,12 +26,12 @@ def python_reports(file_type_list):
             if function_number != "exit":
                 with open("reports\csv_files/python_summary.csv", mode='r') as file:
                     data = list(csv.DictReader(file))
-                    if function_number == "1": test.main(data)
-                    if function_number == "2": test.p_files(data)
-                    if function_number == "3": test.imports(data)
-                    if function_number == "4": test.classes(data)
-                    if function_number == "5": test.functions(data)
-                    if function_number == "6": test.comments(data)
+                    if function_number == "1": python_report_gen.main(data)
+                    if function_number == "2": python_report_gen.p_files(data)
+                    if function_number == "3": python_report_gen.imports(data)
+                    if function_number == "4": python_report_gen.classes(data)
+                    if function_number == "5": python_report_gen.functions(data)
+                    if function_number == "6": python_report_gen.comments(data)
             else:
                  type_of_report(file_type_list)
                 
