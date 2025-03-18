@@ -1,27 +1,8 @@
 import csv
 import re
 
-html_summary_file = "reports/csv_files/html_summary.csv"
-
-# Lists to store CSV rows
 csv_data = []
-
-
-def analyze(html_files):
-    clean_file(html_files)
-    write_csv_summary()
-
-    print(f"Results saved in: {html_summary_file}")
-
-
-def clean_file(html_files):
-    """Process files and store results in CSV format."""
-    for file in html_files:
-        with open(file, 'r', encoding='utf-8') as f:
-            for line in f:
-                stripped_line = line.strip()
-                if stripped_line:
-                    process_line_for_csv(stripped_line, file)
+html_summary_file = "reports/csv_files/html_summary.csv"
 
 
 def process_line_for_csv(line, file):
@@ -46,12 +27,7 @@ def process_line_for_csv(line, file):
         return  # Ignore blank or irrelevant lines
 
     csv_data.append(row)  # Add the row to the CSV data list
-
-def process_html_file(file_path):
-    """Extract information from an HTML file."""
-    with open(file_path, "r", encoding="utf-8") as file:
-        for line in file:
-            process_line_for_csv(line, file_path)
+    write_csv_summary()
 
 def write_csv_summary():
     """Write the collected data to a CSV file."""

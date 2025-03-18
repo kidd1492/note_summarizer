@@ -1,21 +1,53 @@
 from analyzers import html_analyzer, python_analyzer
+import csv
 
-html_files = []
-python_files = []
+# Mapping of file extensions to their respective analyzers
+file_type_analyzer_map = {
+    "html": html_analyzer,
+    "py": python_analyzer,
+    # Add more file types and analyzers if needed
+}
 
 
-#function to seperate all the file types in one place.
-def gather_file_by_type(all_file_paths, file_type_list):    
-    for file in all_file_paths:      
-        if file.endswith(".py"): python_files.append(file)
-        if file.endswith(".html"): html_files.append(file)
-    start_analyzers(file_type_list)
+def generate_csv(all_file_paths, file_types):
+    categorized_files = gather_file_by_type(all_file_paths, file_types)
 
+    for file_type, file_list in categorized_files.items():
+        analyzer = file_type_analyzer_map.get(file_type)
+        if analyzer:  # Ensure an analyzer is available for this file type
+            clean_file(file_list, analyzer)
+
+
+def gather_file_by_type(all_file_paths, file_types):
+    categorized_files = {file_type: [] for file_type in file_types}
+    
+    for file in all_file_paths:
+        for file_type in file_types:
+            if file.endswith(file_type):
+                categorized_files[file_type].append(file)
+    
+    return categorized_files
+        
+
+def clean_file(file_list, analyzer):
+    """Process files and store results in CSV format."""
+    for file in file_list:
+        with open(file, 'r', encoding='utf-8') as f:
+            for line in f:
+                stripped_line = line.strip()
+                if stripped_line:
+                   analyzer.process_line_for_csv(stripped_line, file)
+
+
+
+
+#clean_file() #html clean diff proces to  centralize:
+#start_analyzers(file_type_list)
 
 #function to gather data into csv
-def start_analyzers(file_type_list):
+#def start_analyzers(file_type_list):
     
-    if "py" in file_type_list: python_analyzer.analyze(python_files)
-    if "html" in file_type_list: html_analyzer.analyze(html_files)
+    #if "py" in file_type_list: python_analyzer.analyze(python_files)
+    #if "html" in file_type_list: html_analyzer.analyze(html_files)
 
         

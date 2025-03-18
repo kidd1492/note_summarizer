@@ -11,29 +11,28 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Skip .git directories e
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Check if the file's extension is in the allowed list
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,#add to list for file types
 C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#TODO make a function to seperate all the file types in one place.
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def gather_file_by_type(all_file_paths, file_type_list):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def start_analyzers(file_type_list):
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,import csv
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,# Mapping of file extensions to their respective analyzers
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,# Add more file types and analyzers if needed
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def generate_csv(all_file_paths, file_types):"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def gather_file_by_type(all_file_paths, file_types):"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def clean_file(file_list, analyzer):"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#clean_file() #html clean diff proces to  centralize:
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#start_analyzers(file_type_list)
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#function to gather data into csv
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,#def start_analyzers(file_type_list):
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,"#if ""py"" in file_type_list: python_analyzer.analyze(python_files)"
+C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,"#if ""html"" in file_type_list: html_analyzer.analyze(html_files)"
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import re
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,# Lists to store CSV rows
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def analyze(html_files):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def clean_file(html_files):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,"def process_line_for_csv(line, file):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,# Initialize a dictionary for each line's data
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def process_html_file(file_path):
-C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Extract information from an HTML file."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,def write_csv_summary():
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,import,import re
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# Lists to store CSV rows
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def analyze(python_files):
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Perform the full analysis workflow and output to CSV."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,def clean_file(python_files):
-C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,function,"def process_line_for_csv(line, file):"
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
 C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,comment,# Initialize a dictionary for each line's data
