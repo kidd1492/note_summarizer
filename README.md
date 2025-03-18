@@ -29,10 +29,11 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 |---python_report_gen.py  # python summary report displays on screen
 |---report_helper.py
 |-----csv_files/
+|
 |-------html_summary.csv
 |-------python_summary.csv
 
-
+```
 
 ## Workflow
 Start the Program:
