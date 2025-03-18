@@ -14,7 +14,7 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 
 
 ## Program Flow
-	
+```	
 		                note_summarizer/
                            -—main.py  file in note_summarizer/—
 
@@ -44,7 +44,7 @@ In base_analyzer.py  add import for analyzer, 2. Add file type to file_type_anal
                             def process_line_for_csv(line, file):
                                 def write_csv_summary():	
 
-
+```
 ## Installation
 Clone this repository:
 
