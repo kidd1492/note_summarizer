@@ -1,10 +1,8 @@
-from reports import python_report_gen
-from reports import html_report_gen
-from reports import base_report_gen
+from reports import python_report_gen, html_report_gen, base_report_gen
 import csv, sys
 
 
-def type_of_report(file_type_list, all_file_paths):
+def type_of_report(all_file_paths, file_type_list):
     file_type_list = file_type_list
     all_file_paths = all_file_paths
     print(f"what type of report would you like?")
@@ -14,17 +12,17 @@ def type_of_report(file_type_list, all_file_paths):
         if report_type != "exit":
             if report_type.lower() in file_type_list or report_type.lower() == "base":
                 if report_type == "base":
-                     base_reports(file_type_list, all_file_paths)
+                     base_reports(all_file_paths, file_type_list)
                 if report_type == "py":
-                    python_reports(file_type_list, all_file_paths)
+                    python_reports(all_file_paths, file_type_list)
                 if report_type == "html":
-                    html_reports(file_type_list, all_file_paths)
+                    html_reports(all_file_paths, file_type_list)
         else:
             sys.exit()
 
 
  #functions one for each type of file 
-def python_reports(file_type_list, all_file_paths):      
+def python_reports(all_file_paths, file_type_list):      
     
         while True:
             print(f"\n Python \n")
@@ -40,10 +38,10 @@ def python_reports(file_type_list, all_file_paths):
                     if function_number == "5": python_report_gen.functions(data)
                     if function_number == "6": python_report_gen.comments(data)
             else:
-                 type_of_report(file_type_list, all_file_paths)
+                type_of_report(all_file_paths, file_type_list)
                 
 
-def html_reports(file_type_list):      
+def html_reports(all_file_paths, file_type_list):      
     
         while True:
             print(f"\n HTML \n")
@@ -57,10 +55,10 @@ def html_reports(file_type_list):
                     if function_number == "3": html_report_gen.comments(data)
                     if function_number == "4": html_report_gen.text(data)
             else:
-                 type_of_report(file_type_list)
+                 type_of_report(all_file_paths, file_type_list)
 
 
-def base_reports(file_type_list, all_file_paths):
+def base_reports(all_file_paths, file_type_list):
      while True:
             print(f"\n Base \n")
             print("1. File Tree\n")
@@ -70,4 +68,4 @@ def base_reports(file_type_list, all_file_paths):
                     data = list(csv.DictReader(file))
                     if function_number == "1": base_report_gen.file_tree(all_file_paths)
             else:
-                 type_of_report(file_type_list, all_file_paths)
+                 type_of_report(all_file_paths, file_type_list)

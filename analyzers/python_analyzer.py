@@ -1,37 +1,8 @@
 import csv
 import re
 
-python_summary_file = "reports/csv_files/python_summary.csv"
-#p_file_count = 0
-python_files = []
-
-# Lists to store CSV rows
 csv_data = []
-
-
-def analyze(all_file_paths):
-    """Perform the full analysis workflow and output to CSV."""
-    gather_python_files(all_file_paths)
-    clean_file()
-    write_csv_summary()
-    
-    print(f"Results saved in: {python_summary_file}")
-
-
-def gather_python_files(all_file_paths):    
-    for file in all_file_paths:      
-        if file.endswith(".py"):
-            python_files.append(file)
-            
-            
-def clean_file():
-    """Process files and store results in CSV format."""
-    for file in python_files:
-        with open(file, 'r', encoding='utf-8') as f:
-            for line in f:
-                stripped_line = line.strip()
-                if stripped_line:
-                    process_line_for_csv(stripped_line, file)
+python_summary_file = "reports/csv_files/python_summary.csv"
 
 
 def process_line_for_csv(line, file):
@@ -58,7 +29,7 @@ def process_line_for_csv(line, file):
         return  # Ignore lines that don't match any pattern
 
     csv_data.append(row)  # Add the row to the CSV data list
-
+    write_csv_summary()
 
 def write_csv_summary():
     """Write the collected data to a CSV file."""
@@ -66,7 +37,3 @@ def write_csv_summary():
         writer = csv.DictWriter(csvfile, fieldnames=["File", "Type", "Content"])
         writer.writeheader()  # Write column headers
         writer.writerows(csv_data)  # Write all rows
-
-
-if __name__ == "__analyze__":
-    analyze()
