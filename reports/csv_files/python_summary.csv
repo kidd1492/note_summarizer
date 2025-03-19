@@ -1,7 +1,9 @@
 File,Type,Content
 C:/Users/chris/Desktop/note_summarizer\main.py,import,from reports import report_helper
-C:/Users/chris/Desktop/note_summarizer\main.py,import,from analyzers import base_analyzer
+C:/Users/chris/Desktop/note_summarizer\main.py,import,"from analyzers import html_analyzer, python_analyzer"
 C:/Users/chris/Desktop/note_summarizer\main.py,import,"import os, re"
+C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Mapping of file extensions to their respective analyzers
+C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Add more file types and analyzers if needed
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def main():
 C:/Users/chris/Desktop/note_summarizer\main.py,function,def get_directory():
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,''' ask user for filepath '''
@@ -10,14 +12,10 @@ C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Skip ignored directorie
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Check if the file's extension is in the allowed list
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Initialize the list for this file type if not already present
 C:/Users/chris/Desktop/note_summarizer\main.py,comment,# Append the file path to the appropriate list
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,import,import csv
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,# Mapping of file extensions to their respective analyzers
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,# Add more file types and analyzers if needed
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def generate_csv(categorized_files):
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,"def clean_file(file_list, analyzer):"
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,comment,"""""""Process files and store results in CSV format."""""""
-C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,function,def analyzed_file_summary(categorized_files):
+C:/Users/chris/Desktop/note_summarizer\main.py,function,def generate_csv(categorized_files):
+C:/Users/chris/Desktop/note_summarizer\main.py,function,"def clean_file(file_list, analyzer):"
+C:/Users/chris/Desktop/note_summarizer\main.py,comment,"""""""Process files and store results in CSV format."""""""
+C:/Users/chris/Desktop/note_summarizer\main.py,function,def analyzed_file_summary(categorized_files):
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import csv
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,import,import re
 C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,function,"def process_line_for_csv(line, file):"

@@ -21,21 +21,20 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 def main():
 —def get_directory():                  #gets directory from user returns directory
 —gather_categorized_files(directory):  #directory transferred to gather files using oswalk()
-    —def generate_csv(categorized_files):—--|	
-|                                           |            **analyzers/**
-|                                           |          —base_analyzer.py—
-                                            |
-                                            |-def generate_csv(categorized_files): 
-	                                                def clean_file(file_list, analyzer):
-	                                                    def process_line_for_csv(line, file):
-                                                                                     |
-                                                                                     |
+    —def generate_csv(categorized_files):	                                      
+    -def generate_csv(categorized_files): 
+            def clean_file(file_list, analyzer):
+                def process_line_for_csv(line, file):---|
+    _analyzed_file_summary(categorized_files)           |
+                                                        |
+               |----------------------------------------|
 Add analyzer:  build analyzer with process_line_for_csv(line, file). Analyzer will go into analyzers/.
-
-In base_analyzer.py  add import for analyzer, 2. Add file type to file_type_analyzer_map
- ex("py": python_analyzer,): NO DOT, JUST “py” or whatever file extension and analyzer
+                                                                                            
+In main.py  add import for analyzer, 2. Add file type to file_type_analyzer_map    
+ex("py": python_analyzer,): NO DOT, JUST “py” or whatever file extension and analyzer
+3. Add file extension to the allowed_extensions list
+               |                  
                |
-               |---------------------------------------------------------------------|
 		       |	—python_analyzer.py—
                |----------   def process_line_for_csv(line, file):
                                 def write_csv_summary():
