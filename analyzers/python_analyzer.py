@@ -16,7 +16,7 @@ def process_line_for_csv(line, file):
         "Type": None,  # import, class, function, comment
         "Content": line
     }
-
+    #TODO this is a todo comment
     if line.startswith("import") or line.startswith("from"):
         row["Type"] = "import"
     elif line.startswith("class "):
@@ -25,6 +25,10 @@ def process_line_for_csv(line, file):
         row["Type"] = "function"
     elif re.match(comment_pattern, line):
         row["Type"] = "comment"
+        if line.startswith("#TODO"):
+            row["Type"] = "todo"
+        
+
     else:
         return  # Ignore lines that don't match any pattern
 
