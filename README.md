@@ -19,13 +19,13 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
                            -—main.py  file in note_summarizer/—
 
 def main():
-—def get_directory():             #gets directory from user returns directory
-—def gather_files(directory):  #directory transferred to gather files using oswalk()
-          —def generate_csv:—--------------	|	
-|                                           |                analyzers/
+—def get_directory():                  #gets directory from user returns directory
+—gather_categorized_files(directory):  #directory transferred to gather files using oswalk()
+    —def generate_csv(categorized_files):—--|	
+|                                           |            **analyzers/**
 |                                           |          —base_analyzer.py—
-                                            |-def generate_csv(all_file_paths, file_types): 
-                                                    def gather_file_by_type(all_file_paths, file_types):
+                                            |
+                                            |-def generate_csv(categorized_files): 
 	                                                def clean_file(file_list, analyzer):
 	                                                    def process_line_for_csv(line, file):
                                                                                      |
