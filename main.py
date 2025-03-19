@@ -7,7 +7,7 @@ def main():
     directory = get_directory()
     categorized_files = gather_categorized_files(directory)
     base_analyzer.generate_csv(categorized_files)
-    #report_helper.type_of_report()
+    report_helper.type_of_report(categorized_files)
     
 
 def get_directory():

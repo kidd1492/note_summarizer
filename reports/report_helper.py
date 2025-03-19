@@ -2,9 +2,12 @@ from reports import python_report_gen, html_report_gen, base_report_gen
 import csv, sys
 
 
-def type_of_report(all_file_paths, file_type_list):
-    file_type_list = file_type_list
-    all_file_paths = all_file_paths
+def type_of_report(categorized_files):
+    file_type_list = []
+    for file_type, file_list in categorized_files.items():
+         file_type_list.append(file_type)
+         
+         
     print(f"what type of report would you like?")
     
     while True:
@@ -12,20 +15,20 @@ def type_of_report(all_file_paths, file_type_list):
         if report_type != "exit":
             if report_type.lower() in file_type_list or report_type.lower() == "base":
                 if report_type == "base":
-                     base_reports(all_file_paths, file_type_list)
+                     base_reports(categorized_files)
                 if report_type == "py":
-                    python_reports(all_file_paths, file_type_list)
+                    python_reports(categorized_files)
                 if report_type == "html":
-                    html_reports(all_file_paths, file_type_list)
+                    html_reports(categorized_files)
         else:
             sys.exit()
 
 
  #functions one for each type of file 
-def python_reports(all_file_paths, file_type_list):      
+def python_reports(categorized_files):      
     
         while True:
-            print(f"\n Python \n")
+            print(f"\n Python \n") 
             print("1. Full Report\n2. File List\n3. Unique Imports\n4. Classes\n5. Functions\n6. Comments\n")
             function_number = input("Enter Number for Report or exit: ")
             if function_number != "exit":
@@ -38,10 +41,10 @@ def python_reports(all_file_paths, file_type_list):
                     if function_number == "5": python_report_gen.functions(data)
                     if function_number == "6": python_report_gen.comments(data)
             else:
-                type_of_report(all_file_paths, file_type_list)
+                type_of_report(categorized_files)
                 
 
-def html_reports(all_file_paths, file_type_list):      
+def html_reports(categorized_files):      
     
         while True:
             print(f"\n HTML \n")
@@ -55,10 +58,10 @@ def html_reports(all_file_paths, file_type_list):
                     if function_number == "3": html_report_gen.comments(data)
                     if function_number == "4": html_report_gen.text(data)
             else:
-                 type_of_report(all_file_paths, file_type_list)
+                 type_of_report(categorized_files)
 
 
-def base_reports(all_file_paths, file_type_list):
+def base_reports(categorized_files):
      while True:
             print(f"\n Base \n")
             print("1. File Tree\n")
@@ -68,4 +71,4 @@ def base_reports(all_file_paths, file_type_list):
                     data = list(csv.DictReader(file))
                     if function_number == "1": base_report_gen.file_tree(all_file_paths)
             else:
-                 type_of_report(all_file_paths, file_type_list)
+                 type_of_report(categorized_files)
