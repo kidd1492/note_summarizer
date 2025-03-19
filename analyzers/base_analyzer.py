@@ -16,6 +16,7 @@ def generate_csv(categorized_files):
         analyzer = file_type_analyzer_map.get(file_type)
         if analyzer:  # Ensure an analyzer is available for this file type
             clean_file(file_list, analyzer)
+    process_line_for_csv(categorized_files)
     analyzed_file_summary(categorized_files)
 
 
@@ -44,3 +45,33 @@ def analyzed_file_summary(categorized_files):
             print(f"{file_type} Number of files: {len(file_list)} --- No Analyzer")
             total_analyzed_files += len(file_list)
     print(f"\n{number_of_file_types} Files Types Analyzed:  Total Files Paths {total_analyzed_files}\n")
+
+
+
+csv_data = []
+file_summary = "reports/csv_files/file_summary.csv"
+def process_line_for_csv(categorized_files):
+    with open(file_summary, "w", newline='', encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["Type", "File"])
+        writer.writeheader()  # Write column headers
+
+        for file_type, file_list in categorized_files.items():
+            for file in file_list:
+                row = {
+                    "Type": None,  # py, html, txt, js
+                    "File": None,  
+                }
+
+                row["Type"] = file_type
+                row["File"] = file
+                csv_data.append(row)  # Add the row to the CSV data list
+                write_csv_summary()
+
+
+
+def write_csv_summary(): 
+    """Write the collected data to a CSV file."""
+    with open(file_summary, "w", newline='', encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["Type", "File"])
+        writer.writeheader()  # Write column headers
+        writer.writerows(csv_data)  # Write all rows

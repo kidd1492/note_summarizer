@@ -18,7 +18,6 @@ file_type_analyzer_map = {
 
 def main():
     categorized_files = gather_categorized_files(directory)
- 
     process_line_for_csv(categorized_files)
     analyzed_file_summary(categorized_files)
 
@@ -48,18 +47,21 @@ def gather_categorized_files(directory):
 
 file_summary = "reports/csv_files/file_summary.csv"
 def process_line_for_csv(categorized_files):
-    for file_type, file_list in categorized_files.items():
-        for file in file_list:
-            row = {
-                "Type": None,  # py, html, txt, js
-                "File": None,  
-            }
+    with open(file_summary, "w", newline='', encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["Type", "File"])
+        writer.writeheader()  # Write column headers
 
-            row["Type"] = file_type
-            row["File"] = file
+        for file_type, file_list in categorized_files.items():
+            for file in file_list:
+                row = {
+                    "Type": None,  # py, html, txt, js
+                    "File": None,  
+                }
 
-            csv_data.append(row)  # Add the row to the CSV data list
-            write_csv_summary()
+                row["Type"] = file_type
+                row["File"] = file
+                csv_data.append(row)  # Add the row to the CSV data list
+                write_csv_summary()
 
 
 
