@@ -37,17 +37,4 @@ def clean_file(file_list, analyzer):
                 stripped_line = line.strip()
                 if stripped_line:
                    analyzer.process_line_for_csv(stripped_line, file)
-
-
-
-
-#clean_file() #html clean diff proces to  centralize:
-#start_analyzers(file_type_list)
-
-#function to gather data into csv
-#def start_analyzers(file_type_list):
-    
-    #if "py" in file_type_list: python_analyzer.analyze(python_files)
-    #if "html" in file_type_list: html_analyzer.analyze(html_files)
-
         
