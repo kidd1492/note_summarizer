@@ -5,9 +5,9 @@ import os, re
 
 def main():
     directory = get_directory()
-    all_file_paths, file_type_list = gather_files(directory)
-    base_analyzer.generate_csv(all_file_paths, file_type_list)
-    report_helper.type_of_report(all_file_paths, file_type_list)
+    categorized_files = gather_categorized_files(directory)
+    base_analyzer.generate_csv(categorized_files)
+    #report_helper.type_of_report()
     
 
 def get_directory():
@@ -24,24 +24,26 @@ def get_directory():
                 print(f"An error occurred: {e}. Please try again.")      
 
 
-def gather_files(directory):
-    all_file_paths = []
-    file_type_list = []
-    '''Gather all .py files in directory'''
-    allowed_extensions = [".py", ".md", ".txt", ".html"]
+def gather_categorized_files(directory):
+    allowed_extensions = [".py", ".md", ".txt", ".html", ".css", ".js"]  # Update to add more file types
+    ignored_directories = [".git", "env", "enve", "venv"]
+    categorized_files = {}
+
     for root, dirs, files in os.walk(directory):
-        # Skip .git directories entirely and enve
-        dirs[:] = [d for d in dirs if d not in [".git", "env", "enve", "venv"]]
+        # Skip ignored directories
+        dirs[:] = [d for d in dirs if d not in ignored_directories]
         for file in files:
             # Check if the file's extension is in the allowed list
             if any(file.endswith(ext) for ext in allowed_extensions):
-                all_file_paths.append(os.path.join(root, file))
-                #add to list for file types
-                ext = file.split('.')[-1]
-                if ext not in file_type_list:
-                    file_type_list.append(ext)
-    return [all_file_paths, file_type_list]
+                ext = file.split('.')[-1]  # Extract the file extension (without dot)
 
+                # Initialize the list for this file type if not already present
+                if ext not in categorized_files:
+                    categorized_files[ext] = []
+                # Append the file path to the appropriate list
+                categorized_files[ext].append(os.path.join(root, file))
+
+    return categorized_files
 
 
 if __name__ == "__main__":

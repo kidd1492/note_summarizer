@@ -17,9 +17,7 @@ file_type_analyzer_map = {
 
 
 def main():
-    all_file_paths, file_types = gather_files(directory)
-    #same as base_analyzer generate_csv(all_file_paths, file_types)
-    categorized_files = gather_file_by_type(all_file_paths, file_types)
+    categorized_files = gather_categorized_files(directory)
     analyzed_file_summary(categorized_files)
 
 
@@ -40,14 +38,34 @@ def analyzed_file_summary(categorized_files):
     print(f"\n{number_of_file_types} Files Types Analyzed:  Total Files Paths {total_analyzed_files}\n")
 
 
+def gather_categorized_files(directory):
+    allowed_extensions = [".py", ".md", ".txt", ".html", ".css", ".js"]  # Update to add more file types
+    ignored_directories = [".git", "env", "enve", "venv"]
+    categorized_files = {}
 
+    for root, dirs, files in os.walk(directory):
+        # Skip ignored directories
+        dirs[:] = [d for d in dirs if d not in ignored_directories]
+        for file in files:
+            # Check if the file's extension is in the allowed list
+            if any(file.endswith(ext) for ext in allowed_extensions):
+                ext = file.split('.')[-1]  # Extract the file extension (without dot)
 
+                # Initialize the list for this file type if not already present
+                if ext not in categorized_files:
+                    categorized_files[ext] = []
+                # Append the file path to the appropriate list
+                categorized_files[ext].append(os.path.join(root, file))
+
+    return categorized_files
+
+'''
 #function to search through directory extract wanted files
 #ignore directories not wanted
 def gather_files(directory):
     all_file_paths = []
     file_type_list = []
-    '''Gather all .py files in directory'''
+    #Gather all .py files in directory
     allowed_extensions = [".py", ".md", ".txt", ".html", ".css", ".js"] #update ect. to add file type
     for root, dirs, files in os.walk(directory):
         # Skip .git directories entirely and enve
@@ -75,8 +93,6 @@ def gather_file_by_type(all_file_paths, file_types):
     return categorized_files
 
 
-
-'''
 def clean_file(file_list):
     """Process files and store results in CSV format."""
     for file in file_list:
