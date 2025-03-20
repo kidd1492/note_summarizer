@@ -10,13 +10,21 @@ def process_line_for_csv(line, file):
     comment_pattern = r"^#|^[\"']{3}"
     function_pattern = r"^def\s+"
 
+    file_part = file.split("\\" or "/") 
+    directory = file_part[-2]
+    file_name = file_part[-1]
+
+
     # Initialize a dictionary for each line's data
     row = {
         "File": file,
+        "Directory": directory,
+        "FileName": file_name,
         "Type": None,  # import, class, function, comment
         "Content": line
     }
     #TODO this is a todo comment
+    
     if line.startswith("import") or line.startswith("from"):
         row["Type"] = "import"
     elif line.startswith("class "):
@@ -27,8 +35,6 @@ def process_line_for_csv(line, file):
         row["Type"] = "comment"
         if line.startswith("#TODO"):
             row["Type"] = "todo"
-        
-
     else:
         return  # Ignore lines that don't match any pattern
 
@@ -38,6 +44,6 @@ def process_line_for_csv(line, file):
 def write_csv_summary():
     """Write the collected data to a CSV file."""
     with open(python_summary_file, "w", newline='', encoding='utf-8') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=["File", "Type", "Content"])
+        writer = csv.DictWriter(csvfile, fieldnames=["File", "Directory", "FileName", "Type", "Content"])
         writer.writeheader()  # Write column headers
         writer.writerows(csv_data)  # Write all rows

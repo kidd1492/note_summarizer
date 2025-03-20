@@ -10,7 +10,6 @@ file_type_analyzer_map = {
 }
 
 
-
 def main():
     directory = get_directory()
     categorized_files = gather_categorized_files(directory)
@@ -60,7 +59,6 @@ def generate_csv(categorized_files):
         analyzer = file_type_analyzer_map.get(file_type)
         if analyzer:  # Ensure an analyzer is available for this file type
             clean_file(file_list, analyzer)
-    analyzed_file_summary(categorized_files)
 
 
 def clean_file(file_list, analyzer):
@@ -71,23 +69,6 @@ def clean_file(file_list, analyzer):
                 stripped_line = line.strip()
                 if stripped_line:
                    analyzer.process_line_for_csv(stripped_line, file)
-
-
-def analyzed_file_summary(categorized_files):
-    total_analyzed_files = 0
-    number_of_file_types = 0
-
-    for file_type, file_list in categorized_files.items():
-        total_analyzed_files += 1
-        analyzer = file_type_analyzer_map.get(file_type)
-        if analyzer:  # Ensure an analyzer is available for this file type
-            number_of_file_types += 1
-            total_analyzed_files += len(file_list)
-            print(f"{file_type} Number of files: {len(file_list)}")
-        else:
-            print(f"{file_type} Number of files: {len(file_list)} --- No Analyzer")
-            total_analyzed_files += len(file_list)
-    print(f"\n{number_of_file_types} Files Types Analyzed:  Total Files Paths {total_analyzed_files}\n")
 
 
 if __name__ == "__main__":

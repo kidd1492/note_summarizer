@@ -10,12 +10,20 @@ def process_line_for_csv(line, file):
     tag_pattern = r"<[^>]+>"       # Match HTML tags
     comment_pattern = r"<!--.*?-->"  # Match HTML comments
 
+    file_part = file.split("\\" or "/") 
+    directory = file_part[-2]
+    file_name = file_part[-1]
+
+
     # Initialize a dictionary for each line's data
     row = {
         "File": file,
-        "Type": None,  # tag, comment, text
-        "Content": line.strip()
+        "Directory": directory,
+        "FileName": file_name,
+        "Type": None,  # import, class, function, comment
+        "Content": line
     }
+    #TODO this is a todo comment
 
     if re.match(comment_pattern, line.strip(), re.DOTALL):
         row["Type"] = "comment"
@@ -32,6 +40,6 @@ def process_line_for_csv(line, file):
 def write_csv_summary():
     """Write the collected data to a CSV file."""
     with open(html_summary_file, "w", newline='', encoding="utf-8") as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=["File", "Type", "Content"])
+        writer = csv.DictWriter(csvfile, fieldnames=["File", "Directory", "FileName", "Type", "Content"])
         writer.writeheader()  # Write column headers
         writer.writerows(csv_data)  # Write all rows
