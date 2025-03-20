@@ -33,7 +33,7 @@ def get_directory():
 
 
 def gather_categorized_files(directory):
-    allowed_extensions = [".py", ".md", ".txt", ".html", ".css", ".js"]  # Update to add more file types
+    allowed_extensions = [".py", ".md", ".html"]  # Update to add more file types
     ignored_directories = [".git", "env", "enve", "venv"]
     categorized_files = {}
 

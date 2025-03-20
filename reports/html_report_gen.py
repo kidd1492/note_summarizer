@@ -1,4 +1,25 @@
 import csv
+from reports import report_helper
+
+
+def html_reports(categorized_files):      
+    
+        while True:
+            print(f"\n HTML \n")
+            print("1. Full Report\n2. File List\n3. Comments\n4. Text\n")
+            function_number = input("Enter Number for Report or exit: ")
+            if function_number != "exit":
+                with open("reports\csv_files/html_summary.csv", mode='r') as file:
+                    data = list(csv.DictReader(file))
+                    if function_number == "1": main(data)
+                    if function_number == "2": html_files(data)
+                    if function_number == "3": comments(data)
+                    if function_number == "4": text(data)
+            else:
+                 report_helper.type_of_report(categorized_files)
+
+
+
 
 def main(data):
     html_files(data)

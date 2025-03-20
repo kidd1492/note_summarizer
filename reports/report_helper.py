@@ -15,60 +15,10 @@ def type_of_report(categorized_files):
         if report_type != "exit":
             if report_type.lower() in file_type_list or report_type.lower() == "base":
                 if report_type == "base":
-                     base_reports(categorized_files)
+                     base_report_gen.base_reports(categorized_files)
                 if report_type == "py":
-                    python_reports(categorized_files)
+                    python_report_gen.python_reports(categorized_files)
                 if report_type == "html":
-                    html_reports(categorized_files)
+                    html_report_gen.html_reports(categorized_files)
         else:
             sys.exit()
-
-
- #functions one for each type of file 
-def python_reports(categorized_files):      
-    
-        while True:
-            print(f"\n Python \n") 
-            print("1. Full Report\n2. File List\n3. Unique Imports\n4. Classes\n5. Functions\n6. Comments\n")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
-                with open("reports\csv_files/python_summary.csv", mode='r') as file:
-                    data = list(csv.DictReader(file))
-                    if function_number == "1": python_report_gen.main(data)
-                    if function_number == "2": python_report_gen.p_files(data)
-                    if function_number == "3": python_report_gen.imports(data)
-                    if function_number == "4": python_report_gen.classes(data)
-                    if function_number == "5": python_report_gen.functions(data)
-                    if function_number == "6": python_report_gen.comments(data)
-            else:
-                type_of_report(categorized_files)
-                
-
-def html_reports(categorized_files):      
-    
-        while True:
-            print(f"\n HTML \n")
-            print("1. Full Report\n2. File List\n3. Comments\n4. Text\n")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
-                with open("reports\csv_files/html_summary.csv", mode='r') as file:
-                    data = list(csv.DictReader(file))
-                    if function_number == "1": html_report_gen.main(data)
-                    if function_number == "2": html_report_gen.html_files(data)
-                    if function_number == "3": html_report_gen.comments(data)
-                    if function_number == "4": html_report_gen.text(data)
-            else:
-                 type_of_report(categorized_files)
-
-
-def base_reports(categorized_files):
-     while True:
-            print(f"\n Base \n")
-            print("1. File Tree\n")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
-                with open("reports\csv_files/html_summary.csv", mode='r') as file:
-                    data = list(csv.DictReader(file))
-                    if function_number == "1": base_report_gen.file_tree(all_file_paths)
-            else:
-                 type_of_report(categorized_files)
