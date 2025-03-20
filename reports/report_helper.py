@@ -5,15 +5,15 @@ import csv, sys
 def type_of_report(categorized_files):
     analyzed_file_summary(categorized_files)
 
-    file_type_list = ["exit", "All"]
+    file_type_list = ["main"]
     for file_type, file_list in categorized_files.items():
          file_type_list.append(file_type)
          
-         
-    print(f"what type of report would you like?")
-    
+           
     while True:
-        report_type = input(f"{file_type_list}: \n\n")
+        print(f"what type of report would you like?")
+        print(f"{file_type_list}: \n")
+        report_type = input(f"Select File Type or Exit: ")
         if report_type != "exit":
             if report_type.lower() in file_type_list:
                 if report_type == "main":
