@@ -1,14 +1,22 @@
 import csv
 from reports import report_helper
 
-def python_reports(categorized_files):      
-    
+def python_reports(categorized_files):
+    python_file_count = 0 
+    for file_type, file_list in categorized_files.items():     
+        if file_type == "py":python_file_count += len(file_list)
         while True:
             print(f"\n Python \n") 
-            print("1. Full Report\n2. File List\n3. Unique Imports\n4. Classes\n5. Functions\n6. Comments\n"
+            print("1. Full Report\n"
+            f"2. File List : Files Found {python_file_count}\n"
+            "3. Unique Imports\n"
+            "4. Classes\n"
+            "5. Functions\n"
+            "6. Comments\n"
             "7. TODO Comments")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
+
+            function_number = input("Enter Number for Report or back: ").lower()
+            if function_number != "back":
                 with open("reports\csv_files/python_summary.csv", mode='r') as file:
                     data = list(csv.DictReader(file))
                     if function_number == "1": full_report(data)
@@ -20,6 +28,10 @@ def python_reports(categorized_files):
                     if function_number == "7": TODO(data)
             else:
                 report_helper.type_of_report(categorized_files)
+
+
+#def counts():
+
 
 
 def full_report(data):
