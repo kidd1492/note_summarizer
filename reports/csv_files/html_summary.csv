@@ -1,274 +1,274 @@
-File,Type,Content
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,tag,"<div class=""apology"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,tag,<h2>{{ bottom }}</h2>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,text,{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<div class=""dashboard_row1"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,<h1>Add New Note</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<div class=""dashboard_middle"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<div class=""note_box"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<form class=""note_form"" method=""post"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,<h1>Note</h1>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<input class=""subject"" placeholder=""Subject"" name=""subject"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<input class=""subject"" id=""title"" placeholder=""Title"" autocomplete=""off"" name=""title"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<textarea class=""note"" name=""note"" id=""note""></textarea>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<button type=""submit"" name=""note_submit"">Save Note</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,text,{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,text,{% block title %}Edit Note{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<div class=""note_form"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,<h1>Edit Note</h1>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<h2 class=""title"">{{ note.title }}</h2>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<form method=""post"" action=""/edit"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,<div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<textarea class=""edit_note"" name=""edited_note"" id=""edited_note"">{{ note.data }}</textarea>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<input type=""hidden"" name=""edit_note_id"" value=""{{ note.id }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<input type=""hidden"" name=""edited_note"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<button type=""submit"">Save edits</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<form method=""post"" action=""/delete"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<input type=""hidden"" name=""id"" id=id value=""{{ note.id }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,"<button type=""submit"">Delete Note</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,text,{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,text,{% extends 'layout.html'%}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,text,{% block content%}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""hero_container"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""hero_content"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<h1>Knowledge Amplified:</h1>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<h2> Your Ultimate Notes Companion</h2>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<p>Categorize with Precision: Organize your notes into custom categories.
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,text,"Group by subject, project, or personal interest. Stay in control and"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,text,find what you need at a glance.</p>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div id=""row2"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<h1>Our Mission</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<h2> Inspire Learning:</h2> <p>Fuel your thirst for knowledge. Every note you take becomes a stepping stone toward enlightenment.</p>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<p>Connect the dots between ideas, concepts, and discoveries. Our app bridges the"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,text,gap between information and understanding.</p>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<p>Your time matters. We’re here to streamline your note-taking process, leaving"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,text,you more room to explore and learn.</p>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""card_container"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""main_landing"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<a href=""/register""><div class=""landing_card_link""><h2>Register</h2></div></a>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""box3"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<h3>Join the Knowledge Revolution</h3>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<p>Create your account and unlock a world of organized learning. </p>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""box4""></div>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""main_landing"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<a href=""/login""><div class=""landing_card_link""><h2>Login</h2></div></a>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""box3"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<h3>Back to Brilliance</h3>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,<p>Already part of our community? Log in and continue your journey. </p>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""box4""></div>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,text,{% endblock%}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,<!DOCTYPE html>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<html lang=""en"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,<head>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<meta charset=""UTF-8"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<meta name=""viewport"" content=""initial-scale=1, width=device-width"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<link rel=""stylesheet"" href=""{{ url_for('static', filename='nav_style.css') }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<link rel=""stylesheet"" href=""{{ url_for('static', filename='style.css') }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,<title>{% block title %}Home{% endblock %}</title>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</head>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,<body>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,<nav>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<ul class=""sidebar"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li onclick=hideSidebar()><a href=""#""><img src=""static/images/close_icon.png"" id=""close_icon""></a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,"{% if session.get(""user_id"")  %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/dashboard"">Dashboard</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/wiki_search"">Wikipedia</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/search_notes"">Search Notes</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/notes"">All Notes</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li onclick=""showToolbar()""><a href=""#"">Tools</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/logout"">Logout</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,{% else %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/"">Home</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/login"">Login</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/register"">Register</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,{% endif %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</ul>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,<ul>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,"{% if session.get(""user_id"")  %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/dashboard"">Dashboard</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li class=""hideOnMobile""><a href=""/wiki_search"">Wikipedia</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li class=""hideOnMobile""><a href=""/search_notes"">Search Notes</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li class=""hideOnMobile""><a href=""/notes"">All Notes</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li onclick=""showToolbar()""><a href=""#"">Tools</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li class=""hideOnMobile""><a href=""/logout"">Logout</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,{% else %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li><a href=""/"">Home</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li class=""hideOnMobile""><a href=""/login"">Login</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li class=""hideOnMobile""><a href=""/register"">Register</a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,{% endif %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li onclick=showSidebar()><a href=""#""><img src=""static/images/menu.jpg"" id=""menu_icon""></a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</ul>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</nav>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<ul class=""toolbar"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<li onclick=""hideToolbar()""><a href=""#""><img src=""images/close_icon.png"" id=""close_tool_icon""></a></li>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<div class=""scrollBox"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,<li>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<div id=""calculator"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<input id=""display"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<div id=""keys"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('(')"">(</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay(')')"">)</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('')""></button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""clearDisplay()"" id=""clear"">C</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('7')"">7</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('8')"">8</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('9')"">9</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('+')"">+</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('4')"">4</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('5')"">5</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('6')"">6</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('-')"">-</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('1')"">1</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('2')"">2</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('3')"">3</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('*')"">*</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('.')"">.</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('0')"">0</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""calculate()"">=</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('/')"">/</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</li>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</ul>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<div class=""container"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,text,{% endblock%}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,"<script src=""static/javascript.js""></script>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</body>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,tag,</html>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,text,{% block title %}Login{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<div class=""form-container"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<form method=""post"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,<div><h1>Login</h1></div><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,<div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<label for=""email"">Email Address</label>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<div class=""input_box"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<input type=""email"" id=""email"" name=""email"" placeholder=""Enter email"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<label for=""password"">Password</label>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<div class=""input_box"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<input type=""password"" id=""password"" name=""password"" placeholder=""Password"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,<br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,"<button type=""submit"" value=""Sign Up"">Login</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,text,{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,text,{% block title %}Notes{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<div class=""dashboard_row1"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,<h1>All Notes</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,text,{% for note in notes %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<form class=""note_form"" method=""post"" action=""/edit"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<h2 class=""title"">{{ note.title }}</h2>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<textarea class=""note"">{{ note.data }}</textarea>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<input type=""hidden"" name=""note_id"" value=""{{ note.id }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<button type=""submit"">Edit Note</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<form method=""post"" action=""/delete"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<input type=""hidden"" name=""id"" id=id value=""{{ note.id }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<button type=""submit"">Delete Note</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,text,{% endfor %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,text,{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<div class=""form-container"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<form method=""post"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,<div><h1>Register</h1></div><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,<div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<label for=""email"">Email Address</label>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<div class=""input_box"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<input type=""email"" id=""email"" name=""email"" placeholder=""Enter email"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<label for=""user_name"">User name</label>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<div class=""input_box"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<input type=""text"" id=""user_name"" name=""user_name"" placeholder=""Username"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,</div>.
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<label for=""password"">Password</label>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<div class=""input_box"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<input type=""password"" id=""password"" name=""password"" placeholder=""Password"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<label for=""password1"">Confirm Password</label>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<div class=""input_box"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<input type=""password"" id=""password1"" name=""password1"" placeholder=""Confirm Password"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,<br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,"<button type=""submit"" value=""Sign Up"">Sign Up</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,text,{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,text,{% block title %}Search notes{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<div class=""dashboard_row1"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,<h1>Search Notes</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<form action=""/search_notes"" method=""post"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<input name=""subject"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<button type=""submit"">Search</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,text,{% for note in notes %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<form class=""note_form"" method=""post"" action=""/edit"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<h2 class=""title"">{{ note.title }}</h2>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<textarea class=""note"">{{ note.data }}</textarea>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<input type=""hidden"" name=""note_id"" value=""{{ note.id }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<button type=""submit"">Edit Note</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<form method=""post"" action=""/delete"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<input type=""hidden"" name=""id"" id=id value=""{{ note.id }}"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,"<button type=""submit"">Delete Note</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,text,{% endfor %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,text,{% endblock %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,text,"{% extends ""layout.html"" %}"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,text,{% block content %}
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<div class=""dashboard_row1"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,<h1>Search Wikipedia</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<form method=""post"" name=""form1"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<input type=""search"" name=""wiki_search"" id=""wiki_search"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<button type=""submit"" id=""wiki"" name=""wiki"">Search</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<button type=""button"" onclick=""clearResponse()"">Clear Search</button>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,</form>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<div class=""note_form"">"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<textarea class=""note"" id=""response"">{{ response }}</textarea>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,</div>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,text,{% endblock %}
+File,Directory,FileName,Type,Content
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,templates,apology.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,templates,apology.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,templates,apology.html,tag,"<div class=""apology"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,templates,apology.html,tag,<h2>{{ bottom }}</h2>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,templates,apology.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\apology.html,templates,apology.html,text,{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<div class=""dashboard_row1"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,<h1>Add New Note</h1><br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<div class=""dashboard_middle"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<div class=""note_box"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<form class=""note_form"" method=""post"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,<h1>Note</h1>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<input class=""subject"" placeholder=""Subject"" name=""subject"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<input class=""subject"" id=""title"" placeholder=""Title"" autocomplete=""off"" name=""title"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<textarea class=""note"" name=""note"" id=""note""></textarea>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<button type=""submit"" name=""note_submit"">Save Note</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,text,{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,text,{% block title %}Edit Note{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<div class=""note_form"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,<h1>Edit Note</h1>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<h2 class=""title"">{{ note.title }}</h2>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<form method=""post"" action=""/edit"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,<div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<textarea class=""edit_note"" name=""edited_note"" id=""edited_note"">{{ note.data }}</textarea>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<input type=""hidden"" name=""edit_note_id"" value=""{{ note.id }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<input type=""hidden"" name=""edited_note"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<button type=""submit"">Save edits</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<form method=""post"" action=""/delete"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<input type=""hidden"" name=""id"" id=id value=""{{ note.id }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,"<button type=""submit"">Delete Note</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,text,{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,text,{% extends 'layout.html'%}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,text,{% block content%}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""hero_container"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""hero_content"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<h1>Knowledge Amplified:</h1>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<h2> Your Ultimate Notes Companion</h2>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<p>Categorize with Precision: Organize your notes into custom categories.
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,text,"Group by subject, project, or personal interest. Stay in control and"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,text,find what you need at a glance.</p>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div id=""row2"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<h1>Our Mission</h1><br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<h2> Inspire Learning:</h2> <p>Fuel your thirst for knowledge. Every note you take becomes a stepping stone toward enlightenment.</p>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<p>Connect the dots between ideas, concepts, and discoveries. Our app bridges the"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,text,gap between information and understanding.</p>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<p>Your time matters. We’re here to streamline your note-taking process, leaving"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,text,you more room to explore and learn.</p>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""card_container"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""main_landing"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<a href=""/register""><div class=""landing_card_link""><h2>Register</h2></div></a>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""box3"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<h3>Join the Knowledge Revolution</h3>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<p>Create your account and unlock a world of organized learning. </p>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""box4""></div>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""main_landing"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<a href=""/login""><div class=""landing_card_link""><h2>Login</h2></div></a>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""box3"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<h3>Back to Brilliance</h3>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,<p>Already part of our community? Log in and continue your journey. </p>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""box4""></div>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,text,{% endblock%}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,<!DOCTYPE html>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<html lang=""en"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,<head>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<meta charset=""UTF-8"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<meta name=""viewport"" content=""initial-scale=1, width=device-width"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<link rel=""stylesheet"" href=""{{ url_for('static', filename='nav_style.css') }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<link rel=""stylesheet"" href=""{{ url_for('static', filename='style.css') }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,<title>{% block title %}Home{% endblock %}</title>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</head>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,<body>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,<nav>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<ul class=""sidebar"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li onclick=hideSidebar()><a href=""#""><img src=""static/images/close_icon.png"" id=""close_icon""></a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,"{% if session.get(""user_id"")  %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/dashboard"">Dashboard</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/wiki_search"">Wikipedia</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/search_notes"">Search Notes</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/notes"">All Notes</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li onclick=""showToolbar()""><a href=""#"">Tools</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/logout"">Logout</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,{% else %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/"">Home</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/login"">Login</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/register"">Register</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,{% endif %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</ul>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,<ul>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,"{% if session.get(""user_id"")  %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/dashboard"">Dashboard</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li class=""hideOnMobile""><a href=""/wiki_search"">Wikipedia</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li class=""hideOnMobile""><a href=""/search_notes"">Search Notes</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li class=""hideOnMobile""><a href=""/notes"">All Notes</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li onclick=""showToolbar()""><a href=""#"">Tools</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li class=""hideOnMobile""><a href=""/logout"">Logout</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,{% else %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li><a href=""/"">Home</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li class=""hideOnMobile""><a href=""/login"">Login</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li class=""hideOnMobile""><a href=""/register"">Register</a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,{% endif %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li onclick=showSidebar()><a href=""#""><img src=""static/images/menu.jpg"" id=""menu_icon""></a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</ul>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</nav>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<ul class=""toolbar"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<li onclick=""hideToolbar()""><a href=""#""><img src=""images/close_icon.png"" id=""close_tool_icon""></a></li>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<div class=""scrollBox"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,<li>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<div id=""calculator"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<input id=""display"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<div id=""keys"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('(')"">(</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay(')')"">)</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('')""></button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""clearDisplay()"" id=""clear"">C</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('7')"">7</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('8')"">8</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('9')"">9</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('+')"">+</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('4')"">4</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('5')"">5</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('6')"">6</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('-')"">-</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('1')"">1</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('2')"">2</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('3')"">3</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('*')"">*</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('.')"">.</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('0')"">0</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""calculate()"">=</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<button class=""calc_button"" onclick=""appendToDisplay('/')"">/</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</li>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</ul>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<div class=""container"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,text,{% endblock%}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,"<script src=""static/javascript.js""></script>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</body>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\layout.html,templates,layout.html,tag,</html>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,text,{% block title %}Login{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<div class=""form-container"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<form method=""post"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,<div><h1>Login</h1></div><br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,<div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<label for=""email"">Email Address</label>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<div class=""input_box"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<input type=""email"" id=""email"" name=""email"" placeholder=""Enter email"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<label for=""password"">Password</label>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<div class=""input_box"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<input type=""password"" id=""password"" name=""password"" placeholder=""Password"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,<br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,"<button type=""submit"" value=""Sign Up"">Login</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\login.html,templates,login.html,text,{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,text,{% block title %}Notes{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<div class=""dashboard_row1"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,<h1>All Notes</h1><br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,text,{% for note in notes %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<form class=""note_form"" method=""post"" action=""/edit"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<h2 class=""title"">{{ note.title }}</h2>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<textarea class=""note"">{{ note.data }}</textarea>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<input type=""hidden"" name=""note_id"" value=""{{ note.id }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<button type=""submit"">Edit Note</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<form method=""post"" action=""/delete"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<input type=""hidden"" name=""id"" id=id value=""{{ note.id }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<button type=""submit"">Delete Note</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,text,{% endfor %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,text,{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<div class=""form-container"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<form method=""post"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,<div><h1>Register</h1></div><br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,<div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<label for=""email"">Email Address</label>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<div class=""input_box"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<input type=""email"" id=""email"" name=""email"" placeholder=""Enter email"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<label for=""user_name"">User name</label>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<div class=""input_box"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<input type=""text"" id=""user_name"" name=""user_name"" placeholder=""Username"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,</div>.
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<label for=""password"">Password</label>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<div class=""input_box"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<input type=""password"" id=""password"" name=""password"" placeholder=""Password"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<label for=""password1"">Confirm Password</label>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<div class=""input_box"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<input type=""password"" id=""password1"" name=""password1"" placeholder=""Confirm Password"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,<br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,"<button type=""submit"" value=""Sign Up"">Sign Up</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\register.html,templates,register.html,text,{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,text,{% block title %}Search notes{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<div class=""dashboard_row1"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,<h1>Search Notes</h1><br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<form action=""/search_notes"" method=""post"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<input name=""subject"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<button type=""submit"">Search</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,text,{% for note in notes %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<form class=""note_form"" method=""post"" action=""/edit"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<h2 class=""title"">{{ note.title }}</h2>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<textarea class=""note"">{{ note.data }}</textarea>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<input type=""hidden"" name=""note_id"" value=""{{ note.id }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<button type=""submit"">Edit Note</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<form method=""post"" action=""/delete"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<input type=""hidden"" name=""id"" id=id value=""{{ note.id }}"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,"<button type=""submit"">Delete Note</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,text,{% endfor %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,text,{% endblock %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,text,"{% extends ""layout.html"" %}"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,text,{% block content %}
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<div class=""dashboard_row1"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,<h1>Search Wikipedia</h1><br />
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<form method=""post"" name=""form1"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<input type=""search"" name=""wiki_search"" id=""wiki_search"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<button type=""submit"" id=""wiki"" name=""wiki"">Search</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<button type=""button"" onclick=""clearResponse()"">Clear Search</button>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,</form>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<div class=""note_form"">"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<textarea class=""note"" id=""response"">{{ response }}</textarea>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,</div>
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,tag,"<div class=""bottom"">""The greatest lesson I have learned in life is that I still have a lot to learn"".</div>"
+C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,text,{% endblock %}

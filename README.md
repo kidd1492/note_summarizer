@@ -12,37 +12,34 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 - Easily integrates with projects built using frameworks like Django and Flask.
 
 
-
 ## Program Flow
 ```	
 		                note_summarizer/
                            -—main.py  file in note_summarizer/—
 
 def main():
-—def get_directory():                  #gets directory from user returns directory
-—gather_categorized_files(directory):  #directory transferred to gather files using oswalk()
-    —def generate_csv(categorized_files):—--|	
-|                                           |            **analyzers/**
-|                                           |          —base_analyzer.py—
-                                            |
-                                            |-def generate_csv(categorized_files): 
-	                                                def clean_file(file_list, analyzer):
-	                                                    def process_line_for_csv(line, file):
-                                                                                     |
-                                                                                     |
-Add analyzer:  build analyzer with process_line_for_csv(line, file). Analyzer will go into analyzers/.
-
-In base_analyzer.py  add import for analyzer, 2. Add file type to file_type_analyzer_map
- ex("py": python_analyzer,): NO DOT, JUST “py” or whatever file extension and analyzer
-               |
-               |---------------------------------------------------------------------|
-		       |	—python_analyzer.py—
-               |----------   def process_line_for_csv(line, file):
-                                def write_csv_summary():
-
-                    —html_analyzer.py—
-                            def process_line_for_csv(line, file):
-                                def write_csv_summary():	
+—get_directory():                     
+—gather_categorized_files(directory):      
+-generate_csv(categorized_files): 
+    -clean_file(file_list, analyzer):
+        -analyzer.process_line_for_csv(line, file):-----|       analyzers/
+-report_helper.type_of_report(categorized_files)        |	—python_analyzer.py—
+    |                                                   |--def process_line_for_csv(line, file):
+    |   reports/                                        |      -write_csv_summary():
+    |--report_helper.py--                               |
+    |                                                   |—html_analyzer.py—
+    |-def type_of_report(categorized_files):            |--def process_line_for_csv(line, file)
+        -analyzed_file_summary(categorized_files)              -write_csv_summary():
+        -python_report_gen.python_reports(categorized_files)
+                                             |               Add analyzer:  build analyzer 
+            python_report_gen.py             |              with process_line_for_csv(line, file). 
+    -def python_reports(categorized_files):--|              Analyzer will go into analyzers/.    
+        -data_type(file_search, categorized_files)
+                                                            In main.py  add import for analyzer
+                                                            2. Add file type to file_type_analyzer_map    
+                                                            ex("py": python_analyzer,): NO DOT, JUST “py” 
+                                                            or whatever file extension and analyzer
+                                                            3. Add file extension to the allowed_extensions list
 
 ```
 ## Installation

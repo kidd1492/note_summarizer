@@ -3,72 +3,38 @@ import csv, sys
 
 
 def type_of_report(categorized_files):
-    file_type_list = []
+    analyzed_file_summary(categorized_files)
+
+    file_type_list = ["main"]
     for file_type, file_list in categorized_files.items():
          file_type_list.append(file_type)
          
-         
-    print(f"what type of report would you like?")
-    
+           
     while True:
-        report_type = input(f"File Type Report Options: {file_type_list}: base ")
+        print(f"what type of report would you like?")
+        print(f"{file_type_list}: \n")
+        report_type = input(f"Select File Type or Exit: ")
         if report_type != "exit":
-            if report_type.lower() in file_type_list or report_type.lower() == "base":
-                if report_type == "base":
-                     base_reports(categorized_files)
+            if report_type.lower() in file_type_list:
+                if report_type == "main":
+                     base_report_gen.base_reports(categorized_files)
                 if report_type == "py":
-                    python_reports(categorized_files)
+                    python_report_gen.python_reports(categorized_files)
                 if report_type == "html":
-                    html_reports(categorized_files)
+                    html_report_gen.html_reports(categorized_files)
         else:
             sys.exit()
 
 
- #functions one for each type of file 
-def python_reports(categorized_files):      
-    
-        while True:
-            print(f"\n Python \n") 
-            print("1. Full Report\n2. File List\n3. Unique Imports\n4. Classes\n5. Functions\n6. Comments\n")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
-                with open("reports\csv_files/python_summary.csv", mode='r') as file:
-                    data = list(csv.DictReader(file))
-                    if function_number == "1": python_report_gen.main(data)
-                    if function_number == "2": python_report_gen.p_files(data)
-                    if function_number == "3": python_report_gen.imports(data)
-                    if function_number == "4": python_report_gen.classes(data)
-                    if function_number == "5": python_report_gen.functions(data)
-                    if function_number == "6": python_report_gen.comments(data)
-            else:
-                type_of_report(categorized_files)
-                
-
-def html_reports(categorized_files):      
-    
-        while True:
-            print(f"\n HTML \n")
-            print("1. Full Report\n2. File List\n3. Comments\n4. Text\n")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
-                with open("reports\csv_files/html_summary.csv", mode='r') as file:
-                    data = list(csv.DictReader(file))
-                    if function_number == "1": html_report_gen.main(data)
-                    if function_number == "2": html_report_gen.html_files(data)
-                    if function_number == "3": html_report_gen.comments(data)
-                    if function_number == "4": html_report_gen.text(data)
-            else:
-                 type_of_report(categorized_files)
-
-
-def base_reports(categorized_files):
-     while True:
-            print(f"\n Base \n")
-            print("1. File Tree\n")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
-                with open("reports\csv_files/html_summary.csv", mode='r') as file:
-                    data = list(csv.DictReader(file))
-                    if function_number == "1": base_report_gen.file_tree(all_file_paths)
-            else:
-                 type_of_report(categorized_files)
+def analyzed_file_summary(categorized_files):
+    total_analyzed_files = 0
+    number_of_file_types = 0
+    print()
+    for file_type, file_list in categorized_files.items():
+        #total_analyzed_files += 1
+        number_of_file_types += 1
+        total_analyzed_files += len(file_list)
+        print(f"{file_type} files: {len(file_list)}")
+    else:
+        #total_analyzed_files += len(file_list)
+        print(f"\n{number_of_file_types} Files Types Analyzed:  Total Files Paths {total_analyzed_files}\n")

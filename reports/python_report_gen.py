@@ -1,74 +1,45 @@
 import csv
+from reports import report_helper
 
-def main(data):
-    p_files(data)
-    imports(data)
-    classes(data)
-    functions(data) 
-    comments(data)
 
+def python_reports(categorized_files):
     
-def p_files(data):
-    python_files = []
-    print()
-    # Collect file names in python_files
-    for row in data:
-        if row["File"] not in python_files:
-            python_files.append(row["File"])
-    #print(f"File List:\n")
-    print(f"{python_files}\n")
+    file_search_list = ["all"]
+    with open("reports/csv_files/python_summary.csv", mode='r') as file:
+        data = list(csv.DictReader(file))
+        while True:
+            for row in data:
+                if row["FileName"] not in file_search_list:
+                    file_search_list.append(row["FileName"])
+                    print(row["FileName"])
+            print(f"\nWhat file would you like to analyze:[all] for all files ")
+            file_search = input("or [back] to go back to Report Types: ")
+
+            if file_search == "back":report_helper.type_of_report(categorized_files)
+            if file_search in file_search_list:
+                data_type(file_search, categorized_files)
 
 
-def imports(data):
-    imports_list = []
-    # Collect all imports in a list
-    for row in data:
-        if row["Type"] == "import":
-            row = row["Content"].split()
-            if row[0] == "import":
-                if row[1] not in imports_list: 
-                    if "," in row[1]:
-                        one = row[1].split(",")
-                        for i in one:
-                            if i not in imports_list:
-                                imports_list.append(i)
-                else:
-                    imports_list.append(row[1:])                   
+def data_type(file_search, categorized_files):
 
-            if row[0] == "from":
-                if row[1].startswith("."):
-                    continue
-                else:
-                    imports_list.append(row[1]) 
-    print(f"Imports: \n")
-    for item in imports_list: print(item)
-    print()
+    types_of_data = []
+    with open("reports/csv_files/python_summary.csv", mode='r') as file:
+        data = list(csv.DictReader(file))
+        while True:
+            for row in data:
+                if row["Type"] not in types_of_data:
+                    types_of_data.append(row["Type"])
+                    print(row["Type"])
+            print(f"\nwhat data?:")
+            data_input = input("or [back] to files: ")
+            if data_input == "back":python_reports(categorized_files)
+            if file_search == "all":
+                for row in data:    
+                    if row["Type"] == data_input:
+                        print(row["Type"], row["FileName"], "------", row["Content"])
+            if data_input in types_of_data:      
+                for row in data:
+                    if row["FileName"] == file_search:
+                        if row["Type"] == data_input:
+                            print(row["Type"], row["FileName"], "------", row["Content"])
 
-
-def classes(data):
-    print(f"Class: \n")
-    for row in data:
-        if row["Type"] == "class":
-            print(f"{row['Content']}")
-    print()
-
-
-def functions(data):
-    print(f"Functions: \n")
-    for row in data:
-        if row["Type"] == "function":
-            print(row["Content"])
-    print()
-
-
-def comments(data):
-    # Collect all comments from all files
-    print(f"Comments: \n")
-    for row in data:
-        if row["Type"] == "comment":
-            print(row["Content"])
-    print()
-
-
-if __name__ == "__main__":
-    main()
