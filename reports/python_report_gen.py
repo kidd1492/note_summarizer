@@ -1,7 +1,7 @@
 import csv
 from reports import report_helper
 
-
+#TODO Clean up these functions. reduce 
 def python_reports(categorized_files):
     
     file_search_list = ["all"]
@@ -30,9 +30,10 @@ def data_type(file_search, categorized_files):
                 if row["Type"] not in types_of_data:
                     types_of_data.append(row["Type"])
                     print(row["Type"])
-            print(f"\nwhat data?:")
+            print(f"\nfor all data [main] What data?:")
             data_input = input("or [back] to files: ")
             if data_input == "back":python_reports(categorized_files)
+            if data_input == "main":print_full_report(categorized_files)
             if file_search == "all":
                 for row in data:    
                     if row["Type"] == data_input:
@@ -42,4 +43,17 @@ def data_type(file_search, categorized_files):
                     if row["FileName"] == file_search:
                         if row["Type"] == data_input:
                             print(row["Type"], row["FileName"], "------", row["Content"])
+            
 
+
+#TODO make a function to print out all reports'
+def print_full_report(categorized_files):
+    type_of_data_list = ["import", "function", "todo", "comment"]
+    with open("reports/csv_files/python_summary.csv", mode='r') as file:
+        data = list(csv.DictReader(file))
+        
+        for item in type_of_data_list:
+            for row in data:
+                if row["Type"] == item:
+                    print(row["Type"], row["FileName"], "------", row["Content"])
+            print("\n")
