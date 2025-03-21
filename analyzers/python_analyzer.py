@@ -41,6 +41,7 @@ def process_line_for_csv(line, file):
     csv_data.append(row)  # Add the row to the CSV data list
     write_csv_summary()
 
+#TODO get this function in a central location
 def write_csv_summary():
     """Write the collected data to a CSV file."""
     with open(python_summary_file, "w", newline='', encoding='utf-8') as csvfile:

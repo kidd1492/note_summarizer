@@ -19,6 +19,7 @@ def main():
 
 def get_directory():
     ''' ask user for filepath '''
+    #TODO update to except file paths for other systems?
     path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
 
     while True:
@@ -33,7 +34,7 @@ def get_directory():
 
 def gather_categorized_files(directory):
     allowed_extensions = [".py", ".md", ".html"]  # Update to add more file types
-    ignored_directories = [".git", "env", "enve", "venv"]
+    ignored_directories = [".git", "env", "venv"]
     categorized_files = {}
 
     for root, dirs, files in os.walk(directory):
@@ -64,6 +65,7 @@ def generate_csv(categorized_files):
 def clean_file(file_list, analyzer):
     """Process files and store results in CSV format."""
     for file in file_list:
+        #TODO put in error checking if it can't read the line or file
         with open(file, 'r', encoding='utf-8') as f:
             for line in f:
                 stripped_line = line.strip()

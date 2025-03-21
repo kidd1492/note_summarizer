@@ -4,19 +4,19 @@ import csv, sys
 
 def type_of_report(categorized_files):
     analyzed_file_summary(categorized_files)
-
-    file_type_list = ["main"]
+    #auto generates file_type_list added main
+    file_type_list = ["tools"]
     for file_type, file_list in categorized_files.items():
          file_type_list.append(file_type)
          
            
     while True:
-        print(f"what type of report would you like?")
         print(f"{file_type_list}: \n")
-        report_type = input(f"Select File Type or Exit: ")
+        print(f"[tools] for general information: \nwhat type of report would you like?\n")
+        report_type = input("Select File Type or Exit: ")
         if report_type != "exit":
             if report_type.lower() in file_type_list:
-                if report_type == "main":
+                if report_type == "tools":
                      base_report_gen.base_reports(categorized_files)
                 if report_type.lower() == "py":
                     csv_report_file = "reports/csv_files/python_summary.csv"
@@ -33,7 +33,6 @@ def analyzed_file_summary(categorized_files):
     number_of_file_types = 0
     print()
     for file_type, file_list in categorized_files.items():
-        #total_analyzed_files += 1
         number_of_file_types += 1
         total_analyzed_files += len(file_list)
         print(f"{file_type} files: {len(file_list)}")
@@ -71,10 +70,11 @@ def data_type(file_search, categorized_files, csv_report_file):
                 if row["Type"] not in types_of_data:
                     types_of_data.append(row["Type"])
                     print(row["Type"])
+
             print(f"\nfor all data [main] What data?:")
             data_input = input("or [back] to files: ")
             if data_input == "back":reports(categorized_files, csv_report_file)
-            if data_input == "main":print_full_report(categorized_files, csv_report_file)
+            if data_input == "main":print_full_report(csv_report_file, types_of_data)
             if file_search == "all":
                 for row in data:    
                     if row["Type"] == data_input:
@@ -87,13 +87,14 @@ def data_type(file_search, categorized_files, csv_report_file):
             
 
 
-#TODO make a function to print out all reports'
-def print_full_report(categorized_files, csv_report_file):
-    type_of_data_list = ["import", "function", "todo", "comment", "tag", "text"]
+
+def print_full_report(csv_report_file, types_of_data):
+    #TODO fix the type_of_data_list to auto generate
+
     with open(csv_report_file, mode='r') as file:
         data = list(csv.DictReader(file))
         
-        for item in type_of_data_list:
+        for item in types_of_data:
             for row in data:
                 if row["Type"] == item:
                     print(row["Type"], row["FileName"], "------", row["Content"])
