@@ -1,19 +1,12 @@
 from reports import report_helper
-from analyzers import html_analyzer, python_analyzer
+from analyzers import main_analyzer
 import os, re
-
-# Mapping of file extensions to their respective analyzers
-file_type_analyzer_map = {
-    "html": html_analyzer,
-    "py": python_analyzer,
-    # Add more file types and analyzers if needed
-}
 
 
 def main():
     directory = get_directory()
     categorized_files = gather_categorized_files(directory)
-    generate_csv(categorized_files)
+    main_analyzer.clean_file(categorized_files)
     report_helper.type_of_report(categorized_files)
     
 
@@ -33,7 +26,7 @@ def get_directory():
 
 
 def gather_categorized_files(directory):
-    allowed_extensions = [".py", ".md", ".html"]  # Update to add more file types
+    allowed_extensions = [".py", ".md", ".html", "txt"]  # Update to add more file types
     ignored_directories = [".git", "env", "venv"]
     categorized_files = {}
 
@@ -52,25 +45,6 @@ def gather_categorized_files(directory):
                 categorized_files[ext].append(os.path.join(root, file))
 
     return categorized_files
-
-
-def generate_csv(categorized_files):
-    categorized_files = categorized_files
-    for file_type, file_list in categorized_files.items():
-        analyzer = file_type_analyzer_map.get(file_type)
-        if analyzer:  # Ensure an analyzer is available for this file type
-            clean_file(file_list, analyzer)
-
-
-def clean_file(file_list, analyzer):
-    """Process files and store results in CSV format."""
-    for file in file_list:
-        #TODO put in error checking if it can't read the line or file
-        with open(file, 'r', encoding='utf-8') as f:
-            for line in f:
-                stripped_line = line.strip()
-                if stripped_line:
-                   analyzer.process_line_for_csv(stripped_line, file)
 
 
 if __name__ == "__main__":
