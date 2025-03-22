@@ -7,7 +7,8 @@ html_summary_file = "reports/csv_files/html_summary.csv"
 
 def process_line_for_csv(line, file):
     """Process each line and store relevant data for CSV."""
-    tag_pattern = r"<[^>]+>"       # Match HTML tags
+    h1_pattern = r"<h1>"
+    tag_pattern = r"<a.+>"       # Match HTML tags
     comment_pattern = r"<!--.*?-->"  # Match HTML comments
 
     file_part = file.split("\\" or "/") 
@@ -28,9 +29,9 @@ def process_line_for_csv(line, file):
     if re.match(comment_pattern, line.strip(), re.DOTALL):
         row["Type"] = "comment"
     elif re.match(tag_pattern, line.strip()):
-        row["Type"] = "tag"
-    elif line.strip():  # Non-empty line that's not a tag or comment
-        row["Type"] = "text"
+        row["Type"] = "link"
+    elif re.match(h1_pattern, line.strip()):  # Non-empty line that's not a tag or comment
+        row["Type"] = "h1"
     else:
         return  # Ignore blank or irrelevant lines
 
