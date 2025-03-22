@@ -20,7 +20,7 @@ def clean_file(categorized_files):
 
 def process_line_for_csv(line, file):
     #python pattens
-    comment_pattern = r"^#|^[\"']{3}"
+    python_comment_pattern = r"^#|^[\"']{3}"
     function_pattern = r"^def\s+"
     #html patterns
     tag_pattern = r"<a.+>"       # Match HTML tags
@@ -50,7 +50,7 @@ def process_line_for_csv(line, file):
         row["Type"] = "class"
     elif re.match(function_pattern, line):
         row["Type"] = "function"
-    elif re.match(comment_pattern, line):
+    elif re.match(python_comment_pattern, line):
         row["Type"] = "comment"
         if line.startswith("#TODO"):
             row["Type"] = "todo"
