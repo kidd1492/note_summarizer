@@ -71,10 +71,10 @@ def data_type(file_search, categorized_files, csv_report_file):
                 if row["Type"] not in types_of_data:
                     types_of_data.append(row["Type"])
                     print(row["Type"])
-            print(f"\nfor all data [main] What data?:")
+            print(f"\nWhat type of data:")
             data_input = input("or [back] to files: ")
             if data_input == "back":reports(categorized_files, csv_report_file)
-            if data_input == "main":print_full_report(categorized_files, csv_report_file)
+        
             if file_search == "all":
                 for row in data:    
                     if row["Type"] == data_input:
