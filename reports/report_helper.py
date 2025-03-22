@@ -34,9 +34,8 @@ def files(categorized_files, type):
                 if row["FileName"] not in file_list:file_list.append(row["FileName"])
 
     while True:
-        print("Files")
+        print("Files", "\n")
         for name in file_list:print(name) 
-
         print(f"\nWhat file would you like to analyze:[all] for all files ")
         file_search = input("or [back] to go back to Report Types: ")
 
@@ -50,18 +49,18 @@ def files(categorized_files, type):
             
 
 
-def data_type(categorized_files, type, file_list):
+def data_type(categorized_files, type, selected_file):
     data_opptions = ["all",]
     with open(csv_report_file, mode='r') as file:
         data = list(csv.DictReader(file))
-        if file_list.lower() == "all":
+        if selected_file.lower() == "all":
             for row in data:
                 if row["FileType"] == type:
                     if row["Type"] not in data_opptions:data_opptions.append(row["Type"])
         else:
             for row in data:
                 if row["FileType"] == type:
-                    if row["FileName"] == file_list:
+                    if row["FileName"] == selected_file:
                         if row["Type"] not in data_opptions:data_opptions.append(row["Type"])
 
         while True:
@@ -72,28 +71,28 @@ def data_type(categorized_files, type, file_list):
             if data_input == "back":
                 files(categorized_files, type)
                 break
-            elif file_list == "all":
-                print("\n")
-                for row in data:
-                    if row["FileType"] == type:
-                        if row["Type"] == data_input:
+            elif selected_file == "all":
+                if data_input == "all":
+                    print("\n")
+                    for row in data:
+                        if row["FileType"] == type:
+                            #if row["Type"] == data_input:
                             print(row["Type"], row["FileName"], "------", row["Content"])
+                 
             elif data_input == "all":
                 print("\n")
                 for row in data:
                     if row["FileType"] == type:
-                        if row["FileName"] == file_list:
+                        if row["FileName"] == selected_file:
                             print(row["Type"], row["FileName"], "------", row["Content"])
 
             elif data_input in data_opptions:
                 print("\n")
                 for row in data:
                     if row["FileType"] == type:
-                        if row["FileName"] == file_list:
+                        if row["FileName"] == selected_file:
                             if row["Type"] == data_input:
                                 print(row["Type"], row["FileName"], "------", row["Content"])
             
             else:
-                continue
-                
-               
+                continue              
