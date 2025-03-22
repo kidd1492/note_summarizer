@@ -19,7 +19,7 @@ def main():
 
 def get_directory():
     ''' ask user for filepath '''
-    #TODO update to except file paths for other systems?
+    #TODO update file paths for other systems?
     path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
 
     while True:

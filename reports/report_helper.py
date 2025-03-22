@@ -28,26 +28,15 @@ def type_of_report(categorized_files):
             sys.exit()
 
 
-def analyzed_file_summary(categorized_files):
-    total_analyzed_files = 0
-    number_of_file_types = 0
-    print()
-    for file_type, file_list in categorized_files.items():
-        number_of_file_types += 1
-        total_analyzed_files += len(file_list)
-        print(f"{file_type} files: {len(file_list)}")
-    else:
-        #total_analyzed_files += len(file_list)
-        print(f"\n{number_of_file_types} Files Types Analyzed:  Total Files Paths {total_analyzed_files}\n")
-
-
 #TODO Clean up these functions. reduce 
+#TODO make a function for printing information and one for writing data
 def reports(categorized_files, csv_report_file):
     
     file_search_list = ["all"]
     with open(csv_report_file, mode='r') as file:
         data = list(csv.DictReader(file))
         while True:
+            print("\n")
             for row in data:
                 if row["FileName"] not in file_search_list:
                     file_search_list.append(row["FileName"])
@@ -66,6 +55,7 @@ def data_type(file_search, categorized_files, csv_report_file):
     with open(csv_report_file, mode='r') as file:
         data = list(csv.DictReader(file))
         while True:
+            print("\n")
             for row in data:
                 if row["Type"] not in types_of_data:
                     types_of_data.append(row["Type"])
@@ -86,8 +76,6 @@ def data_type(file_search, categorized_files, csv_report_file):
                             print(row["Type"], row["FileName"], "------", row["Content"])
             
 
-
-
 def print_full_report(csv_report_file, types_of_data):
     #TODO fix the type_of_data_list to auto generate
 
@@ -99,3 +87,16 @@ def print_full_report(csv_report_file, types_of_data):
                 if row["Type"] == item:
                     print(row["Type"], row["FileName"], "------", row["Content"])
             print("\n")
+
+
+def analyzed_file_summary(categorized_files):
+    total_analyzed_files = 0
+    number_of_file_types = 0
+    print()
+    for file_type, file_list in categorized_files.items():
+        number_of_file_types += 1
+        total_analyzed_files += len(file_list)
+        print(f"{file_type} files: {len(file_list)}")
+    else:
+        #total_analyzed_files += len(file_list)
+        print(f"\n{number_of_file_types} Files Types Analyzed:  Total Files Paths {total_analyzed_files}\n")
