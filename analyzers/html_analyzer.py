@@ -14,10 +14,11 @@ def process_line_for_csv(line, file):
     file_part = file.split("\\" or "/") 
     directory = file_part[-2]
     file_name = file_part[-1]
-
+    file_type = file_name.split('.')[-1]
 
     # Initialize a dictionary for each line's data
     row = {
+        "FileType": file_type,
         "File": file,
         "Directory": directory,
         "FileName": file_name,
@@ -41,6 +42,6 @@ def process_line_for_csv(line, file):
 def write_csv_summary():
     """Write the collected data to a CSV file."""
     with open(html_summary_file, "w", newline='', encoding="utf-8") as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=["File", "Directory", "FileName", "Type", "Content"])
+        writer = csv.DictWriter(csvfile, fieldnames=["FileType", "File", "Directory", "FileName", "Type", "Content"])
         writer.writeheader()  # Write column headers
         writer.writerows(csv_data)  # Write all rows

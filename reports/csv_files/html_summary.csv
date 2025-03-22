@@ -1,11 +1,11 @@
-File,Directory,FileName,Type,Content
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Add New Note</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Note</h1>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,h1,<h1>Edit Note</h1>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Knowledge Amplified:</h1>
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Our Mission</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/register""><div class=""landing_card_link""><h2>Register</h2></div></a>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/login""><div class=""landing_card_link""><h2>Login</h2></div></a>"
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,h1,<h1>All Notes</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,h1,<h1>Search Notes</h1><br />
-C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,h1,<h1>Search Wikipedia</h1><br />
+FileType,File,Directory,FileName,Type,Content
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Add New Note</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Note</h1>
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,h1,<h1>Edit Note</h1>
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Knowledge Amplified:</h1>
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Our Mission</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/register""><div class=""landing_card_link""><h2>Register</h2></div></a>"
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/login""><div class=""landing_card_link""><h2>Login</h2></div></a>"
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,h1,<h1>All Notes</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,h1,<h1>Search Notes</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,h1,<h1>Search Wikipedia</h1><br />
