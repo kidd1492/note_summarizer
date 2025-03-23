@@ -1,13 +1,6 @@
 from reports import report_helper
-from analyzers import html_analyzer, python_analyzer
+from analyzers import analyzer
 import os, re
-
-# Mapping of file extensions to their respective analyzers
-file_type_analyzer_map = {
-    "html": html_analyzer,
-    "py": python_analyzer,
-    # Add more file types and analyzers if needed
-}
 
 
 def main():
@@ -56,12 +49,10 @@ def gather_categorized_files(directory):
 def generate_csv(categorized_files):
     categorized_files = categorized_files
     for file_type, file_list in categorized_files.items():
-        analyzer = file_type_analyzer_map.get(file_type)
-        if analyzer:  # Ensure an analyzer is available for this file type
-            clean_file(file_list, analyzer)
+        clean_file(file_list)
 
 
-def clean_file(file_list, analyzer):
+def clean_file(file_list):
     """Process files and store results in CSV format."""
     for file in file_list:
         with open(file, 'r', encoding='utf-8') as f:

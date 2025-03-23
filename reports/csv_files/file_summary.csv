@@ -1,0 +1,57 @@
+FileType,File,Directory,FileName,Type,Content
+py,C:/Users/chris/Desktop/test_flask\app.py,C:/Users/chris/Desktop/test_flask,app.py,import,from updated_notes import create_app
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,from functools import wraps
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from flask import Blueprint, render_template, request, redirect, session"
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from werkzeug.security import check_password_hash, generate_password_hash"
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,from . import db
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from .models import User, Note"
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from .helper import apology, wiki_search"
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def login_required(f):
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,"def decorated_function(*args, **kwargs):"
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def after_request(response):
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Ensure responses aren't cached"""""""
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def index():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def login():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Remember which user has logged in
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def register():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def logout():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Log user out"""""""
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Redirect user home page
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def dashboard():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def wiki():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def notes():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Show all notes"""""""
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def edit():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Render the edit.html template with the note data
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Commit the changes to the database
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def delete():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def search_notes():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Show all notes"""""""
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,import,from flask import render_template
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,import,import wikipedia as wk
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,function,"def apology(message, code=400):"
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,comment,"""""""Render message as an apology to user."""""""
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,function,def escape(s):
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,comment,""""""""
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,comment,""""""""
+py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,function,def wiki_search(term):
+py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,import,from . import db
+py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,import,from sqlalchemy import func
+py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,class,class Note(db.Model):
+py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,class,class User(db.Model):
+py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from flask import Flask
+py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from flask_sqlalchemy import SQLAlchemy
+py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from flask_session import Session
+py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,function,def create_app():
+py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from .auth import auth
+py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,"from .models import User, Note"
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Add New Note</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Note</h1>
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,h1,<h1>Edit Note</h1>
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Knowledge Amplified:</h1>
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Our Mission</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/register""><div class=""landing_card_link""><h2>Register</h2></div></a>"
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/login""><div class=""landing_card_link""><h2>Login</h2></div></a>"
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,h1,<h1>All Notes</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,h1,<h1>Search Notes</h1><br />
+html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,h1,<h1>Search Wikipedia</h1><br />
