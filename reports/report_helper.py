@@ -2,14 +2,15 @@ from reports import base_report_gen
 import pandas as pd
 import sys
 
-def type_of_report(categorized_files):
+def type_of_report():
      #user_input = input("what type of data do you want to view? : ")
-     analyzed_file_summary(categorized_files)
      file_type()
 
 
 def file_type():
     df = pd.read_csv('reports/csv_files/file_summary.csv')
+    df = df[["FileType", "Directory", "FileName", "Type", "Content"]].copy()
+
 
     types_of_files = df["FileType"].unique()
     while True:
@@ -44,7 +45,7 @@ def select_data(df, selected_file, selected_file_type, type):
         data_list = data_type['Type'].unique()
         while True:
             print("\n")
-            for item in data_list:print(item)
+            print(data_type["Type"].value_counts())
             print(f"\n [back] to go back to file selection:")
             selected_data = input("Select Data Type: ")
             if selected_data == "back":select_file(df, selected_file_type)
@@ -61,7 +62,7 @@ def select_data(df, selected_file, selected_file_type, type):
         while True:
             
             print("\n")
-            for item in data_list:print(item)
+            print(type["Type"].value_counts())
             print(f"\n [back] to go back to file selection:")
             selected_data = input("Select Data Type: ")
             if selected_data == "back":select_file(df, selected_file_type)

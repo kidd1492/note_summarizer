@@ -4,10 +4,22 @@ import os, re
 
 
 def main():
+    print(f"\n--Welcome to Project Analyzer--\n")
+    while True:
+        print("Analyzer a project directory: [y]")
+        answer = input("View last Analyzered Files [n]: y/n :")
+        if answer.lower() == "y":
+            run_analyzer()
+            break
+        if answer.lower() == "n":  
+            report_helper.type_of_report()
+
+
+def run_analyzer():
     directory = get_directory()
     categorized_files = gather_categorized_files(directory)
     generate_csv(categorized_files)
-    report_helper.type_of_report(categorized_files)
+    report_helper.type_of_report()
     
 
 def get_directory():

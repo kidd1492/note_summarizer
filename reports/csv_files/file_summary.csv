@@ -3,6 +3,7 @@ py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_su
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,from analyzers import analyzer
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,"import os, re"
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def main():
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def run_analyzer():
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def get_directory():
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,comment,''' ask user for filepath '''
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def gather_categorized_files(directory):
@@ -28,7 +29,7 @@ py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,bas
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,from reports import base_report_gen
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import pandas as pd
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import sys
-py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def type_of_report(categorized_files):
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def type_of_report():
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,"#user_input = input(""what type of data do you want to view? : "")"
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def file_type():
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,"def select_file(df, selected_file_type):"
