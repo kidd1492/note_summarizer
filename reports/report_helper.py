@@ -2,8 +2,9 @@ from reports import base_report_gen
 import pandas as pd
 import sys
 
+
 def type_of_report():
-     #user_input = input("what type of data do you want to view? : ")
+     base_report_gen.generate_summary_report()
      file_type()
 
 
@@ -71,17 +72,3 @@ def select_data(df, selected_file, selected_file_type, type):
                 print("\n")
                 print(filtered_df)
         
-
-def analyzed_file_summary(categorized_files):
-    total_analyzed_files = 0
-    number_of_file_types = 0
-    print()
-    for file_type, file_list in categorized_files.items():
-        #total_analyzed_files += 1
-        number_of_file_types += 1
-        total_analyzed_files += len(file_list)
-        print(f"{file_type} files: {len(file_list)}")
-    else:
-        #total_analyzed_files += len(file_list)
-        print(f"\n{number_of_file_types} Files Types Analyzed:  Total Files Paths {total_analyzed_files}\n")
-

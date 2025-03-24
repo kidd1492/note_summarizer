@@ -1,0 +1,101 @@
+========================================
+SUMMARY REPORT: FILES
+========================================
+
+Total Files: 5
+
+Filenames:
+- app.py
+- auth.py
+- helper.py
+- models.py
+- __init__.py
+
+----------------------------------------
+File: app.py
+----------------------------------------
+
+Import:
+    from updated_notes import create_app
+
+----------------------------------------
+File: auth.py
+----------------------------------------
+
+Import:
+    from functools import wraps
+    from flask import Blueprint, render_template, request, redirect, session
+    from werkzeug.security import check_password_hash, generate_password_hash
+    from . import db
+    from .models import User, Note
+    from .helper import apology, wiki_search
+
+Function:
+    def login_required(f):
+    def decorated_function(*args, **kwargs):
+    def after_request(response):
+    def index():
+    def login():
+    def register():
+    def logout():
+    def dashboard():
+    def wiki():
+    def notes():
+    def edit():
+    def delete():
+    def search_notes():
+
+Comment:
+    """Ensure responses aren't cached"""
+    # Remember which user has logged in
+    """Log user out"""
+    # Redirect user home page
+    """Show all notes"""
+    # Render the edit.html template with the note data
+    # Commit the changes to the database
+    """Show all notes"""
+
+----------------------------------------
+File: helper.py
+----------------------------------------
+
+Import:
+    from flask import render_template
+    import wikipedia as wk
+
+Function:
+    def apology(message, code=400):
+    def escape(s):
+    def wiki_search(term):
+
+Comment:
+    """Render message as an apology to user."""
+    """
+    """
+
+----------------------------------------
+File: models.py
+----------------------------------------
+
+Import:
+    from . import db
+    from sqlalchemy import func
+
+Class:
+    class Note(db.Model):
+    class User(db.Model):
+
+----------------------------------------
+File: __init__.py
+----------------------------------------
+
+Import:
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    from flask_session import Session
+    from .auth import auth
+    from .models import User, Note
+
+Function:
+    def create_app():
+

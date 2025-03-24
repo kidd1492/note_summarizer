@@ -1,30 +1,45 @@
-import os, csv
-from reports import report_helper
+import pandas as pd
 
+def generate_summary_report():
+    csv_file = "reports/csv_files/file_summary.csv"
+    report_file = "summary_report.txt"
+    
+    # Read CSV
+    df = pd.read_csv(csv_file)
+    
+    with open(report_file, "w") as report:
+        # Filter by FileType (use any file type dynamically)
+        files = df[df["FileType"] == "py"]  # Change "html" to desired FileType
+        file_count = len(files["FileName"].unique())
+        
+        # Write FileType summary
+        report.write(f"{'='*40}\n")
+        report.write(f"SUMMARY REPORT: FILES\n")
+        report.write(f"{'='*40}\n\n")
+        
+        report.write(f"Total Files: {file_count}\n\n")
+        
+        # List all filenames
+        report.write("Filenames:\n")
+        for filename in files["FileName"].unique():
+            report.write(f"- {filename}\n")
+        report.write("\n")
+        
+        # Process each file
+        types_of_data = files["Type"].unique()
+        for filename in files["FileName"].unique():
+            report.write(f"{'-'*40}\n")
+            report.write(f"File: {filename}\n")
+            report.write(f"{'-'*40}\n")
+            
+            for type in types_of_data:
+                # Extract content of a specific Type
+                contents = files[(files["FileName"] == filename) & (files["Type"] == type)]
+                if not contents.empty:
+                    report.write(f"\n{type.capitalize()}:\n")
+                    for content in contents["Content"]:
+                        report.write(f"    {content}\n")
+            
+            report.write("\n")
 
-def base_reports(categorized_files):
-     while True:
-            print(f"\n Base \n")
-            print("1. File Tree\n")
-            function_number = input("Enter Number for Report or exit: ")
-            if function_number != "exit":
-                with open("reports\csv_files/html_summary.csv", mode='r') as file:
-                    data = list(csv.DictReader(file))
-                    if function_number == "1": generate_file_tree(directory)
-            else:
-                 report_helper.type_of_report(categorized_files)
-
-
-
-def generate_file_tree(directory):
-    ignored_directories = [".git", "env", "enve", "venv"]
-    tree = []
-    for root, dirs, files in os.walk(directory):
-        dirs[:] = [d for d in dirs if d not in ignored_directories]
-        depth = root.replace(directory, "").count(os.sep)
-        indent = " " * 4 * depth
-        tree.append(f"{indent}{os.path.basename(root)}/")
-        sub_indent = " " * 4 * (depth + 1)
-        for f in files:
-            tree.append(f"{sub_indent}{f}")
-    print("\n".join(tree))
+    print(f"Summary report generated and saved to '{report_file}'!")
