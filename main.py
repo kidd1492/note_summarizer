@@ -1,39 +1,27 @@
 from reports import report_helper
 from analyzers import analyzer
-import os, re
+import os, re, sys
 
 
 def main():
-    print(f"\n--Welcome to Project Analyzer--\n")
-    while True:
-        print("Analyzer a project directory: [y]")
-        answer = input("View last Analyzered Files [n]: y/n :")
-        if answer.lower() == "y":
-            run_analyzer()
-            break
-        if answer.lower() == "n":  
-            report_helper.type_of_report()
+    args = sys.argv
 
+    if len(args) == 1:
+        print("Please enter report or enter directory path")
 
-def run_analyzer():
-    directory = get_directory()
-    categorized_files = gather_categorized_files(directory)
-    generate_csv(categorized_files)
-    report_helper.type_of_report()
+    elif len(args) == 2:
+        if args[1].lower() == "report":
+            report_helper.file_type()
+        else:
+            path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
     
-
-def get_directory():
-    ''' ask user for filepath '''
-    path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
-
-    while True:
-        directory_name = input("ex. C:/Desktop/file_name\nFile Path Name:").replace("\\", "/")  
-        if re.match(path_pattern, directory_name):
-            try:
+            directory_name = args[1].replace("\\", "/")  
+            if re.match(path_pattern, directory_name): 
                 if os.path.isdir(directory_name):
-                    return directory_name
-            except Exception as e:
-                print(f"An error occurred: {e}. Please try again.")      
+                    categorized_files = gather_categorized_files(directory_name)
+                    generate_csv(categorized_files)
+            else:
+                print("invalid path name! Please try again: ")     
 
 
 def gather_categorized_files(directory):
@@ -41,9 +29,8 @@ def gather_categorized_files(directory):
     ignored_directories = [".git", "env", "enve", "venv"]
     categorized_files = {}
 
-    for root, dirs, files in os.walk(directory):
-        # Skip ignored directories
-        dirs[:] = [d for d in dirs if d not in ignored_directories]
+    for root, dirs, files in os.walk(directory): 
+        dirs[:] = [d for d in dirs if d not in ignored_directories]# Skip ignored directories
         for file in files:
             # Check if the file's extension is in the allowed list
             if any(file.endswith(ext) for ext in allowed_extensions):
@@ -61,17 +48,12 @@ def gather_categorized_files(directory):
 def generate_csv(categorized_files):
     categorized_files = categorized_files
     for file_type, file_list in categorized_files.items():
-        clean_file(file_list)
-
-
-def clean_file(file_list):
-    """Process files and store results in CSV format."""
-    for file in file_list:
-        with open(file, 'r', encoding='utf-8') as f:
-            for line in f:
-                stripped_line = line.strip()
-                if stripped_line:
-                   analyzer.process_line_for_csv(stripped_line, file)
+        for file in file_list:
+            with open(file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    stripped_line = line.strip()
+                    if stripped_line:
+                        analyzer.process_line_for_csv(stripped_line, file)
 
 
 if __name__ == "__main__":

@@ -1,13 +1,12 @@
 # Note Summarizer Project
 
-The **Note Summarizer** is a Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate CSV reports for each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, JavaScript) in the future.
+The **Note Summarizer** is a Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate a CSV reports with each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, JavaScript) in the future.
 
 
 ## Features
 - The program collects all file paths in the specified directory for the supported file types (currently Python and HTML).
-- Based on the file type, the program calls the appropriate analyzer (e.g., PythonAnalyzer, HTMLAnalyzer).
-- Analyzers parse the file content, extract relevant information, and generate a CSV report for each file type.
-- CSV reports are saved in the csv_file directory with details about the analyzed files.
+- Analyzer parse the file content, extract relevant information, and generate a CSV report including each file type.
+- CSV report is saved in the csv_file directory as file_summary.
 - The CSV files can be used for generating detailed reports, visualization, or further analysis.
 - Easily integrates with projects built using frameworks like Django and Flask.
 
@@ -17,29 +16,31 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 		                note_summarizer/
                            -—main.py  file in note_summarizer/—
 
-def main():
-—get_directory():                     
+def main():                     
 —gather_categorized_files(directory):      
 -generate_csv(categorized_files): 
-    -clean_file(file_list, analyzer):
-        -analyzer.process_line_for_csv(line, file):-----|       analyzers/
--report_helper.type_of_report(categorized_files)        |	—python_analyzer.py—
+    -analyzer.process_line_for_csv(line, file):---------|       analyzers/
+-report_helper.type_of_report(categorized_files)        |	  --analyzer.py—
     |                                                   |--def process_line_for_csv(line, file):
-    |   reports/                                        |      -write_csv_summary():
-    |--report_helper.py--                               |
-    |                                                   |—html_analyzer.py—
-    |-def type_of_report(categorized_files):            |--def process_line_for_csv(line, file)
-        -analyzed_file_summary(categorized_files)              -write_csv_summary():
-        -python_report_gen.python_reports(categorized_files)
-                                             |               Add analyzer:  build analyzer 
-            python_report_gen.py             |              with process_line_for_csv(line, file). 
-    -def python_reports(categorized_files):--|              Analyzer will go into analyzers/.    
-        -data_type(file_search, categorized_files)
-                                                            In main.py  add import for analyzer
-                                                            2. Add file type to file_type_analyzer_map    
-                                                            ex("py": python_analyzer,): NO DOT, JUST “py” 
-                                                            or whatever file extension and analyzer
-                                                            3. Add file extension to the allowed_extensions list
+    |   reports/                                              -write_csv_summary():
+    |--csv_files/
+    |    * file_summary.csv                                                 
+    |--report_helper.py--                            
+    |                                                  
+    |----def type_of_report(categorized_files):      
+          -file_type(): 
+            -select_file(df, selected_file_type):
+               -select_data(df, selected_file, selected_file_type, type):
+
+    
+    This will save a report to txt file working in interaction
+    to print a full report on all files for selected file types
+    -----------------------------------------------------------
+                          reports/
+                      base_report_gen.py                       
+    -def base_report_gen.generate_summary_report(report_type)    
+        
+                                                            
 
 ```
 ## Installation
@@ -49,11 +50,18 @@ bash
 git clone https://github.com/username/note_summarizer.git
 Navigate to the project directory:
 Set up your venv
+pip install requirements.txt (pandas)
 
 
 ### Run the program:
 bash
-python main.py
+- python main.py # will give back enter report or directory path
+
+1. run main.py with a directory path to analyze the files...
+python main.py C:/Desktop/SomeDirectory  # if valid directory will generate the csv
+
+2. To see the analyzed info...
+python main.py report  # will show interaction for reports generated by csv. 
 
 
 License

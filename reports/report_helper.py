@@ -3,11 +3,6 @@ import pandas as pd
 import sys
 
 
-def type_of_report():
-     base_report_gen.generate_summary_report()
-     file_type()
-
-
 def file_type():
     df = pd.read_csv('reports/csv_files/file_summary.csv')
     df = df[["FileType", "Directory", "FileName", "Type", "Content"]].copy()

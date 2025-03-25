@@ -1,57 +1,40 @@
 FileType,File,Directory,FileName,Type,Content
-py,C:/Users/chris/Desktop/test_flask\app.py,C:/Users/chris/Desktop/test_flask,app.py,import,from updated_notes import create_app
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,from functools import wraps
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from flask import Blueprint, render_template, request, redirect, session"
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from werkzeug.security import check_password_hash, generate_password_hash"
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,from . import db
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from .models import User, Note"
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,import,"from .helper import apology, wiki_search"
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def login_required(f):
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,"def decorated_function(*args, **kwargs):"
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def after_request(response):
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Ensure responses aren't cached"""""""
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def index():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def login():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Remember which user has logged in
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def register():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def logout():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Log user out"""""""
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Redirect user home page
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def dashboard():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def wiki():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def notes():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Show all notes"""""""
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def edit():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Render the edit.html template with the note data
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,# Commit the changes to the database
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def delete():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,function,def search_notes():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\auth.py,updated_notes,auth.py,comment,"""""""Show all notes"""""""
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,import,from flask import render_template
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,import,import wikipedia as wk
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,function,"def apology(message, code=400):"
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,comment,"""""""Render message as an apology to user."""""""
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,function,def escape(s):
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,comment,""""""""
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,comment,""""""""
-py,C:/Users/chris/Desktop/test_flask\updated_notes\helper.py,updated_notes,helper.py,function,def wiki_search(term):
-py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,import,from . import db
-py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,import,from sqlalchemy import func
-py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,class,class Note(db.Model):
-py,C:/Users/chris/Desktop/test_flask\updated_notes\models.py,updated_notes,models.py,class,class User(db.Model):
-py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from flask import Flask
-py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from flask_sqlalchemy import SQLAlchemy
-py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from flask_session import Session
-py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,function,def create_app():
-py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,from .auth import auth
-py,C:/Users/chris/Desktop/test_flask\updated_notes\__init__.py,updated_notes,__init__.py,import,"from .models import User, Note"
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Add New Note</h1><br />
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\dashboard.html,templates,dashboard.html,h1,<h1>Note</h1>
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\edit.html,templates,edit.html,h1,<h1>Edit Note</h1>
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Knowledge Amplified:</h1>
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,h1,<h1>Our Mission</h1><br />
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/register""><div class=""landing_card_link""><h2>Register</h2></div></a>"
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\index.html,templates,index.html,link,"<a href=""/login""><div class=""landing_card_link""><h2>Login</h2></div></a>"
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\notes.html,templates,notes.html,h1,<h1>All Notes</h1><br />
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\search_notes.html,templates,search_notes.html,h1,<h1>Search Notes</h1><br />
-html,C:/Users/chris/Desktop/test_flask\updated_notes\templates\wiki_search.html,templates,wiki_search.html,h1,<h1>Search Wikipedia</h1><br />
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,from reports import report_helper
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,from analyzers import analyzer
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,"import os, re, sys"
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def main():
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def gather_categorized_files(directory):
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,comment,# Check if the file's extension is in the allowed list
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,comment,# Initialize the list for this file type if not already present
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,comment,# Append the file path to the appropriate list
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def generate_csv(categorized_files):
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,import,import csv
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,import,import re
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,function,"def process_line_for_csv(line, file):"
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,comment,# Initialize a dictionary for each line's data
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,comment,# python rows
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,todo,#TODO html rows  rework this to be differant analyzers and move the write_csv
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,todo,#TODO move this function to central loacation
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,function,def write_csv_summary():
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\analyzer.py,analyzers,analyzer.py,comment,"""""""Write the collected data to a CSV file."""""""
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,import,import pandas as pd
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,function,def generate_summary_report():
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# Read CSV
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# Filter by FileType (use any file type dynamically)
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# Write FileType summary
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# List all filenames
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# Process each file
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# Extract content of a specific Type
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,from reports import base_report_gen
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import pandas as pd
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import sys
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def file_type():
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,"def select_file(df, selected_file_type):"
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,"def select_data(df, selected_file, selected_file_type, type):"
+md,C:/Users/chris/Desktop/note_summarizer\README.md,C:/Users/chris/Desktop/note_summarizer,README.md,comment,# Note Summarizer Project
+md,C:/Users/chris/Desktop/note_summarizer\README.md,C:/Users/chris/Desktop/note_summarizer,README.md,comment,## Features
+md,C:/Users/chris/Desktop/note_summarizer\README.md,C:/Users/chris/Desktop/note_summarizer,README.md,comment,## Program Flow
+md,C:/Users/chris/Desktop/note_summarizer\README.md,C:/Users/chris/Desktop/note_summarizer,README.md,function,def main():
+md,C:/Users/chris/Desktop/note_summarizer\README.md,C:/Users/chris/Desktop/note_summarizer,README.md,comment,## Installation
+md,C:/Users/chris/Desktop/note_summarizer\README.md,C:/Users/chris/Desktop/note_summarizer,README.md,comment,### Run the program:

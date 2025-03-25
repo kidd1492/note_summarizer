@@ -25,11 +25,11 @@ def process_line_for_csv(line, file):
         "File": file,
         "Directory": directory,
         "FileName": file_name,
-        "Type": None,  # import, class, function, comment
+        "Type": None,  # all data is named and collected in Type
         "Content": line
     }
-    #TODO this is a todo comment
-    
+   
+    # python rows
     if line.startswith("import") or line.startswith("from"):
         row["Type"] = "import"
     elif line.startswith("class "):
@@ -40,7 +40,9 @@ def process_line_for_csv(line, file):
         row["Type"] = "comment"
         if line.startswith("#TODO"):
             row["Type"] = "todo"
-    elif re.match(comment_pattern, line.strip(), re.DOTALL):
+
+    #TODO html rows  rework this to be differant analyzers and move the write_csv       
+    elif re.match(html_comment_pattern, line.strip(), re.DOTALL):
         row["Type"] = "comment"
     elif re.match(tag_pattern, line.strip()):
         row["Type"] = "link"
@@ -52,6 +54,8 @@ def process_line_for_csv(line, file):
     csv_data.append(row)  # Add the row to the CSV data list
     write_csv_summary()
 
+
+#TODO move this function to central loacation
 def write_csv_summary():
     """Write the collected data to a CSV file."""
     with open(summary_file, "w", newline='', encoding='utf-8') as csvfile:
