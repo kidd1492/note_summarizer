@@ -2,6 +2,8 @@ from analyzers import base_analyzer
 import re
 
 csv_data = []
+
+
 def process_line_for_csv(file_list):
     """Process each line and store relevant data for CSV."""
     h1_pattern = r"<h1>"

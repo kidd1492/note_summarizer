@@ -3,6 +3,7 @@ import pandas as pd
 import sys
 
 
+#opens and reads csv ask user what type of file walks through process
 def file_type():
     df = pd.read_csv('reports/csv_files/file_summary.csv')
     df = df[["FileType", "Directory", "FileName", "Type", "Content"]].copy()
@@ -19,6 +20,7 @@ def file_type():
             break
 
 
+#function displays all files gives user opptions: all, save, select file
 def select_file(df, selected_file_type): 
     type = df[df['FileType'] == selected_file_type ] 
     type = type[['FileName', 'Type', 'Content']]
@@ -39,6 +41,8 @@ def select_file(df, selected_file_type):
             select_data(df, selected_file, selected_file_type, type)
 
 
+# function displays all data types avalable ask user to select one. 
+# all will print all data for the selection.
 def select_data(df, selected_file, selected_file_type, type):
     if selected_file != "all":
         data_type = type[type['FileName'] == selected_file]

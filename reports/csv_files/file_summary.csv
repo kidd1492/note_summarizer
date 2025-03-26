@@ -2,13 +2,20 @@ FileType,File,Directory,FileName,Type,Content
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,from reports import report_helper
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,from analyzers import base_analyzer
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,import,"import os, re, sys"
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,comment,#main function processes command line arguments
+py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,comment,#  check for reports or path to directory
 py,C:/Users/chris/Desktop/note_summarizer\main.py,C:/Users/chris/Desktop/note_summarizer,main.py,function,def main():
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer"
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,import,"import os, csv"
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,# Mapping of file extensions to their respective analyzers
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,#called from main.main() takes file list for each file type it check
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,#if there is an analyzer then hands the list off to analyzer to process lines
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,function,def generate_csv(directory):
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,'''function to walk through a directory pick what kinds of file it wants
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,function,def gather_categorized_files(directory):
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,#function creates the summary file and clears all info then writes the header.
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,function,def create_csv_summary():
+py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,#function appends the csv data returned by the analyzer to the csv summary file.
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,function,def write_csv_summary(csv_data):
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,import,from analyzers import base_analyzer
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,import,import re
@@ -21,6 +28,10 @@ py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,bas
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,from reports import base_report_gen
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import pandas as pd
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import sys
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,#opens and reads csv ask user what type of file walks through process
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def file_type():
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,"#function displays all files gives user opptions: all, save, select file"
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,"def select_file(df, selected_file_type):"
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,# function displays all data types avalable ask user to select one.
+py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,# all will print all data for the selection.
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,function,"def select_data(df, selected_file, selected_file_type, type):"

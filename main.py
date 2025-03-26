@@ -3,6 +3,8 @@ from analyzers import base_analyzer
 import os, re, sys
 
 
+#main function processes command line arguments
+#  check for reports or path to directory
 def main():
     args = sys.argv
 
@@ -13,6 +15,7 @@ def main():
         if args[1].lower() == "report":
             report_helper.file_type()
         else:
+            #TODO make sure this is good for any system
             path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
     
             directory_name = args[1].replace("\\", "/")  

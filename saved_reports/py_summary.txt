@@ -1,5 +1,5 @@
 ========================================
-SUMMARY REPORT: FILES note_summarizer
+SUMMARY REPORT: FILES
 ========================================
 
 Total Files: 6
@@ -21,6 +21,10 @@ Import:
     from analyzers import base_analyzer
     import os, re, sys
 
+Comment:
+    #main function processes command line arguments
+    #  check for reports or path to directory
+
 Function:
     def main():
 
@@ -32,14 +36,19 @@ Import:
     from analyzers import html_analyzer, python_analyzer
     import os, csv
 
+Comment:
+    # Mapping of file extensions to their respective analyzers
+    #called from main.main() takes file list for each file type it check
+    #if there is an analyzer then hands the list off to analyzer to process lines
+    '''function to walk through a directory pick what kinds of file it wants
+    #function creates the summary file and clears all info then writes the header.
+    #function appends the csv data returned by the analyzer to the csv summary file.
+
 Function:
     def generate_csv(directory):
     def gather_categorized_files(directory):
     def create_csv_summary():
     def write_csv_summary(csv_data):
-
-Comment:
-    # Mapping of file extensions to their respective analyzers
 
 ----------------------------------------
 File: html_analyzer.py
@@ -81,6 +90,12 @@ Import:
     from reports import base_report_gen
     import pandas as pd
     import sys
+
+Comment:
+    #opens and reads csv ask user what type of file walks through process
+    #function displays all files gives user opptions: all, save, select file
+    # function displays all data types avalable ask user to select one.
+    # all will print all data for the selection.
 
 Function:
     def file_type():

@@ -9,6 +9,8 @@ file_type_analyzer_map = {
 }
 
 
+#called from main.main() takes file list for each file type it check
+#if there is an analyzer then hands the list off to analyzer to process lines
 def generate_csv(directory):
     categorized_files = gather_categorized_files(directory)
     create_csv_summary()
@@ -19,6 +21,9 @@ def generate_csv(directory):
             write_csv_summary(csv_data)           
 
 
+'''function to walk through a directory pick what kinds of file it wants
+ignoring directory like venv, .git it then saves the type of file and a list of 
+files for that type into a dict. returns catagorized files'''
 def gather_categorized_files(directory):
     allowed_extensions = [".py", ".md", ".html"]  # Update to add more file types
     ignored_directories = [".git", "env", "enve", "venv"]
@@ -39,13 +44,13 @@ def gather_categorized_files(directory):
 
     return categorized_files
 
-
+#function creates the summary file and clears all info then writes the header.
 def create_csv_summary():
     with open(summary_file, "w", newline='', encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=["FileType", "File", "Directory", "FileName", "Type", "Content"])
         writer.writeheader()  # Write column headers
 
-
+#function appends the csv data returned by the analyzer to the csv summary file.
 summary_file = "reports/csv_files/file_summary.csv"
 def write_csv_summary(csv_data):
     with open(summary_file, "a", newline='', encoding="utf-8") as csvfile:

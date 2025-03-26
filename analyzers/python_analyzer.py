@@ -1,12 +1,14 @@
 from analyzers import base_analyzer
 import re
 
-summary_file = "reports/csv_files/python_summary.csv"
 csv_data = []
+
+
 def process_line_for_csv(file_list):
     """Process each line and store relevant data for CSV."""
     comment_pattern = r"^#|^[\"']{3}"
     function_pattern = r"^def\s+"
+    todo_pattern = r"^#\s*TODO"
 
     for file in file_list:
         with open(file, 'r', encoding='utf-8') as f:
@@ -36,8 +38,8 @@ def process_line_for_csv(file_list):
                         row["Type"] = "function"
                     elif re.match(comment_pattern, line):
                         row["Type"] = "comment"
-                        if line.startswith("#TODO"):
-                            row["Type"] = "todo"
+                    elif re.match(todo_pattern, line):
+                        row["Type"] = "todo"
                     else:
                         continue
                     csv_data.append(row)  # Add the row to the CSV data list
