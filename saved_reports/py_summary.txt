@@ -1,5 +1,5 @@
 ========================================
-SUMMARY REPORT: FILES
+SUMMARY REPORT: FILES note_summarizer
 ========================================
 
 Total Files: 6
@@ -71,7 +71,7 @@ Import:
     import pandas as pd
 
 Function:
-    def generate_summary_report():
+    def generate_summary_report(file_type, report_file):
 
 ----------------------------------------
 File: report_helper.py

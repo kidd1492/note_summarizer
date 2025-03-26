@@ -17,7 +17,7 @@ py,C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,analyzers
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,import,import re
 py,C:/Users/chris/Desktop/note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,function,def process_line_for_csv(file_list):
 py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,import,import pandas as pd
-py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,function,def generate_summary_report():
+py,C:/Users/chris/Desktop/note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,function,"def generate_summary_report(file_type, report_file):"
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,from reports import base_report_gen
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import pandas as pd
 py,C:/Users/chris/Desktop/note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import sys

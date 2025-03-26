@@ -1,15 +1,15 @@
 import pandas as pd
 
-def generate_summary_report():
+
+def generate_summary_report(file_type, report_file):
     csv_file = "reports/csv_files/file_summary.csv"
-    report_file = "summary_report.txt"
     
     # Read CSV
     df = pd.read_csv(csv_file)
     
     with open(report_file, "w") as report:
         # Filter by FileType (use any file type dynamically)
-        files = df[df["FileType"] == "py"]  # Change "html" to desired FileType
+        files = df[df["FileType"] == f"{file_type}"]  # Change "html" to desired FileType
         file_count = len(files["FileName"].unique())
         
         # Write FileType summary

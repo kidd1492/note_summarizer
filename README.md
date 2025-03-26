@@ -18,29 +18,32 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 
 def main():                     
     -base_analyzer.generate_csv(directory_name):---------|              analyzers/
-    |                                                    |	        --base_analyzer.py—
-    |----report_helper.file_type()                       |
+    |                                                    |	        
+    |----report_helper.file_type()                       |         --base_analyzer.py—
     |                                                    |-----gather_categorized_files(directory)    
     |                                                             -gather_categorized_files(directory)
-    |   reports/                                                  -create_csv_summary()
-    |  csv_files/                                                 -analyzer.process_line_for_csv(file_list)
-    |    * file_summary.csv                                       -write_csv_summary(csv_data)--------------|
-    |                                                                                                        |
+    |---reports/                                                  -create_csv_summary()
+    |  csv_files/                                                 -analyzer.process_line_for_csv(file_list)-|
+    |                                                             -write_csv_summary(csv_data)              |
+    |    * file_summary.csv                                                                                 |
+    |  saved_reports/                                                                                       |
+    |                                                                     --python_analyzer.py-_            |
+    |  --report_helper.py--                                           -def process_line_for_csv(file_list)--|
     |                                                                                                       |
-    |  --report_helper.py--                                                                                 |
-    |                                                                                                       |
-    |----file_type():                                                        --python_analyzer.py--         |
-         def select_file(df, selected_file_type)                      -def process_line_for_csv(file_list)--|
-         def select_data(df, selected_file, selected_file_type, type)                                       |
-                                                                             --python_analyzer.py--         |
-                                                                      -def process_line_for_csv(file_list)--|
-
-    This will save a report to txt file working in interaction
-    to print a full report on all files for selected file types
-    -----------------------------------------------------------
-                          reports/
-                      base_report_gen.py                       
-    -def base_report_gen.generate_summary_report(report_type)    
+    |----file_type():                                                     --html_analyzer.py--              |
+       def select_file(df, selected_file_type)                       --def process_line_for_csv(file_list)--|         
+    |---base_report_gen.generate_summary_report()                     
+    |    def select_data(df, selected_file, selected_file_type, type)                                       
+    |                                                                                 
+    |                                                                 
+    |
+    |    This will save a report to txt file working in interaction
+    |     to print a full report on all files for selected file types
+    |      --------------------------------------------------------
+    |        
+    |  --base_report_gen.py--
+    |                       
+    |-----def base_report_gen.generate_summary_report(report_type, file_out)    
         
                                                             
 

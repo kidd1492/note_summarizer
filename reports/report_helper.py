@@ -4,7 +4,6 @@ import sys
 
 
 def file_type():
-    base_report_gen.generate_summary_report()
     df = pd.read_csv('reports/csv_files/file_summary.csv')
     df = df[["FileType", "Directory", "FileName", "Type", "Content"]].copy()
 
@@ -30,8 +29,12 @@ def select_file(df, selected_file_type):
         print("\n")
         for item in file_list:print(item)
         print("\n","Type file name or [all] for all files")
+        print("type [save] to save txt report all files")
         selected_file = input("or [back] to go back to File Types: ")
         if selected_file == "back":file_type()
+        elif selected_file == "save":
+            base_report_gen.generate_summary_report(selected_file_type, f"saved_reports/{selected_file_type}_summary.txt" )
+            print(f"report saved as {selected_file_type}_summary.txt: ")
         elif selected_file in file_list or selected_file == "all":
             select_data(df, selected_file, selected_file_type, type)
 
