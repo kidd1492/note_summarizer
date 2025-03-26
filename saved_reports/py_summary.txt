@@ -28,6 +28,9 @@ Comment:
 Function:
     def main():
 
+Todo:
+    #TODO make sure this is good for any system
+
 ----------------------------------------
 File: base_analyzer.py
 ----------------------------------------
@@ -38,9 +41,13 @@ Import:
 
 Comment:
     # Mapping of file extensions to their respective analyzers
+    # Add more file types and analyzers if needed
     #called from main.main() takes file list for each file type it check
     #if there is an analyzer then hands the list off to analyzer to process lines
     '''function to walk through a directory pick what kinds of file it wants
+    # Check if the file's extension is in the allowed list
+    # Initialize the list for this file type if not already present
+    # Append the file path to the appropriate list
     #function creates the summary file and clears all info then writes the header.
     #function appends the csv data returned by the analyzer to the csv summary file.
 
@@ -50,6 +57,12 @@ Function:
     def create_csv_summary():
     def write_csv_summary(csv_data):
 
+Todo:
+    #TODO fix this to be one function??
+
+Return:
+    return categorized_files
+
 ----------------------------------------
 File: html_analyzer.py
 ----------------------------------------
@@ -58,8 +71,15 @@ Import:
     from analyzers import base_analyzer
     import re
 
+Comment:
+    """Process each line and store relevant data for CSV."""
+    # Initialize a dictionary for each line's data
+
 Function:
     def process_line_for_csv(file_list):
+
+Return:
+    return csv_data
 
 ----------------------------------------
 File: python_analyzer.py
@@ -69,8 +89,15 @@ Import:
     from analyzers import base_analyzer
     import re
 
+Comment:
+    """Process each line and store relevant data for CSV."""
+    # Initialize a dictionary for each line's data
+
 Function:
     def process_line_for_csv(file_list):
+
+Return:
+    return csv_data
 
 ----------------------------------------
 File: base_report_gen.py
@@ -78,6 +105,14 @@ File: base_report_gen.py
 
 Import:
     import pandas as pd
+
+Comment:
+    # Read CSV
+    # Filter by FileType (use any file type dynamically)
+    # Write FileType summary
+    # List all filenames
+    # Process each file
+    # Extract content of a specific Type
 
 Function:
     def generate_summary_report(file_type, report_file):

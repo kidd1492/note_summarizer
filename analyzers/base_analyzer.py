@@ -44,6 +44,8 @@ def gather_categorized_files(directory):
 
     return categorized_files
 
+
+#TODO fix this to be one function??
 #function creates the summary file and clears all info then writes the header.
 def create_csv_summary():
     with open(summary_file, "w", newline='', encoding="utf-8") as csvfile:
