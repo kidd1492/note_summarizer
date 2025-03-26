@@ -2,11 +2,13 @@
 SUMMARY REPORT: FILES
 ========================================
 
-Total Files: 4
+Total Files: 6
 
 Filenames:
 - main.py
-- analyzer.py
+- base_analyzer.py
+- html_analyzer.py
+- python_analyzer.py
 - base_report_gen.py
 - report_helper.py
 
@@ -16,41 +18,50 @@ File: main.py
 
 Import:
     from reports import report_helper
-    from analyzers import analyzer
+    from analyzers import base_analyzer
     import os, re, sys
 
 Function:
     def main():
-    def gather_categorized_files(directory):
-    def generate_csv(categorized_files):
-
-Comment:
-    # Check if the file's extension is in the allowed list
-    # Initialize the list for this file type if not already present
-    # Append the file path to the appropriate list
 
 ----------------------------------------
-File: analyzer.py
+File: base_analyzer.py
 ----------------------------------------
 
 Import:
-    import csv
+    from analyzers import html_analyzer, python_analyzer
+    import os, csv
+
+Function:
+    def generate_csv(directory):
+    def gather_categorized_files(directory):
+    def create_csv_summary():
+    def write_csv_summary(csv_data):
+
+Comment:
+    # Mapping of file extensions to their respective analyzers
+
+----------------------------------------
+File: html_analyzer.py
+----------------------------------------
+
+Import:
+    from analyzers import base_analyzer
     import re
 
 Function:
-    def process_line_for_csv(line, file):
-    def write_csv_summary():
+    def process_line_for_csv(file_list):
 
-Comment:
-    """Process each line and store relevant data for CSV."""
-    # Initialize a dictionary for each line's data
-    # python rows
-    """Write the collected data to a CSV file."""
+----------------------------------------
+File: python_analyzer.py
+----------------------------------------
 
-Todo:
-    #TODO this is a todo comment
-    #TODO html rows  rework this to be differant analyzers and move the write_csv
-    #TODO move this function to central loacation
+Import:
+    from analyzers import base_analyzer
+    import re
+
+Function:
+    def process_line_for_csv(file_list):
 
 ----------------------------------------
 File: base_report_gen.py
@@ -61,14 +72,6 @@ Import:
 
 Function:
     def generate_summary_report():
-
-Comment:
-    # Read CSV
-    # Filter by FileType (use any file type dynamically)
-    # Write FileType summary
-    # List all filenames
-    # Process each file
-    # Extract content of a specific Type
 
 ----------------------------------------
 File: report_helper.py

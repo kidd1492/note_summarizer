@@ -4,6 +4,7 @@ import sys
 
 
 def file_type():
+    base_report_gen.generate_summary_report()
     df = pd.read_csv('reports/csv_files/file_summary.csv')
     df = df[["FileType", "Directory", "FileName", "Type", "Content"]].copy()
 

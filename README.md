@@ -13,26 +13,28 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 
 ## Program Flow
 ```	
-		                note_summarizer/
-                           -—main.py  file in note_summarizer/—
+		                                     note_summarizer/
+-—main.py--
 
 def main():                     
-—gather_categorized_files(directory):      
--generate_csv(categorized_files): 
-    -analyzer.process_line_for_csv(line, file):---------|       analyzers/
--report_helper.type_of_report(categorized_files)        |	  --analyzer.py—
-    |                                                   |--def process_line_for_csv(line, file):
-    |   reports/                                              -write_csv_summary():
-    |--csv_files/
-    |    * file_summary.csv                                                 
-    |--report_helper.py--                            
-    |                                                  
-    |----def type_of_report(categorized_files):      
-          -file_type(): 
-            -select_file(df, selected_file_type):
-               -select_data(df, selected_file, selected_file_type, type):
+    -base_analyzer.generate_csv(directory_name):---------|              analyzers/
+    |                                                    |	        --base_analyzer.py—
+    |----report_helper.file_type()                       |
+    |                                                    |-----gather_categorized_files(directory)    
+    |                                                             -gather_categorized_files(directory)
+    |   reports/                                                  -create_csv_summary()
+    |  csv_files/                                                 -analyzer.process_line_for_csv(file_list)
+    |    * file_summary.csv                                       -write_csv_summary(csv_data)--------------|
+    |                                                                                                        |
+    |                                                                                                       |
+    |  --report_helper.py--                                                                                 |
+    |                                                                                                       |
+    |----file_type():                                                        --python_analyzer.py--         |
+         def select_file(df, selected_file_type)                      -def process_line_for_csv(file_list)--|
+         def select_data(df, selected_file, selected_file_type, type)                                       |
+                                                                             --python_analyzer.py--         |
+                                                                      -def process_line_for_csv(file_list)--|
 
-    
     This will save a report to txt file working in interaction
     to print a full report on all files for selected file types
     -----------------------------------------------------------
