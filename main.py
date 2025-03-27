@@ -1,7 +1,7 @@
 from reports import report_helper
 from analyzers import base_analyzer
 import os, re, sys
-
+from pathlib import Path
 
 #main function processes command line arguments
 #  check for reports or path to directory
@@ -15,13 +15,9 @@ def main():
         if args[1].lower() == "report":
             report_helper.file_type()
         else:
-            #TODO make sure this is good for any system
-            path_pattern = r"^[A-Z]:[\\/](?:[^\\/]+[\\/])*[^\\/]*$"
-    
-            directory_name = args[1].replace("\\", "/")  
-            if re.match(path_pattern, directory_name): 
-                if os.path.isdir(directory_name):
-                    base_analyzer.generate_csv(directory_name)
+            directory_name = os.path.normpath(args[1])
+            if os.path.isdir(directory_name):
+                base_analyzer.generate_csv(directory_name)
             else:
                 print("invalid path name! Please try again: ")     
                 

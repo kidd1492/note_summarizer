@@ -20,6 +20,7 @@ Import:
     from reports import report_helper
     from analyzers import base_analyzer
     import os, re, sys
+    from pathlib import Path
 
 Comment:
     #main function processes command line arguments
@@ -27,9 +28,6 @@ Comment:
 
 Function:
     def main():
-
-Todo:
-    #TODO make sure this is good for any system
 
 ----------------------------------------
 File: base_analyzer.py
@@ -57,11 +55,11 @@ Function:
     def create_csv_summary():
     def write_csv_summary(csv_data):
 
-Todo:
-    #TODO fix this to be one function??
-
 Return:
     return categorized_files
+
+Todo:
+    #TODO fix this to be one function??
 
 ----------------------------------------
 File: html_analyzer.py

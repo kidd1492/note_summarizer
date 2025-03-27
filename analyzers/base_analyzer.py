@@ -26,7 +26,7 @@ ignoring directory like venv, .git it then saves the type of file and a list of
 files for that type into a dict. returns catagorized files'''
 def gather_categorized_files(directory):
     allowed_extensions = [".py", ".md", ".html"]  # Update to add more file types
-    ignored_directories = [".git", "env", "enve", "venv"]
+    ignored_directories = [".git", "env", "venv"]
     categorized_files = {}
 
     for root, dirs, files in os.walk(directory): 
