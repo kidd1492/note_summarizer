@@ -52,7 +52,7 @@ def main():
 Clone this repository:
 
 bash
-git clone https://github.com/username/note_summarizer.git
+git clone https://github.com/kidd1492/note_summarizer.git
 Navigate to the project directory:
 Set up your venv
 pip install requirements.txt (pandas)
