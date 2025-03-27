@@ -2,7 +2,7 @@
 SUMMARY REPORT: FILES
 ========================================
 
-Total Files: 7
+Total Files: 9
 
 Filenames:
 - main.py
@@ -11,6 +11,8 @@ Filenames:
 - js_analyzer.py
 - python_analyzer.py
 - base_report_gen.py
+- charts.py
+- data_explorer.py
 - report_helper.py
 
 ----------------------------------------
@@ -164,11 +166,31 @@ Function:
     def generate_summary_report(file_type, report_file):
 
 ----------------------------------------
-File: report_helper.py
+File: charts.py
 ----------------------------------------
 
 Import:
-    from reports import base_report_gen
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+Comment:
+    # Calculate percentages of each file type
+    # Create pie chart
+    # Set up the figure and subplots
+    # Pie chart for file type percentages
+    # Pie charts for each file type's data breakdown
+    # Adjust layout and display
+
+Function:
+    def type_percent_chart():
+    def data_percent_chart():
+
+----------------------------------------
+File: data_explorer.py
+----------------------------------------
+
+Import:
+    from reports import report_helper
     import pandas as pd
     import sys
 
@@ -182,4 +204,21 @@ Function:
     def file_type():
     def select_file(df, selected_file_type):
     def select_data(df, selected_file, selected_file_type, type):
+
+----------------------------------------
+File: report_helper.py
+----------------------------------------
+
+Import:
+    import pandas as pd
+    import sys
+    from reports import base_report_gen, data_explorer, charts
+
+Comment:
+    #opens and reads csv ask user what type of file walks through process
+
+Function:
+    def main_menu():
+    def charts_menu():
+    def save_file_menu(df):
 

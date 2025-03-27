@@ -43,6 +43,3 @@ def data_percent_chart():
     plt.tight_layout()
     plt.subplots_adjust(top=0.85)  # Add space for the main title
     plt.show()   
-
-data_percent_chart()  
-

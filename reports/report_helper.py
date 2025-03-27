@@ -1,77 +1,48 @@
-from reports import base_report_gen
 import pandas as pd
 import sys
-
+from reports import base_report_gen, data_explorer, charts
 
 #opens and reads csv ask user what type of file walks through process
-def file_type():
+def main_menu():
     df = pd.read_csv('reports/csv_files/file_summary.csv')
     df = df[["FileType", "Directory", "FileName", "Type", "Content"]].copy()
+    
+    print(f"{'='*40}\n")
+    print(f"REPORT MENU:\n")
+    print(f"{'='*40}\n\n")
+    
+    main_menu_items = ["1. Charts", "2. Explore Files", "3. Save File Type Report"]
+    for opption in main_menu_items:print(opption)
+    selection = input(f"\nSelect or [exit]: ")
+    if selection == "1":charts_menu()
+    if selection == "2":data_explorer.file_type()
+    if selection == "3":save_file_menu(df)
+    if selection.lower() == "exit":sys.exit()
 
 
-    types_of_files = df["FileType"].unique()
+ 
+def charts_menu():
+    print(f"{'='*40}\n")
+    print(f"CHARTS MENU:\n")
+    print(f"{'='*40}\n\n")
     while True:
+        charts_menu_opptions = ["1. File Type Percentage", "2. Data Per File Type"]
+        for opption in charts_menu_opptions:print(opption)
+        selection = input(f"\nSelect Chart Number or [menu]: ")
+
+        if selection == "1":charts.type_percent_chart()
+        if selection == "2":charts.data_percent_chart()
+        if selection.lower() == "menu":main_menu()
+
+
+def save_file_menu(df):
+    while True:
+        types_of_files = df["FileType"].unique()
         print(f"\n{types_of_files}\n")
-        print("What types of files would you like to explore? : ")
-        selected_file_type = input("[exit] to quit or select file type: ")
-        if selected_file_type == "exit":sys.exit()
-        if selected_file_type in types_of_files:
-            select_file(df, selected_file_type )
-            break
-
-
-#function displays all files gives user opptions: all, save, select file
-def select_file(df, selected_file_type): 
-    type = df[df['FileType'] == selected_file_type ] 
-    type = type[['FileName', 'Type', 'Content']]
-    
-    file_list = type['FileName'].unique()
-    
-    while True:
-        print("\n")
-        for item in file_list:print(item)
-        print("\n","Type file name or [all] for all files")
-        print("type [save] to save txt report all files")
-        selected_file = input("or [back] to go back to File Types: ")
-        if selected_file == "back":file_type()
-        elif selected_file == "save":
-            base_report_gen.generate_summary_report(selected_file_type, f"saved_reports/{selected_file_type}_summary.txt" )
-            print(f"report saved as {selected_file_type}_summary.txt: ")
-        elif selected_file in file_list or selected_file == "all":
-            select_data(df, selected_file, selected_file_type, type)
-
-
-# function displays all data types avalable ask user to select one. 
-# all will print all data for the selection.
-def select_data(df, selected_file, selected_file_type, type):
-    if selected_file != "all":
-        data_type = type[type['FileName'] == selected_file]
-        data_list = data_type['Type'].unique()
-        while True:
-            print("\n")
-            print(data_type["Type"].value_counts())
-            print(f"\n [back] to go back to file selection:")
-            selected_data = input("Select Data Type: ")
-            if selected_data == "back":select_file(df, selected_file_type)
-            if selected_data == "all":
-                print("\n")
-                print(data_type)
-            elif selected_data in data_list:
-                filtered_df = data_type[data_type['Type'] == f"{selected_data}"]
-                print("\n")
-                print(filtered_df)
-
-    else:
-        data_list = type['Type'].unique()
-        while True:
-            
-            print("\n")
-            print(type["Type"].value_counts())
-            print(f"\n [back] to go back to file selection:")
-            selected_data = input("Select Data Type: ")
-            if selected_data == "back":select_file(df, selected_file_type)
-            elif selected_data in data_list:
-                filtered_df = type[type['Type'] == f"{selected_data}"]
-                print("\n")
-                print(filtered_df)
+        selected_file_type = input("Select File Type: ")
         
+        if selected_file_type in types_of_files:
+            save_file_name = f"saved_reports/{selected_file_type}_summary.txt"
+            base_report_gen.generate_summary_report(selected_file_type, save_file_name)
+            main_menu()
+            break

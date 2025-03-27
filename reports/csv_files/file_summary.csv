@@ -7,17 +7,6 @@ py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,commen
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,comment,#  check for reports or path to directory
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,function,def main():
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,main_entry,"if __name__ == ""__main__"":"
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,import,import matplotlib.pyplot as plt
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,import,import pandas as pd
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,import,import sys
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,comment,# Calculate percentages of each file type
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,comment,# Create pie chart
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,function,def type_percent_chart():
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,comment,# Set up the figure and subplots
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,function,def data_percent_chart():
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,comment,# Pie chart for file type percentages
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,comment,# Pie charts for each file type's data breakdown
-py,C:\Users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,comment,# Adjust layout and display
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer, js_analyzer"
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,import,"import os, csv"
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,# Mapping of file extensions to their respective analyzers
@@ -82,13 +71,30 @@ py,C:\Users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,bas
 py,C:\Users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# List all filenames
 py,C:\Users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# Process each file
 py,C:\Users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,comment,# Extract content of a specific Type
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,from reports import base_report_gen
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,import,import matplotlib.pyplot as plt
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,import,import pandas as pd
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Calculate percentages of each file type
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Create pie chart
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,function,def type_percent_chart():
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Set up the figure and subplots
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,function,def data_percent_chart():
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Pie chart for file type percentages
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Pie charts for each file type's data breakdown
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Adjust layout and display
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,from reports import report_helper
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,import pandas as pd
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,import sys
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,#opens and reads csv ask user what type of file walks through process
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,function,def file_type():
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,"#function displays all files gives user opptions: all, save, select file"
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,function,"def select_file(df, selected_file_type):"
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,# function displays all data types avalable ask user to select one.
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,# all will print all data for the selection.
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,function,"def select_data(df, selected_file, selected_file_type, type):"
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import pandas as pd
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import sys
+py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,"from reports import base_report_gen, data_explorer, charts"
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,#opens and reads csv ask user what type of file walks through process
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def file_type():
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,"#function displays all files gives user opptions: all, save, select file"
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,"def select_file(df, selected_file_type):"
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,# function displays all data types avalable ask user to select one.
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,# all will print all data for the selection.
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,"def select_data(df, selected_file, selected_file_type, type):"
+py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def main_menu():
+py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def charts_menu():
+py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def save_file_menu(df):

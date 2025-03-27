@@ -13,7 +13,7 @@ def main():
 
     elif len(args) == 2:
         if args[1].lower() == "report":
-            report_helper.file_type()
+            report_helper.main_menu()
         else:
             directory_name = os.path.normpath(args[1])
             if os.path.isdir(directory_name):
