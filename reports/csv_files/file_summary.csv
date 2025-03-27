@@ -6,7 +6,8 @@ py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,import
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,comment,#main function processes command line arguments
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,comment,#  check for reports or path to directory
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,function,def main():
-py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer"
+py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,main_entry,"if __name__ == ""__main__"":"
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,import,"from analyzers import html_analyzer, python_analyzer, js_analyzer"
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,import,"import os, csv"
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,# Mapping of file extensions to their respective analyzers
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,comment,# Add more file types and analyzers if needed
@@ -27,15 +28,35 @@ py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,b
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,import,import re
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,function,def process_line_for_csv(file_list):
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,"#tag_pattern = r""<([a-zA-Z1-6]+)[^>]*>"""
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,exception_handling,try:
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,exception_handling,try:
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,# Initialize a dictionary for each line's data
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,# Skip problematic lines quietly
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,# Skip the entire file if there are issues
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,return,return csv_data
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,import,import os
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,import,import re
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,function,def process_line_for_csv(file_list):
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,"""""""Process .js files and extract relevant information for CSV."""""""
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,exception_handling,try:
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,# Normalize the file path for cross-platform compatibility
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,# Skip files that are not .js
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,exception_handling,try:
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,# Initialize a dictionary for each line's data
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,# Classify line content
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,# Add the row to the CSV data list
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,# Skip problematic lines quietly
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,comment,# Skip the entire file if there are issues
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,return,return csv_data
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,import,import os
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,import,import re
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,function,def process_line_for_csv(file_list):
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,return,"return_pattern = r""^return"""
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,exception_handling,try:
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,comment,# Normalize the file path for cross-platform compatibility
+py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,exception_handling,try:
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,comment,# Initialize a dictionary for each line's data
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,comment,# Classify line content
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,comment,# Add the row to the CSV data list

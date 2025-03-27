@@ -2,12 +2,13 @@
 SUMMARY REPORT: FILES
 ========================================
 
-Total Files: 6
+Total Files: 7
 
 Filenames:
 - main.py
 - base_analyzer.py
 - html_analyzer.py
+- js_analyzer.py
 - python_analyzer.py
 - base_report_gen.py
 - report_helper.py
@@ -29,12 +30,15 @@ Comment:
 Function:
     def main():
 
+Main_entry:
+    if __name__ == "__main__":
+
 ----------------------------------------
 File: base_analyzer.py
 ----------------------------------------
 
 Import:
-    from analyzers import html_analyzer, python_analyzer
+    from analyzers import html_analyzer, python_analyzer, js_analyzer
     import os, csv
 
 Comment:
@@ -66,36 +70,80 @@ File: html_analyzer.py
 ----------------------------------------
 
 Import:
-    from analyzers import base_analyzer
     import re
 
 Comment:
     """Process each line and store relevant data for CSV."""
+    #tag_pattern = r"<([a-zA-Z1-6]+)[^>]*>"
     # Initialize a dictionary for each line's data
+    # Skip problematic lines quietly
+    # Skip the entire file if there are issues
 
 Function:
     def process_line_for_csv(file_list):
 
 Return:
     return csv_data
+
+Exception_handling:
+    try:
+    try:
+
+----------------------------------------
+File: js_analyzer.py
+----------------------------------------
+
+Import:
+    import os
+    import re
+
+Comment:
+    """Process .js files and extract relevant information for CSV."""
+    # Normalize the file path for cross-platform compatibility
+    # Skip files that are not .js
+    # Initialize a dictionary for each line's data
+    # Classify line content
+    # Add the row to the CSV data list
+    # Skip problematic lines quietly
+    # Skip the entire file if there are issues
+
+Function:
+    def process_line_for_csv(file_list):
+
+Return:
+    return csv_data
+
+Exception_handling:
+    try:
+    try:
 
 ----------------------------------------
 File: python_analyzer.py
 ----------------------------------------
 
 Import:
-    from analyzers import base_analyzer
+    import os
     import re
 
 Comment:
     """Process each line and store relevant data for CSV."""
+    # Normalize the file path for cross-platform compatibility
     # Initialize a dictionary for each line's data
+    # Classify line content
+    # Add the row to the CSV data list
+    # Skip problematic lines quietly
+    # Skip the entire file if there are issues
 
 Function:
     def process_line_for_csv(file_list):
 
 Return:
+    return_pattern = r"^return"
     return csv_data
+
+Exception_handling:
+    try:
+    try:
 
 ----------------------------------------
 File: base_report_gen.py

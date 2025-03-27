@@ -4,19 +4,13 @@ import re
 csv_data = []
 
 def process_line_for_csv(file_list):
-    """Process each line and store relevant data for CSV."""
-    import_pattern = r"^import\s+|^from\s+\w+\s+import"
-    function_pattern = r"^def\s+"
-    class_pattern = r"^class\s+"
-    todo_pattern = r"^#TODO"
-    comment_pattern = r"^#|^[\"']{3}"
-    main_entry_pattern = r"^if\s+__name__\s*==\s*['\"]__main__['\"]:"
-    return_pattern = r"^return"
-    exception_handling_pattern = r"^try:|^except:|^finally:"
-
+    """Process .js files and extract relevant information for CSV."""
+    function_pattern = r"^function\s+|const\s+\w+\s*=\s*\(.*\)\s*=>"
+    variable_pattern = r"^var\s+|^let\s+|^const\s+"
+    event_pattern = r"\.addEventListener\("
+    api_call_pattern = r"fetch|axios"
+    import_pattern = r"^import\s+|^require\("
     
-  
-
     for file in file_list:
         try:
             # Normalize the file path for cross-platform compatibility
@@ -25,6 +19,10 @@ def process_line_for_csv(file_list):
             file_name = file_part[-1]
             file_type = file_name.split('.')[-1]
 
+            if file_type != "js":
+                # Skip files that are not .js
+                continue
+            
             with open(file, 'r', encoding='utf-8') as f:
                 for line in f:
                     try:
@@ -35,29 +33,24 @@ def process_line_for_csv(file_list):
                             "File": file,
                             "Directory": directory,
                             "FileName": file_name,
-                            "Type": None,  # all data is named and collected in Type
+                            "Type": None,  # The type of line content (e.g., function, variable)
                             "Content": line.strip()
                         }
 
                         # Classify line content
-                        if re.match(import_pattern, line):
-                            row["Type"] = "import"
-                        elif re.match(function_pattern, line):
+                        if re.match(function_pattern, line):
                             row["Type"] = "function"
-                        elif re.match(class_pattern, line):
-                            row["Type"] = "class"
-                        elif re.match(todo_pattern, line):
-                            row["Type"] = "todo"
-                        elif re.match(comment_pattern, line):
-                            row["Type"] = "comment"
-                        elif re.match(main_entry_pattern, line):
-                            row["Type"] = "main_entry"
-                        elif re.match(return_pattern, line):
-                            row["Type"] = "return"
-                        elif re.match(exception_handling_pattern, line):
-                            row["Type"] = "exception_handling"
+                        elif re.match(variable_pattern, line):
+                            row["Type"] = "variable"
+                        elif re.search(event_pattern, line):
+                            row["Type"] = "event_listener"
+                        elif re.search(api_call_pattern, line):
+                            row["Type"] = "api_call"
+                        elif re.match(import_pattern, line):
+                            row["Type"] = "import"
                         else:
                             continue
+
                         # Add the row to the CSV data list
                         csv_data.append(row)
                     except Exception:
@@ -66,5 +59,5 @@ def process_line_for_csv(file_list):
         except Exception:
             # Skip the entire file if there are issues
             continue
-
+    
     return csv_data

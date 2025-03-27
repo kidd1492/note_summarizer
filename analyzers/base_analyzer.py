@@ -1,10 +1,11 @@
-from analyzers import html_analyzer, python_analyzer
+from analyzers import html_analyzer, python_analyzer, js_analyzer
 import os, csv
 
 # Mapping of file extensions to their respective analyzers
 file_type_analyzer_map = {
     "html": html_analyzer,
     "py": python_analyzer,
+    "js": js_analyzer
     # Add more file types and analyzers if needed
 }
 
@@ -25,7 +26,7 @@ def generate_csv(directory):
 ignoring directory like venv, .git it then saves the type of file and a list of 
 files for that type into a dict. returns catagorized files'''
 def gather_categorized_files(directory):
-    allowed_extensions = [".py", ".md", ".html"]  # Update to add more file types
+    allowed_extensions = [".py", ".html", "js"]  # Update to add more file types
     ignored_directories = [".git", "env", "venv"]
     categorized_files = {}
 

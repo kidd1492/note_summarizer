@@ -6,9 +6,14 @@ csv_data = []
 
 def process_line_for_csv(file_list):
     """Process each line and store relevant data for CSV."""
-    h1_pattern = r"<h1>"
-    tag_pattern = r"<a.+>"       # Match HTML tags
-    html_comment_pattern = r"<!--.*?-->"  # Match HTML comments
+    #tag_pattern = r"<([a-zA-Z1-6]+)[^>]*>"
+    script_pattern = r"<script[^>]*>"
+    link_pattern = r"<link[^>]*>"
+    image_pattern = r"<img[^>]*>"
+    meta_pattern = r"<meta[^>]*>"
+    inline_style_pattern = r"style\s*=\s*['\"]"
+    comment_pattern = r"<!--.*-->"
+
 
     for file in file_list:
         try:
@@ -29,14 +34,19 @@ def process_line_for_csv(file_list):
                             "FileName": file_name,
                             "Type": None,  # all data is named and collected in Type
                             "Content": line.strip()
-                            }
-
-                        if re.match(html_comment_pattern, line.strip(), re.DOTALL):
-                            row["Type"] = "comment"
-                        elif re.match(tag_pattern, line.strip()):
+                        }
+                        if re.match(script_pattern, line):
+                            row["Type"] = "script"
+                        elif re.match(link_pattern, line):
                             row["Type"] = "link"
-                        elif re.match(h1_pattern, line.strip()):  # Non-empty line that's not a tag or comment
-                            row["Type"] = "h1"
+                        elif re.match(image_pattern, line):
+                            row["Type"] = "image"
+                        elif re.match(meta_pattern, line):
+                            row["Type"] = "meta"
+                        elif re.search(inline_style_pattern, line):
+                            row["Type"] = "inline_style"
+                        elif re.match(comment_pattern, line):
+                            row["Type"] = "comment"
                         else:
                             continue  # Ignore blank or irrelevant lines
 
