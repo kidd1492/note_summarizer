@@ -1,10 +1,10 @@
 # Note Summarizer Project
 
-The **Note Summarizer** is a Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate a CSV reports with each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, JavaScript) in the future.
+The **Note Summarizer** is a Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate a CSV reports with each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, ) in the future.
 
 
 ## Features
-- The program collects all file paths in the specified directory for the supported file types (currently Python and HTML).
+- The program collects all file paths in the specified directory for the supported file types (currently Python, HTML, js).
 - Analyzer parse the file content, extract relevant information, and generate a CSV report including each file type.
 - CSV report is saved in the csv_file directory as file_summary.
 - The CSV files can be used for generating detailed reports, visualization, or further analysis.
