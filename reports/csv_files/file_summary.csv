@@ -83,7 +83,7 @@ py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,co
 py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Adjust layout and display
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,from reports import report_helper
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,import pandas as pd
-py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,import sys
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,import os
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,#opens and reads csv ask user what type of file walks through process
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,function,def file_type():
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,"#function displays all files gives user opptions: all, save, select file"
@@ -91,10 +91,12 @@ py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,# function displays all data types avalable ask user to select one.
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,comment,# all will print all data for the selection.
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,function,"def select_data(df, selected_file, selected_file_type, type):"
+py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,function,def clear_screen():
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import pandas as pd
-py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,import sys
+py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,"import sys, os"
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,import,"from reports import base_report_gen, data_explorer, charts"
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,comment,#opens and reads csv ask user what type of file walks through process
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def main_menu():
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def charts_menu():
 py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def save_file_menu(df):
+py,C:\Users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,function,def clear_screen():

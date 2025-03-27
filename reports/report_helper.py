@@ -1,9 +1,10 @@
 import pandas as pd
-import sys
+import sys, os
 from reports import base_report_gen, data_explorer, charts
 
 #opens and reads csv ask user what type of file walks through process
 def main_menu():
+    clear_screen()
     df = pd.read_csv('reports/csv_files/file_summary.csv')
     df = df[["FileType", "Directory", "FileName", "Type", "Content"]].copy()
     
@@ -17,15 +18,19 @@ def main_menu():
     if selection == "1":charts_menu()
     if selection == "2":data_explorer.file_type()
     if selection == "3":save_file_menu(df)
-    if selection.lower() == "exit":sys.exit()
+    if selection.lower() == "exit":
+        clear_screen()
+        sys.exit()
 
 
  
 def charts_menu():
-    print(f"{'='*40}\n")
-    print(f"CHARTS MENU:\n")
-    print(f"{'='*40}\n\n")
+    
     while True:
+        clear_screen()
+        print(f"{'='*40}\n")
+        print(f"CHARTS MENU:\n")
+        print(f"{'='*40}\n\n")
         charts_menu_opptions = ["1. File Type Percentage", "2. Data Per File Type"]
         for opption in charts_menu_opptions:print(opption)
         selection = input(f"\nSelect Chart Number or [menu]: ")
@@ -36,13 +41,22 @@ def charts_menu():
 
 
 def save_file_menu(df):
+    clear_screen()
     while True:
         types_of_files = df["FileType"].unique()
         print(f"\n{types_of_files}\n")
-        selected_file_type = input("Select File Type: ")
-        
+        selected_file_type = input("Select File Type or [menu]: ")
+        if selected_file_type.lower() == "menu":main_menu()
+
         if selected_file_type in types_of_files:
             save_file_name = f"saved_reports/{selected_file_type}_summary.txt"
             base_report_gen.generate_summary_report(selected_file_type, save_file_name)
             main_menu()
             break
+
+
+def clear_screen():
+    if os.name == 'nt':  # For Windows
+        os.system('cls')
+    else:  
+        os.system('clear')

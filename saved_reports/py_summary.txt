@@ -192,7 +192,7 @@ File: data_explorer.py
 Import:
     from reports import report_helper
     import pandas as pd
-    import sys
+    import os
 
 Comment:
     #opens and reads csv ask user what type of file walks through process
@@ -204,6 +204,7 @@ Function:
     def file_type():
     def select_file(df, selected_file_type):
     def select_data(df, selected_file, selected_file_type, type):
+    def clear_screen():
 
 ----------------------------------------
 File: report_helper.py
@@ -211,7 +212,7 @@ File: report_helper.py
 
 Import:
     import pandas as pd
-    import sys
+    import sys, os
     from reports import base_report_gen, data_explorer, charts
 
 Comment:
@@ -221,4 +222,5 @@ Function:
     def main_menu():
     def charts_menu():
     def save_file_menu(df):
+    def clear_screen():
 
