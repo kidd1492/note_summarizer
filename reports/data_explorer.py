@@ -12,12 +12,16 @@ def file_type():
     types_of_files = df["FileType"].unique()
     while True:
         clear_screen()
+        print(f"{'='*40}\n")
+        print(f"FILE TYPE:\n")
+        print(f"{'='*40}\n\n")
         print(f"\n{types_of_files}\n")
         print("What types of files would you like to explore? : ")
         selected_file_type = input("[exit] to quit or select file type: ")
+
         if selected_file_type == "exit":report_helper.main_menu()
         if selected_file_type in types_of_files:
-            select_file(df, selected_file_type )
+            select_file(df, selected_file_type)
             break
 
 
@@ -30,7 +34,10 @@ def select_file(df, selected_file_type):
     
     while True:
         clear_screen()
-        print("\n")
+        print(f"{'='*40}\n")
+        print(f"FILES:\n")
+        print(f"{'='*40}\n\n")
+       
         for item in file_list:print(item)
         print("\n","Type file name or [all] for all files")
         selected_file = input("or [back] to go back to File Types: ")
@@ -49,7 +56,9 @@ def select_data(df, selected_file, selected_file_type, type):
         data_list = data_type['Type'].unique()
         while True:
             
-            print("\n")
+            print(f"{'='*40}\n")
+            print(f"DATA TYPE:\n")
+            print(f"{'='*40}\n\n")
             print(data_type["Type"].value_counts())
             print(f"\n [back] to go back to file selection:")
             selected_data = input("Select Data Type: ")
@@ -69,10 +78,14 @@ def select_data(df, selected_file, selected_file_type, type):
         clear_screen()
         data_list = type['Type'].unique()
         while True:
-            print("\n")
+            print(f"{'='*40}\n")
+            print(f"DATA TYPE:\n")
+            print(f"{'='*40}\n\n")
+
             print(type["Type"].value_counts())
             print(f"\n [back] to go back to file selection:")
             selected_data = input("Select Data Type: ")
+            
             if selected_data == "back":select_file(df, selected_file_type)
             elif selected_data in data_list:
                 filtered_df = type[type['Type'] == f"{selected_data}"]

@@ -1,6 +1,6 @@
 from reports import report_helper
 from analyzers import base_analyzer
-import os, re, sys
+import os, sys
 from pathlib import Path
 
 #main function processes command line arguments
