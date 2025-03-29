@@ -1,7 +1,7 @@
 FileType,File,Directory,FileName,Type,Content
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,import,from reports import report_helper
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,import,from analyzers import base_analyzer
-py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,import,"import os, re, sys"
+py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,import,"import os, sys"
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,import,from pathlib import Path
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,comment,#main function processes command line arguments
 py,C:\Users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,comment,#  check for reports or path to directory
