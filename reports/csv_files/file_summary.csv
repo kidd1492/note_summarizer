@@ -28,7 +28,6 @@ py,C:\Users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,b
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,import,import re
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,function,def process_line_for_csv(file_list):
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,"""""""Process each line and store relevant data for CSV."""""""
-py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,"#tag_pattern = r""<([a-zA-Z1-6]+)[^>]*>"""
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,exception_handling,try:
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,exception_handling,try:
 py,C:\Users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,comment,# Initialize a dictionary for each line's data
@@ -81,6 +80,11 @@ py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,fu
 py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Pie chart for file type percentages
 py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Pie charts for each file type's data breakdown
 py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Adjust layout and display
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,function,def data_chart():
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Aggregate counts of 'Type' by 'FileName'
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Plotting the data
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Customize the chart
+py,C:\Users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,comment,# Show the plot
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,from reports import report_helper
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,import pandas as pd
 py,C:\Users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,import,import os

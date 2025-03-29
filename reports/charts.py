@@ -43,3 +43,22 @@ def data_percent_chart():
     plt.tight_layout()
     plt.subplots_adjust(top=0.85)  # Add space for the main title
     plt.show()   
+
+
+def data_chart():
+    # Aggregate counts of 'Type' by 'FileName'
+    type_counts = df.groupby(["FileName", "Type"]).size().unstack(fill_value=0)
+
+    # Plotting the data
+    ax = type_counts.plot(kind="bar", stacked=False, figsize=(10, 6))
+
+    # Customize the chart
+    plt.title("Distribution of Types Across Files", fontsize=14)
+    plt.xlabel("File Names", fontsize=12)
+    plt.ylabel("Count", fontsize=12)
+    plt.xticks(rotation=45, ha='right', fontsize=10)
+    plt.legend(title="Type", fontsize=10)
+    plt.tight_layout()
+
+    # Show the plot
+    plt.show()

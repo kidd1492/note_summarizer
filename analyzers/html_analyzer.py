@@ -6,7 +6,6 @@ csv_data = []
 
 def process_line_for_csv(file_list):
     """Process each line and store relevant data for CSV."""
-    #tag_pattern = r"<([a-zA-Z1-6]+)[^>]*>"
     script_pattern = r"<script[^>]*>"
     link_pattern = r"<link[^>]*>"
     image_pattern = r"<img[^>]*>"

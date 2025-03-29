@@ -76,7 +76,6 @@ Import:
 
 Comment:
     """Process each line and store relevant data for CSV."""
-    #tag_pattern = r"<([a-zA-Z1-6]+)[^>]*>"
     # Initialize a dictionary for each line's data
     # Skip problematic lines quietly
     # Skip the entire file if there are issues
@@ -180,10 +179,15 @@ Comment:
     # Pie chart for file type percentages
     # Pie charts for each file type's data breakdown
     # Adjust layout and display
+    # Aggregate counts of 'Type' by 'FileName'
+    # Plotting the data
+    # Customize the chart
+    # Show the plot
 
 Function:
     def type_percent_chart():
     def data_percent_chart():
+    def data_chart():
 
 ----------------------------------------
 File: data_explorer.py
