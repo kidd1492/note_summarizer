@@ -4,7 +4,6 @@ import re
 csv_data = []
 
 def process_line_for_csv(file_list):
-    """Process each line and store relevant data for CSV."""
     import_pattern = r"^import\s+|^from\s+\w+\s+import"
     function_pattern = r"^def\s+"
     class_pattern = r"^class\s+"
@@ -19,7 +18,6 @@ def process_line_for_csv(file_list):
 
     for file in file_list:
         try:
-            # Normalize the file path for cross-platform compatibility
             file_part = os.path.normpath(file).split(os.sep)
             directory = file_part[-2] if len(file_part) > 1 else "Unknown"
             file_name = file_part[-1]
@@ -28,7 +26,6 @@ def process_line_for_csv(file_list):
             with open(file, 'r', encoding='utf-8') as f:
                 for line in f:
                     try:
-                        # Initialize a dictionary for each line's data
                         line = line.strip()
                         row = {
                             "FileType": file_type,

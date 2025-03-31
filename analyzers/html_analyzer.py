@@ -5,7 +5,6 @@ csv_data = []
 
 
 def process_line_for_csv(file_list):
-    """Process each line and store relevant data for CSV."""
     script_pattern = r"<script[^>]*>"
     link_pattern = r"<link[^>]*>"
     image_pattern = r"<img[^>]*>"

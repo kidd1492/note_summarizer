@@ -1,10 +1,9 @@
 from reports import report_helper
 from analyzers import base_analyzer
 import os, sys
-from pathlib import Path
 
-#main function processes command line arguments
-#  check for reports or path to directory
+'''main function processes command line arguments
+check for reports or path to directory'''
 def main():
     args = sys.argv
 

@@ -10,8 +10,8 @@ file_type_analyzer_map = {
 }
 
 
-#called from main.main() takes file list for each file type it check
-#if there is an analyzer then hands the list off to analyzer to process lines
+'''called from main.main() takes file list for each file type it check
+if there is an analyzer then hands the list off to analyzer to process lines'''
 def generate_csv(directory):
     categorized_files = gather_categorized_files(directory)
     create_csv_summary()

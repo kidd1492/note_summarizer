@@ -1,10 +1,8 @@
-import os
-import re
+import re, os
 
 csv_data = []
 
 def process_line_for_csv(file_list):
-    """Process .js files and extract relevant information for CSV."""
     function_pattern = r"^function\s+|const\s+\w+\s*=\s*\(.*\)\s*=>"
     variable_pattern = r"^var\s+|^let\s+|^const\s+"
     event_pattern = r"\.addEventListener\("
@@ -13,7 +11,6 @@ def process_line_for_csv(file_list):
     
     for file in file_list:
         try:
-            # Normalize the file path for cross-platform compatibility
             file_part = os.path.normpath(file).split(os.sep)
             directory = file_part[-2] if len(file_part) > 1 else "Unknown"
             file_name = file_part[-1]
