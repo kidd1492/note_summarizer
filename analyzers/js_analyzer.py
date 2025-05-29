@@ -1,18 +1,21 @@
-import os, re
-from analyzers import base_analyzer
+import os
+import re
 import logging
 
+from analyzers import base_analyzer
 csv_data = []
 
 def process_line_for_csv(file_list):
-    import_pattern = r"^(from\s+\w+\s+)?import\s+(\w+(,\s*\w+)*)?"
-    function_pattern = r"\bfunction\s+(\w+)\s*\("
-    class_pattern = r"\bclass\s+(\w+)\s*{"
-    todo_pattern = r"^//TODO"
-    comment_pattern = r"^(\/\/.*)|(^\/\*.*?\*\/)"
-    main_entry_pattern = r"^\s*if\s+__name__\s*==\s*['\"]__main__['\"]:"
-    return_pattern = r"\breturn\s+[\w\s,]+;"
-    exception_handling_pattern = r"^(try:|catch:|finally:)"
+    import_pattern = r"^\s*import\s+(\w+)"
+    function_pattern = r"^\s*function\s+(\w+)\s*\("
+    arrow_function_pattern = r"^\s*(const|let|var)\s+(\w+)\s*=\s*\(.*?\)\s*=>"
+    variable_pattern = r"^\s*(const|let|var)\s+(\w+)\s*="
+    loop_pattern = r"^\s*(for|while)\s*\("
+    condition_pattern = r"^\s*(if|else\s*if|else)\s*\("
+    event_listener_pattern = r"^\s*\w+\.addEventListener\s*\("
+    comment_pattern = r"^\s*(//.*|/\*.*\*/)"  # Captures single-line and block comments
+    return_pattern = r"^\s*return\s+[\w\s,]+;"
+    exception_handling_pattern = r"^\s*(try|catch|finally)\s*"
 
     for file in file_list:
         try:
@@ -30,41 +33,56 @@ def process_line_for_csv(file_list):
                             "File": file,
                             "Directory": directory,
                             "FileName": file_name,
-                            "Type": None,  # all data is named and collected in Type
+                            "Type": None,
                             "Content": line.strip()
                         }
 
                         if re.match(import_pattern, line):
-                            row["Type"] = "Import"
-                            matches = re.findall(r'\b\w+\b', line)
-                            row["Content"] = ', '.join(matches)
+                            match = re.search(import_pattern, line)
+                            if match:
+                                row["Type"] = "Import"
+                                row["Content"] = match.group(1)
 
                         elif re.match(function_pattern, line):
-                            match = re.search(r'function\s+(\w+)\s*\(', line)
+                            match = re.search(function_pattern, line)
                             if match:
                                 row["Type"] = "Function"
                                 row["Content"] = match.group(1)
 
-                        elif re.match(class_pattern, line):
-                            match = re.search(r'class\s+(\w+)\s*{', line)
+                        elif re.match(arrow_function_pattern, line):
+                            match = re.search(arrow_function_pattern, line)
                             if match:
-                                row["Type"] = "Class"
+                                row["Type"] = "Arrow Function"
+                                row["Content"] = match.group(2)
+
+                        elif re.match(variable_pattern, line):
+                            match = re.search(variable_pattern, line)
+                            if match:
+                                row["Type"] = "Variable"
+                                row["Content"] = match.group(2)
+
+                        elif re.match(loop_pattern, line):
+                            match = re.search(loop_pattern, line)
+                            if match:
+                                row["Type"] = "Loop"
                                 row["Content"] = match.group(1)
 
-                        elif re.match(todo_pattern, line):
-                            row["Type"] = "Todo"
+                        elif re.match(condition_pattern, line):
+                            match = re.search(condition_pattern, line)
+                            if match:
+                                row["Type"] = "Conditional Statement"
+                                row["Content"] = match.group(1)
+
+                        elif re.match(event_listener_pattern, line):
+                            row["Type"] = "Event Listener"
                             row["Content"] = line
 
                         elif re.match(comment_pattern, line):
                             row["Type"] = "Comment"
                             row["Content"] = line
 
-                        elif re.match(main_entry_pattern, line):
-                            row["Type"] = "Main Entry"
-                            row["Content"] = line
-
                         elif re.match(return_pattern, line):
-                            row["Type"] = "Return"
+                            row["Type"] = "Return Statement"
                             row["Content"] = line
 
                         elif re.match(exception_handling_pattern, line):

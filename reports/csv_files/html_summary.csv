@@ -1,0 +1,413 @@
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,HTML Tag,h2
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\apology.html,templates,apology.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\dashboard.html,templates,dashboard.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,{% block title %}Edit Note{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,h2
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\edit.html,templates,edit.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,{% extends 'layout.html'%}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,{% block content%}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,h2
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,p
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,"Group by subject, project, or personal interest. Stay in control and"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,find what you need at a glance.</p>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,h2
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,p
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,gap between information and understanding.</p>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,p
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,you more room to explore and learn.</p>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,a
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,h3
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,p
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,a
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,h3
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,p
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\index.html,templates,index.html,,{% endblock%}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,DOCTYPE,<!DOCTYPE html>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,html
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,head
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,meta
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,meta
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,link
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,link
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,title
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</head>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,body
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,nav
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,ul
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,"{% if session.get(""user_id"")  %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,{% else %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,{% endif %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</ul>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,ul
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,"{% if session.get(""user_id"")  %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,{% else %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,{% endif %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</ul>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</nav>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,ul
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,li
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</li>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</ul>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,{% endblock%}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,HTML Tag,script
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</body>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\layout.html,templates,layout.html,,</html>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,{% block title %}Login{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,label
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,label
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,br
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\login.html,templates,login.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,{% block title %}Notes{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,{% for note in notes %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,h2
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,{% endfor %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\notes.html,templates,notes.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,label
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,label
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,</div>.
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,label
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,label
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,br
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\register.html,templates,register.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,{% block title %}Search notes{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,select
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,option
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,option
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,option
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,option
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,</select>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,{% for note in notes %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,h2
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,{% endfor %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\search_notes.html,templates,search_notes.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate.html,templates,translate.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\translate_result.html,templates,translate_result.html,,{% endblock %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,"{% extends ""layout.html"" %}"
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,{% block content %}
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,h1
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,form
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,input
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,button
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,</form>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,textarea
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,</div>
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,HTML Tag,div
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,
+html,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\templates\wiki_search.html,templates,wiki_search.html,,{% endblock %}

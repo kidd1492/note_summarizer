@@ -1,0 +1,325 @@
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,Import,"from, updated_notes, import, create_app"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,app = create_app()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,Main Entry,if __name__ == '__main__':
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,app.run()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Import,"from, functools, import, wraps"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Import,"from, flask, import, Blueprint, render_template, request, redirect, session"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"from werkzeug.security import check_password_hash, generate_password_hash"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,from . import db
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"from .models import User, Note"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"from .helper import apology, wiki_search, read_aloud"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Import,"import, translators, as, ts"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"auth = Blueprint('auth', __name__)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@wraps(f)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,decorated_function
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if session.get(""user_id"") is None:"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/login"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return f(*args, **kwargs)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return decorated_function
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@auth.after_request
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,after_request
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Ensure responses aren't cached"""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"response.headers[""Cache-Control""] = ""no-cache, no-store, must-revalidate"""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"response.headers[""Expires""] = 0"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"response.headers[""Pragma""] = ""no-cache"""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return response
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@auth.route('/')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,index
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""index.html"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/login', methods=['POST', 'GET'])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,login
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"email = request.form.get(""email"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"password = request.form.get(""password"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,user = User.query.filter_by(email=email).first()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if not email:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Please enter a valid email"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif len(password) < 6:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""password must be 6 characters"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif not user:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Email must match"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"elif not check_password_hash(user.password, password):"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""incorrect password"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Remember which user has logged in
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"session[""user_id""] = user.id"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/dashboard"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""login.html"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/register', methods=['POST', 'GET'])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,register
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_name = request.form.get(""user_name"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"email = request.form.get(""email"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"password = request.form.get(""password"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"password1 = request.form.get(""password1"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,existing_user = db.session.query(User).filter_by(email=email).first()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if existing_user:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Already registered, please login"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif not email:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Please enter a valid email"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif len(user_name) < 3:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""username must be 3 characters"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif len(password) < 6:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""password must be 6 characters"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif password != password1:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Passwords must match"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"new_user = User(email=email, password=generate_password_hash(password), user_name=user_name)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.add(new_user)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/login"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('register.html')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/logout"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,logout
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Log user out"""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,session.clear()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Redirect user home page
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/dashboard"", methods=[""GET"", ""POST""])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,dashboard
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,subject = request.form.get('subject')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"note = request.form.get(""note"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"title = request.form.get(""title"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if len(note) < 1:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology('Note is to short', 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"new_note = Note(title=title, data=note, user_id=user_id, subject=subject.lower())"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.add(new_note)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""dashboard.html"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/wiki_search"", methods=[""GET"", ""POST""])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,wiki
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,search = request.form.get('wiki_search')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if len(search) < 1:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Please enter search term"", 400)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return wiki_search(search)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""wiki_search.html"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/translate', methods=['POST', 'GET'])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,translate
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,original_text = request.form.get('text_area')  # Get the text from the textarea
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"translated_text = ts.translate_text(original_text, to_language='es')  # Translate using 'translators'"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('translate_result.html', original=original_text, translated=translated_text)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('translate.html')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@auth.route('/translate_result')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,translate_result
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('translate_result.html')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/readAloud', methods=['POST', 'GET'])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,readAloud
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,translated = request.form.get('translated')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,original = request.form.get('original')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"read_aloud(translated, original)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('translate_result.html', original=original, translated=translated)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('translate_result.html')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/notes"", methods=[""GET"", ""POST""])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,notes
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,notes = Note.query.filter_by(user_id=user_id)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""notes.html"", notes=notes)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/edit"", methods=[""POST"", ""GET""])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,edit
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"note_id = request.form.get(""note_id"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,note = Note.query.get(note_id)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if note:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Render the edit.html template with the note data
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""edit.html"", note=note)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"edited_note = request.form.get(""edited_note"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if edited_note:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"edit_note_id = request.form.get(""edit_note_id"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,edit_note = Note.query.get(edit_note_id)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,edit_note.data = edited_note
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Commit the changes to the database
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/notes"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return ""Invalid note ID"""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/delete"", methods=[""GET"", ""POST""])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,delete
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"note_id = request.form.get(""id"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,note = Note.query.get(note_id)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.delete(note)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/notes"")"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/search_notes"", methods=[""GET"", ""POST""])"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,search_notes
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")  # Get the user ID from the session"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,search_by = request.form.get('searchBy')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if search_by == 'subject':
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,subject = request.form.get('subject').lower()  # Get the category from the form
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"notes = Note.query.filter_by(user_id=user_id, subject=subject).all()"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('search_notes.html', notes=notes)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if search_by == 'title':
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,title = request.form.get('subject') # Get the category from the form
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"notes = Note.query.filter_by(user_id=user_id, title=title).all()"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('search_notes.html', notes=notes)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if search_by == 'termInNote':
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,termInNote = request.form.get('subject') # Get the category from the form
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"notes = Note.query.filter(Note.data.like(f""%{termInNote}%"")).all()"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('search_notes.html', notes=notes)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('search_notes.html')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Import,"from, flask, import, render_template"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Import,"import, wikipedia, as, wk"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Import,"import, pyttsx3"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,apology
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Comment,"""""""Render message as an apology to user."""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,escape
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,""""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,Escape special characters.
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,https://github.com/jacebrowning/memegen#special-characters
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,""""""""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"for old, new in ["
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""-"", ""--""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"("" "", ""-""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""_"", ""__""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""?"", ""~q""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""%"", ""~p""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""#"", ""~h""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""/"", ""~s""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"('""', ""''""),"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,]:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"s = s.replace(old, new)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,return s
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"return render_template(""apology.html"", top=code, bottom=escape(message)), code"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,wiki_search
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Exception Handling,try:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,page = wk.page(term)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,response = page.content
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,except wk.exceptions.DisambiguationError:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"response = f""Multiple options found for '{term}'. Please specify."""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,except wk.exceptions.PageError:
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"response = f""No Wikipedia page found for '{term}'"""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"return render_template('wiki_search.html', response=response)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,read_aloud
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,engine = pyttsx3.init()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Comment,# Load the translated text
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,translated_text = translated  # Replace with the actual translated text
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Comment,# Say the translated text aloud
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,engine.say(translated_text)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,engine.runAndWait()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"return render_template('translate.html', translated=translated , original=original)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,from . import db
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,Import,"from, sqlalchemy, import, func"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,class Note(db.Model):
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"id = db.Column(db.Integer, primary_key=True)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,title = db.Column(db.String(200))
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,data = db.Column(db.String(10000))
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"date = db.Column(db.DateTime(timezone=True), default=func.now())"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"user_id = db.Column(db.Integer, db.ForeignKey('user.id'))"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"subject = db.Column(db.String(200), default='Subject')"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,class User(db.Model):
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"id = db.Column(db.Integer, primary_key=True)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"email = db.Column(db.String(150), unique=True)"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,password = db.Column(db.String(150))
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,user_name = db.Column(db.String(150))
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,notes = db.relationship('Note')
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Import,"from, flask, import, Flask"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Import,"from, flask_sqlalchemy, import, SQLAlchemy"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Import,"from, flask_session, import, Session"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,db = SQLAlchemy()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"DB_NAME = ""study_notes.db"""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Function,create_app
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,app = Flask(__name__)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,app.config['SECRET_KEY'] = 'jdf iewjfdka jfd'
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,db.init_app(app)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"app.config[""SESSION_PERMANENT""] = False"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"app.config[""SESSION_TYPE""] = ""filesystem"""
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,Session(app)
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,from .auth import auth
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"from .models import User, Note"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"app.register_blueprint(auth, url_prefix='/')"
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,with app.app_context():
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,db.create_all()
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
+py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,return app

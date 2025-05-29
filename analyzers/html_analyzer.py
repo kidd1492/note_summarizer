@@ -6,14 +6,14 @@ from analyzers import base_analyzer
 csv_data = []
 
 def process_line_for_csv(file_list):
-    import_pattern = r"^(from\s+\w+\s+)?import\s+(\w+(,\s*\w+)*)?"
-    function_pattern = r"^\s*def\s+(\w+)\s*\("
-    class_pattern = r"^\s*class\s+(\w+)\s*:"
-    todo_pattern = r"^#TODO"
-    comment_pattern = r"^\s*(\"{3}.*?\"|\'{3}.*?\')|^#"
-    main_entry_pattern = r"^\s*if\s+__name__\s*==\s*['\"]__main__['\"]:"
-    return_pattern = r"^\s*return\s+[\w\s,]+;"
-    exception_handling_pattern = r"^\s*(try|except|finally):"
+    tag_pattern = r"<(\w+)"  # Extracts HTML tags
+    attribute_pattern = r"(\w+)=[\"']([^\"']+)[\"']"  # Captures attributes
+    comment_pattern = r"<!--(.*?)-->"  # Identifies HTML comments
+    doctype_pattern = r"<!DOCTYPE\s+\w+>"  # Detects DOCTYPE declarations
+    script_style_pattern = r"<(script|style)[^>]*>.*?</\1>"  # Captures embedded scripts or styles
+    link_pattern = r"<a\s+[^>]*href=[\"']([^\"']+)[\"']"  # Finds hyperlinks
+    form_pattern = r"<form\s+[^>]*action=[\"']([^\"']+)[\"']"  # Identifies forms and actions
+    input_pattern = r"<input\s+[^>]*type=[\"']([^\"']+)[\"']"  # Detects input fields in forms
 
     for file in file_list:
         try:
@@ -31,46 +31,53 @@ def process_line_for_csv(file_list):
                             "File": file,
                             "Directory": directory,
                             "FileName": file_name,
-                            "Type": None,  # all data is named and collected in Type
+                            "Type": None,
                             "Content": line.strip()
                         }
 
-                        if re.match(import_pattern, line):
-                            row["Type"] = "Import"
-                            matches = re.findall(r'\b\w+\b', line)
-                            row["Content"] = ', '.join(matches)
-
-                        elif re.match(function_pattern, line):
-                            match = re.search(r'(\w+)\s*\(', line)
+                        if re.match(tag_pattern, line):
+                            match = re.search(tag_pattern, line)
                             if match:
-                                row["Type"] = "Function"
+                                row["Type"] = "HTML Tag"
                                 row["Content"] = match.group(1)
 
-                        elif re.match(class_pattern, line):
-                            match = re.search(r'(\w+):', line)
-                            if match:
-                                row["Type"] = "Class"
-                                row["Content"] = match.group(1)
-
-                        elif re.match(todo_pattern, line):
-                            row["Type"] = "Todo"
-                            row["Content"] = line
+                        elif re.findall(attribute_pattern, line):
+                            row["Type"] = "Attributes"
+                            row["Content"] = ", ".join([f"{attr}={val}" for attr, val in re.findall(attribute_pattern, line)])
 
                         elif re.match(comment_pattern, line):
-                            row["Type"] = "Comment"
-                            row["Content"] = line
+                            match = re.search(comment_pattern, line)
+                            if match:
+                                row["Type"] = "Comment"
+                                row["Content"] = match.group(1).strip()
 
-                        elif re.match(main_entry_pattern, line):
-                            row["Type"] = "Main Entry"
-                            row["Content"] = line
+                        elif re.match(doctype_pattern, line):
+                            row["Type"] = "DOCTYPE"
+                            row["Content"] = line.strip()
 
-                        elif re.match(return_pattern, line):
-                            row["Type"] = "Return"
-                            row["Content"] = line
+                        elif re.match(script_style_pattern, line):
+                            match = re.search(r"<(script|style)", line)
+                            if match:
+                                row["Type"] = f"{match.group(1).capitalize()} Block"
+                                row["Content"] = "Embedded Code"
 
-                        elif re.match(exception_handling_pattern, line):
-                            row["Type"] = "Exception Handling"
-                            row["Content"] = line
+                        elif re.match(link_pattern, line):
+                            match = re.search(link_pattern, line)
+                            if match:
+                                row["Type"] = "Hyperlink"
+                                row["Content"] = match.group(1)
+
+                        elif re.match(form_pattern, line):
+                            match = re.search(form_pattern, line)
+                            if match:
+                                row["Type"] = "Form"
+                                row["Content"] = match.group(1)
+
+                        elif re.match(input_pattern, line):
+                            match = re.search(input_pattern, line)
+                            if match:
+                                row["Type"] = "Input Field"
+                                row["Content"] = match.group(1)
 
                         csv_data.append(row)
 
