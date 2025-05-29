@@ -1,325 +1,653 @@
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,Import,"from, updated_notes, import, create_app"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,app = create_app()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,Main Entry,if __name__ == '__main__':
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\app.py,notes_app_v3.2,app.py,,app.run()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Import,"from, functools, import, wraps"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Import,"from, flask, import, Blueprint, render_template, request, redirect, session"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"from werkzeug.security import check_password_hash, generate_password_hash"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,from . import db
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"from .models import User, Note"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"from .helper import apology, wiki_search, read_aloud"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Import,"import, translators, as, ts"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"auth = Blueprint('auth', __name__)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@wraps(f)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,decorated_function
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if session.get(""user_id"") is None:"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/login"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return f(*args, **kwargs)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return decorated_function
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@auth.after_request
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,after_request
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Ensure responses aren't cached"""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"response.headers[""Cache-Control""] = ""no-cache, no-store, must-revalidate"""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"response.headers[""Expires""] = 0"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"response.headers[""Pragma""] = ""no-cache"""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return response
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@auth.route('/')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,index
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""index.html"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/login', methods=['POST', 'GET'])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,login
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"email = request.form.get(""email"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"password = request.form.get(""password"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,user = User.query.filter_by(email=email).first()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if not email:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Please enter a valid email"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif len(password) < 6:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""password must be 6 characters"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif not user:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Email must match"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"elif not check_password_hash(user.password, password):"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""incorrect password"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Remember which user has logged in
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"session[""user_id""] = user.id"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/dashboard"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""login.html"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/register', methods=['POST', 'GET'])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,register
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_name = request.form.get(""user_name"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"email = request.form.get(""email"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"password = request.form.get(""password"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"password1 = request.form.get(""password1"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,existing_user = db.session.query(User).filter_by(email=email).first()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if existing_user:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Already registered, please login"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif not email:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Please enter a valid email"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif len(user_name) < 3:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""username must be 3 characters"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif len(password) < 6:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""password must be 6 characters"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,elif password != password1:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Passwords must match"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"new_user = User(email=email, password=generate_password_hash(password), user_name=user_name)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.add(new_user)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/login"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('register.html')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/logout"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,logout
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Log user out"""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,session.clear()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Redirect user home page
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/dashboard"", methods=[""GET"", ""POST""])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,dashboard
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,subject = request.form.get('subject')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"note = request.form.get(""note"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"title = request.form.get(""title"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if len(note) < 1:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology('Note is to short', 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"new_note = Note(title=title, data=note, user_id=user_id, subject=subject.lower())"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.add(new_note)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""dashboard.html"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/wiki_search"", methods=[""GET"", ""POST""])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,wiki
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,search = request.form.get('wiki_search')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if len(search) < 1:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return apology(""Please enter search term"", 400)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return wiki_search(search)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""wiki_search.html"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/translate', methods=['POST', 'GET'])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,translate
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,original_text = request.form.get('text_area')  # Get the text from the textarea
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"translated_text = ts.translate_text(original_text, to_language='es')  # Translate using 'translators'"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('translate_result.html', original=original_text, translated=translated_text)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('translate.html')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@auth.route('/translate_result')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,translate_result
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('translate_result.html')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route('/readAloud', methods=['POST', 'GET'])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,readAloud
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,translated = request.form.get('translated')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,original = request.form.get('original')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"read_aloud(translated, original)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('translate_result.html', original=original, translated=translated)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('translate_result.html')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/notes"", methods=[""GET"", ""POST""])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,notes
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,notes = Note.query.filter_by(user_id=user_id)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""notes.html"", notes=notes)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/edit"", methods=[""POST"", ""GET""])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,edit
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"note_id = request.form.get(""note_id"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,note = Note.query.get(note_id)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if note:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Render the edit.html template with the note data
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template(""edit.html"", note=note)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"edited_note = request.form.get(""edited_note"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if edited_note:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"edit_note_id = request.form.get(""edit_note_id"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,edit_note = Note.query.get(edit_note_id)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,edit_note.data = edited_note
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,# Commit the changes to the database
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/notes"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,else:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return ""Invalid note ID"""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/delete"", methods=[""GET"", ""POST""])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,delete
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"note_id = request.form.get(""id"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,note = Note.query.get(note_id)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.delete(note)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,db.session.commit()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return redirect(""/notes"")"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"@auth.route(""/search_notes"", methods=[""GET"", ""POST""])"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,@login_required
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Function,search_notes
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"if request.method == ""POST"":"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"user_id = session.get(""user_id"")  # Get the user ID from the session"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,search_by = request.form.get('searchBy')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if search_by == 'subject':
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,subject = request.form.get('subject').lower()  # Get the category from the form
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"notes = Note.query.filter_by(user_id=user_id, subject=subject).all()"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('search_notes.html', notes=notes)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if search_by == 'title':
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,title = request.form.get('subject') # Get the category from the form
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"notes = Note.query.filter_by(user_id=user_id, title=title).all()"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('search_notes.html', notes=notes)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,if search_by == 'termInNote':
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,termInNote = request.form.get('subject') # Get the category from the form
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"notes = Note.query.filter(Note.data.like(f""%{termInNote}%"")).all()"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,Comment,"""""""Show all notes"""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,"return render_template('search_notes.html', notes=notes)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\auth.py,updated_notes,auth.py,,return render_template('search_notes.html')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Import,"from, flask, import, render_template"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Import,"import, wikipedia, as, wk"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Import,"import, pyttsx3"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,apology
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Comment,"""""""Render message as an apology to user."""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,escape
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,""""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,Escape special characters.
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,https://github.com/jacebrowning/memegen#special-characters
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,""""""""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"for old, new in ["
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""-"", ""--""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"("" "", ""-""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""_"", ""__""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""?"", ""~q""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""%"", ""~p""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""#"", ""~h""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"(""/"", ""~s""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"('""', ""''""),"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,]:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"s = s.replace(old, new)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,return s
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"return render_template(""apology.html"", top=code, bottom=escape(message)), code"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,wiki_search
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Exception Handling,try:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,page = wk.page(term)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,response = page.content
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,except wk.exceptions.DisambiguationError:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"response = f""Multiple options found for '{term}'. Please specify."""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,except wk.exceptions.PageError:
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"response = f""No Wikipedia page found for '{term}'"""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"return render_template('wiki_search.html', response=response)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Function,read_aloud
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,engine = pyttsx3.init()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Comment,# Load the translated text
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,translated_text = translated  # Replace with the actual translated text
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,Comment,# Say the translated text aloud
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,engine.say(translated_text)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,engine.runAndWait()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\helper.py,updated_notes,helper.py,,"return render_template('translate.html', translated=translated , original=original)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,from . import db
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,Import,"from, sqlalchemy, import, func"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,class Note(db.Model):
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"id = db.Column(db.Integer, primary_key=True)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,title = db.Column(db.String(200))
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,data = db.Column(db.String(10000))
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"date = db.Column(db.DateTime(timezone=True), default=func.now())"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"user_id = db.Column(db.Integer, db.ForeignKey('user.id'))"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"subject = db.Column(db.String(200), default='Subject')"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,class User(db.Model):
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"id = db.Column(db.Integer, primary_key=True)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,"email = db.Column(db.String(150), unique=True)"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,password = db.Column(db.String(150))
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,user_name = db.Column(db.String(150))
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\models.py,updated_notes,models.py,,notes = db.relationship('Note')
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Import,"from, flask, import, Flask"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Import,"from, flask_sqlalchemy, import, SQLAlchemy"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Import,"from, flask_session, import, Session"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,db = SQLAlchemy()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"DB_NAME = ""study_notes.db"""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,Function,create_app
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,app = Flask(__name__)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,app.config['SECRET_KEY'] = 'jdf iewjfdka jfd'
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,db.init_app(app)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"app.config[""SESSION_PERMANENT""] = False"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"app.config[""SESSION_TYPE""] = ""filesystem"""
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,Session(app)
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,from .auth import auth
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"from .models import User, Note"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,"app.register_blueprint(auth, url_prefix='/')"
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,with app.app_context():
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,db.create_all()
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,
-py,C:\Users\chris\Desktop\notes_app\notes_app_v3.2\updated_notes\__init__.py,updated_notes,__init__.py,,return app
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Import,"from, analyzers, import, base_analyzer"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Import,"import, os"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Import,"import, sys"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Import,"import, logging"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Comment,# Configure logging
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"logging.basicConfig(level=logging.INFO, filename='app.log', format='%(asctime)s - %(levelname)s - %(message)s')"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,'''function to walk through a directory pick what kinds of file it wants
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"ignoring directories like venv, .git, it then saves the type of file and a list of"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,files for that type into a dict. returns catagorized files'''
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Function,gather_categorized_files
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"allowed_extensions = ["".py"", "".html"", ""js""]  # Update to add more file types"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"ignored_directories = ["".git"", ""env"", ""venv""]"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,categorized_files = {}
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"for root, dirs, files in os.walk(directory):"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,dirs[:] = [d for d in dirs if d not in ignored_directories]  # Skip ignored directories
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,for file in files:
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Comment,# Check if the file's extension is in the allowed list
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,if any(file.endswith(ext) for ext in allowed_extensions):
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,ext = file.split('.')[-1]  # Extract the file extension (without dot)
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Comment,# Initialize the list for this file type if not already present
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,if ext not in categorized_files:
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,categorized_files[ext] = []
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Comment,# Append the file path to the appropriate list
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"categorized_files[ext].append(os.path.abspath(os.path.join(root, file)))"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"logging.error(f""An error occurred while gathering files: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,return categorized_files
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,Main Entry,"if __name__ == ""__main__"":"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,args = sys.argv
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,if len(args) == 1:
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"print(""Please enter a directory path."")"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,sys.exit(1)
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,elif len(args) == 2:
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,directory_name = os.path.normpath(args[1])
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,if not os.path.exists(directory_name):
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"logging.error(f""The specified directory does not exist: {directory_name}"")"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,sys.exit(1)
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,categorized_files = gather_categorized_files(directory_name)
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,base_analyzer.generate_csv(categorized_files)
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,else:
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,"print(""Invalid number of arguments. Please provide exactly one directory path."")"
+py,C:\users\chris\Desktop\note_summarizer\main.py,note_summarizer,main.py,,sys.exit(1)
+py,C:\users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,Import,"import, pandas, as, pd"
+py,C:\users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,,
+py,C:\users\chris\Desktop\note_summarizer\test.py,note_summarizer,test.py,,"df = pd.read_csv(""reports/csv_files/file_summary.csv"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,Import,"from, analyzers, import, html_analyzer, python_analyzer, js_analyzer"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,Import,"import, logging, csv"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,Comment,# Mapping of file extensions to their respective analyzers
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,file_type_analyzer_map = {
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"""html"": html_analyzer,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"""py"": python_analyzer,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"""js"": js_analyzer"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,}
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,Function,generate_csv
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"for file_type, file_list in categorized_files.items():"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,analyzer = file_type_analyzer_map.get(file_type)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,if analyzer:  # Ensure an analyzer is available for this file type
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,analyzer.process_line_for_csv(file_list)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"logging.error(f""An error occurred during analysis: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,Function,write_csv_summary
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"with open(out_file, ""w"", newline='', encoding=""utf-8"") as csvfile:"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"writer = csv.DictWriter(csvfile, fieldnames=[""FileType"", ""File"", ""Directory"", ""FileName"", ""Type"", ""Content""])"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,writer.writerows(csv_data)  # Write all rows
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\base_analyzer.py,analyzers,base_analyzer.py,,"logging.error(f""An error occurred while writing to the CSV summary file: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,Import,"import, os"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,Import,"import, re"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,Import,"import, logging"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,Import,"from, analyzers, import, base_analyzer"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,csv_data = []
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,Function,process_line_for_csv
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"tag_pattern = r""<(\w+)""  # Extracts HTML tags"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"attribute_pattern = r""(\w+)=[\""']([^\""']+)[\""']""  # Captures attributes"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"comment_pattern = r""<!--(.*?)-->""  # Identifies HTML comments"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"doctype_pattern = r""<!DOCTYPE\s+\w+>""  # Detects DOCTYPE declarations"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"script_style_pattern = r""<(script|style)[^>]*>.*?</\1>""  # Captures embedded scripts or styles"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"link_pattern = r""<a\s+[^>]*href=[\""']([^\""']+)[\""']""  # Finds hyperlinks"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"form_pattern = r""<form\s+[^>]*action=[\""']([^\""']+)[\""']""  # Identifies forms and actions"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"input_pattern = r""<input\s+[^>]*type=[\""']([^\""']+)[\""']""  # Detects input fields in forms"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,for file in file_list:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,file_part = os.path.normpath(file).split(os.sep)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"directory = file_part[-2] if len(file_part) > 1 else ""Unknown"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,file_name = file_part[-1]
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,file_type = file_name.split('.')[-1]
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"with open(file, 'r', encoding='utf-8') as f:"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,for line in f:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,line = line.strip()
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,row = {
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"""FileType"": file_type,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"""File"": file,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"""Directory"": directory,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"""FileName"": file_name,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"""Type"": None,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"""Content"": line.strip()"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,}
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"if re.match(tag_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"match = re.search(tag_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = ""HTML Tag"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"elif re.findall(attribute_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = ""Attributes"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = "", "".join([f""{attr}={val}"" for attr, val in re.findall(attribute_pattern, line)])"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"elif re.match(comment_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"match = re.search(comment_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = ""Comment"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = match.group(1).strip()"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"elif re.match(doctype_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = ""DOCTYPE"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = line.strip()"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"elif re.match(script_style_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"match = re.search(r""<(script|style)"", line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = f""{match.group(1).capitalize()} Block"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = ""Embedded Code"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"elif re.match(link_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"match = re.search(link_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = ""Hyperlink"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"elif re.match(form_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"match = re.search(form_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = ""Form"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"elif re.match(input_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"match = re.search(input_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Type""] = ""Input Field"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,csv_data.append(row)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"logging.error(f""Error processing line in {file}: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,except FileNotFoundError:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"logging.error(f""File not found: {file}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,except PermissionError:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"logging.error(f""Permission denied for file: {file}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"logging.error(f""An error occurred while processing {file}: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\html_analyzer.py,analyzers,html_analyzer.py,,"base_analyzer.write_csv_summary(csv_data, ""reports/csv_files/html_summary.csv"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,Import,"import, os"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,Import,"import, re"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,Import,"import, logging"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,Import,"from, analyzers, import, base_analyzer"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,csv_data = []
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,Function,process_line_for_csv
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"import_pattern = r""^\s*import\s+(\w+)"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"function_pattern = r""^\s*function\s+(\w+)\s*\("""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"arrow_function_pattern = r""^\s*(const|let|var)\s+(\w+)\s*=\s*\(.*?\)\s*=>"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"variable_pattern = r""^\s*(const|let|var)\s+(\w+)\s*="""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"loop_pattern = r""^\s*(for|while)\s*\("""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"condition_pattern = r""^\s*(if|else\s*if|else)\s*\("""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"event_listener_pattern = r""^\s*\w+\.addEventListener\s*\("""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"comment_pattern = r""^\s*(//.*|/\*.*\*/)""  # Captures single-line and block comments"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"return_pattern = r""^\s*return\s+[\w\s,]+;"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"exception_handling_pattern = r""^\s*(try|catch|finally)\s*"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,for file in file_list:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,file_part = os.path.normpath(file).split(os.sep)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"directory = file_part[-2] if len(file_part) > 1 else ""Unknown"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,file_name = file_part[-1]
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,file_type = file_name.split('.')[-1]
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"with open(file, 'r', encoding='utf-8') as f:"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,for line in f:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,line = line.strip()
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,row = {
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"""FileType"": file_type,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"""File"": file,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"""Directory"": directory,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"""FileName"": file_name,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"""Type"": None,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"""Content"": line.strip()"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,}
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"if re.match(import_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"match = re.search(import_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Import"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(function_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"match = re.search(function_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Function"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(arrow_function_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"match = re.search(arrow_function_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Arrow Function"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = match.group(2)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(variable_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"match = re.search(variable_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Variable"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = match.group(2)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(loop_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"match = re.search(loop_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Loop"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(condition_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"match = re.search(condition_pattern, line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Conditional Statement"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(event_listener_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Event Listener"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(comment_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Comment"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(return_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Return Statement"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"elif re.match(exception_handling_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Type""] = ""Exception Handling"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,csv_data.append(row)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"logging.error(f""Error processing line in {file}: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,except FileNotFoundError:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"logging.error(f""File not found: {file}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,except PermissionError:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"logging.error(f""Permission denied for file: {file}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"logging.error(f""An error occurred while processing {file}: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\js_analyzer.py,analyzers,js_analyzer.py,,"base_analyzer.write_csv_summary(csv_data, ""reports/csv_files/js_summary.csv"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,Import,"from, analyzers, import, base_analyzer"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,Import,"import, os"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,Import,"import, re"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,Import,"import, logging"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,csv_data = []
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,Function,process_line_for_csv
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"import_pattern = r""^(from\s+\w+\s+)?import\s+(\w+(,\s*\w+)*)?"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"function_pattern = r""^\s*def\s+(\w+)\s*\("""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"class_pattern = r""^\s*class\s+(\w+)\s*:"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"todo_pattern = r""^#TODO"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"comment_pattern = r""^\s*(\""{3}.*?\""|\'{3}.*?\')|^#"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"main_entry_pattern = r""^\s*if\s+__name__\s*==\s*['\""]__main__['\""]:"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"return_pattern = r""^\s*return\s+[\w\s,]+;"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"exception_handling_pattern = r""^\s*(try|except|finally):"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,for file in file_list:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,file_part = os.path.normpath(file).split(os.sep)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"directory = file_part[-2] if len(file_part) > 1 else ""Unknown"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,file_name = file_part[-1]
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,file_type = file_name.split('.')[-1]
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"with open(file, 'r', encoding='utf-8') as f:"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,for line in f:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,Exception Handling,try:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,line = line.strip()
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,row = {
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"""FileType"": file_type,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"""File"": file,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"""Directory"": directory,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"""FileName"": file_name,"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"""Type"": None,  # all data is named and collected in Type"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"""Content"": line.strip()"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,}
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"if re.match(import_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Import"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"matches = re.findall(r'\b\w+\b', line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = ', '.join(matches)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"elif re.match(function_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"match = re.search(r'(\w+)\s*\(', line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Function"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"elif re.match(class_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"match = re.search(r'(\w+):', line)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,if match:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Class"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = match.group(1)"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"elif re.match(todo_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Todo"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"elif re.match(comment_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Comment"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"elif re.match(main_entry_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Main Entry"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"elif re.match(return_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Return"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"elif re.match(exception_handling_pattern, line):"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Type""] = ""Exception Handling"""
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"row[""Content""] = line"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,csv_data.append(row)
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"logging.error(f""Error processing line in {file}: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,except FileNotFoundError:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"logging.error(f""File not found: {file}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,except PermissionError:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"logging.error(f""Permission denied for file: {file}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,except Exception as e:
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"logging.error(f""An error occurred while processing {file}: {e}"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,
+py,C:\users\chris\Desktop\note_summarizer\analyzers\python_analyzer.py,analyzers,python_analyzer.py,,"base_analyzer.write_csv_summary(csv_data, ""reports/csv_files/python_summary.csv"")"
+py,C:\users\chris\Desktop\note_summarizer\analyzers\__init__.py,analyzers,__init__.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Import,"import, pandas, as, pd"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Function,generate_summary_report
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"csv_file = ""reports/csv_files/file_summary.csv"""
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Comment,# Read CSV
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,df = pd.read_csv(csv_file)
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"with open(report_file, ""w"") as report:"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Comment,# Filter by FileType (use any file type dynamically)
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"files = df[df[""FileType""] == f""{file_type}""]  # Change ""html"" to desired FileType"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"file_count = len(files[""FileName""].unique())"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Comment,# Write FileType summary
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""SUMMARY REPORT: FILES\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""Total Files: {file_count}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Comment,# List all filenames
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(""Filenames:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"for filename in files[""FileName""].unique():"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""- {filename}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(""\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Comment,# Process each file
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"types_of_data = files[""Type""].unique()"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"for filename in files[""FileName""].unique():"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""{'-'*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""File: {filename}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""{'-'*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,for type in types_of_data:
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,Comment,# Extract content of a specific Type
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"contents = files[(files[""FileName""] == filename) & (files[""Type""] == type)]"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,if not contents.empty:
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""\n{type.capitalize()}:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"for content in contents[""Content""]:"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(f""    {content}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"report.write(""\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\base_report_gen.py,reports,base_report_gen.py,,"print(f""Summary report generated and saved to '{report_file}'!"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Import,"import, matplotlib, pyplot, as, plt"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Import,"import, pandas, as, pd"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,df = pd.read_csv('reports/csv_files/file_summary.csv')
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"df = df[[""FileType"",""FileName"", ""Type""]].copy()"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Calculate percentages of each file type
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,file_type_counts = df['FileType'].value_counts()
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,file_type_labels = file_type_counts.index
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,file_type_sizes = file_type_counts.values
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Create pie chart
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Function,type_percent_chart
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.figure(figsize=(8, 8))"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.pie(file_type_sizes, labels=file_type_labels, autopct='%1.1f%%', startangle=140)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.title(""Percentage of File Types Analyzed"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,plt.show()
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Set up the figure and subplots
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Function,data_percent_chart
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"num_file_types = len(file_type_labels) + 1  # One for ""Percentage of File Types"""
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"fig, axes = plt.subplots(1, num_file_types, figsize=(16, 8), subplot_kw={'aspect': 'equal'})"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"fig.suptitle(""Data Breakdown"", fontsize=16)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Pie chart for file type percentages
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"axes[0].pie(file_type_sizes, labels=file_type_labels, autopct='%1.1f%%', startangle=140)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"axes[0].set_title(""Percentage of File Types"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Pie charts for each file type's data breakdown
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"file_type = df[""FileType""].unique()"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"for i, type in enumerate(file_type):"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,filtered_df = df[df['FileType'] == type]
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,type_counts = filtered_df['Type'].value_counts()
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,type_labels = type_counts.index
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,type_sizes = type_counts.values
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"axes[i + 1].pie(type_sizes, labels=type_labels, autopct='%1.1f%%', startangle=140)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"axes[i + 1].set_title(f""Data Breakdown for {type} Files"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Adjust layout and display
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,plt.tight_layout()
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,plt.subplots_adjust(top=0.85)  # Add space for the main title
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,plt.show()
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Function,data_chart
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Aggregate counts of 'Type' by 'FileName'
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"type_counts = df.groupby([""FileName"", ""Type""]).size().unstack(fill_value=0)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Plotting the data
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"ax = type_counts.plot(kind=""bar"", stacked=False, figsize=(10, 6))"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Customize the chart
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.title(""Distribution of Types Across Files"", fontsize=14)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.xlabel(""File Names"", fontsize=12)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.ylabel(""Count"", fontsize=12)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.xticks(rotation=45, ha='right', fontsize=10)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,"plt.legend(title=""Type"", fontsize=10)"
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,plt.tight_layout()
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,Comment,# Show the plot
+py,C:\users\chris\Desktop\note_summarizer\reports\charts.py,reports,charts.py,,plt.show()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Import,"from, reports, import, report_helper"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Import,"import, pandas, as, pd"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Import,"import, os"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Comment,#opens and reads csv ask user what type of file walks through process
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Function,file_type
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,df = pd.read_csv('reports/csv_files/file_summary.csv')
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"df = df[[""FileType"", ""Directory"", ""FileName"", ""Type"", ""Content""]].copy()"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"types_of_files = df[""FileType""].unique()"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,while True:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""FILE TYPE:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""\n{types_of_files}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(""What types of files would you like to explore? : "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"selected_file_type = input(""[exit] to quit or select file type: "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"if selected_file_type == ""exit"":report_helper.main_menu()"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,if selected_file_type in types_of_files:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"select_file(df, selected_file_type)"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,break
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Comment,"#function displays all files gives user opptions: all, save, select file"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Function,select_file
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,type = df[df['FileType'] == selected_file_type ]
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"type = type[['FileName', 'Type', 'Content']]"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,file_list = type['FileName'].unique()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,while True:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""FILES:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,for item in file_list:print(item)
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(""\n"",""Type file name or [all] for all files"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"selected_file = input(""or [back] to go back to File Types: "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"if selected_file == ""back"":file_type()"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"elif selected_file in file_list or selected_file == ""all"":"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"select_data(df, selected_file, selected_file_type, type)"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Comment,# function displays all data types avalable ask user to select one.
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Comment,# all will print all data for the selection.
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Function,select_data
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"if selected_file != ""all"":"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,data_type = type[type['FileName'] == selected_file]
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,data_list = data_type['Type'].unique()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,while True:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""DATA TYPE:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(data_type[""Type""].value_counts())"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""\n [back] to go back to file selection:"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"selected_data = input(""Select Data Type: "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"if selected_data == ""back"":select_file(df, selected_file_type)"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"if selected_data == ""all"":"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(""\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,print(data_type)
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,elif selected_data in data_list:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"filtered_df = data_type[data_type['Type'] == f""{selected_data}""]"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(""\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,print(filtered_df)
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,else:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,data_list = type['Type'].unique()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,while True:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""DATA TYPE:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(type[""Type""].value_counts())"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(f""\n [back] to go back to file selection:"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"selected_data = input(""Select Data Type: "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"if selected_data == ""back"":select_file(df, selected_file_type)"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,elif selected_data in data_list:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"filtered_df = type[type['Type'] == f""{selected_data}""]"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,"print(""\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,print(filtered_df)
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,Function,clear_screen
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,if os.name == 'nt':  # For Windows
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,os.system('cls')
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,else:
+py,C:\users\chris\Desktop\note_summarizer\reports\data_explorer.py,reports,data_explorer.py,,os.system('clear')
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Import,"import, pandas, as, pd"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Import,"import, sys, os"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Import,"from, reports, import, base_report_gen, data_explorer, charts"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Comment,#opens and reads csv ask user what type of file walks through process
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Function,main_menu
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,df = pd.read_csv('reports/csv_files/file_summary.csv')
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"df = df[[""FileType"", ""Directory"", ""FileName"", ""Type"", ""Content""]].copy()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,while True:
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"total_files = len(df[""FileName""].unique())"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""\nTotal Files: {total_files}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"types_of_files = df[""FileType""].unique()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{len(types_of_files)} Type of File\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{types_of_files}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""MAIN MENU:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"main_menu_items = [""1. Charts"", ""2. Explore Files"", ""3. Save File Type Report""]"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,for opption in main_menu_items:print(opption)
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"selection = input(f""\nSelect or [exit]: "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection == ""1"":charts_menu()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection == ""2"":data_explorer.file_type()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection == ""3"":save_file_menu(df)"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection.lower() == ""exit"":"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,sys.exit()
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Function,charts_menu
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,while True:
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""CHART MENU:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"charts_menu_opptions = [""1. File Type Percentage"", ""2. Data Per File Type"", ""3. Data Type by FileName""]"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,for opption in charts_menu_opptions:print(opption)
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"selection = input(f""\nSelect Chart Number or [menu]: "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection == ""1"":charts.type_percent_chart()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection == ""2"":charts.data_percent_chart()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection == ""3"":charts.data_chart()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selection.lower() == ""menu"":main_menu()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Function,save_file_menu
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,while True:
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,clear_screen()
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{'='*40}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""SAVE REPORT MENU:\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""{'='*40}\n\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"types_of_files = df[""FileType""].unique()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"print(f""\n{types_of_files}\n"")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"selected_file_type = input(""Select File Type or [menu]: "")"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"if selected_file_type.lower() == ""menu"":main_menu()"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,if selected_file_type in types_of_files:
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"save_file_name = f""saved_reports/{selected_file_type}_summary.txt"""
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,"base_report_gen.generate_summary_report(selected_file_type, save_file_name)"
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,main_menu()
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,break
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,Function,clear_screen
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,if os.name == 'nt':  # For Windows
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,os.system('cls')
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,else:
+py,C:\users\chris\Desktop\note_summarizer\reports\report_helper.py,reports,report_helper.py,,os.system('clear')

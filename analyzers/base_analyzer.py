@@ -19,13 +19,6 @@ def generate_csv(categorized_files):
     except Exception as e:
         logging.error(f"An error occurred during analysis: {e}")
 
-'''def create_csv_summary():
-    try:
-        with open("reports/csv_files/file_summary.csv", "w", newline='', encoding="utf-8") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=["FileType", "File", "Directory", "FileName", "Type", "Content"])
-            writer.writeheader()  # Write column headers
-    except Exception as e:
-        logging.error(f"An error occurred while creating the CSV summary file: {e}")'''
 
 def write_csv_summary(csv_data, out_file):
     try:
