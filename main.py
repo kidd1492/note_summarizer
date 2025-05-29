@@ -1,25 +1,54 @@
-from reports import report_helper
 from analyzers import base_analyzer
-import os, sys
+import os
+import sys
+import logging
 
-'''main function processes command line arguments
-check for reports or path to directory'''
-def main():
+# Configure logging
+logging.basicConfig(level=logging.INFO, filename='app.log', format='%(asctime)s - %(levelname)s - %(message)s')
+
+'''function to walk through a directory pick what kinds of file it wants
+ignoring directories like venv, .git, it then saves the type of file and a list of
+files for that type into a dict. returns catagorized files'''
+def gather_categorized_files(directory):
+    allowed_extensions = [".py", ".html", "js"]  # Update to add more file types
+    ignored_directories = [".git", "env", "venv"]
+    categorized_files = {}
+
+    try:
+        for root, dirs, files in os.walk(directory):
+            dirs[:] = [d for d in dirs if d not in ignored_directories]  # Skip ignored directories
+            for file in files:
+                # Check if the file's extension is in the allowed list
+                if any(file.endswith(ext) for ext in allowed_extensions):
+                    ext = file.split('.')[-1]  # Extract the file extension (without dot)
+
+                    # Initialize the list for this file type if not already present
+                    if ext not in categorized_files:
+                        categorized_files[ext] = []
+                    # Append the file path to the appropriate list
+                    categorized_files[ext].append(os.path.abspath(os.path.join(root, file)))
+    except Exception as e:
+        logging.error(f"An error occurred while gathering files: {e}")
+
+    return categorized_files
+
+
+if __name__ == "__main__":
     args = sys.argv
 
     if len(args) == 1:
-        print("Please enter report or enter directory path")
+        print("Please enter a directory path.")
+        sys.exit(1)
 
     elif len(args) == 2:
-        if args[1].lower() == "report":
-            report_helper.main_menu()
-        else:
-            directory_name = os.path.normpath(args[1])
-            if os.path.isdir(directory_name):
-                base_analyzer.generate_csv(directory_name)
-            else:
-                print("invalid path name! Please try again: ")     
-                
 
-if __name__ == "__main__":
-    main()
+        directory_name = os.path.normpath(args[1])
+        if not os.path.exists(directory_name):
+            logging.error(f"The specified directory does not exist: {directory_name}")
+            sys.exit(1)
+
+        categorized_files = gather_categorized_files(directory_name)
+        base_analyzer.generate_csv(categorized_files)
+    else:
+        print("Invalid number of arguments. Please provide exactly one directory path.")
+        sys.exit(1)

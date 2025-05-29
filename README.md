@@ -15,8 +15,7 @@ The **Note Summarizer** is a Python-based project analyzer designed to parse and
 ```	
 		                                     note_summarizer/
 -—main.py--
-
-def main():                     
+                     
     -base_analyzer.generate_csv(directory_name):---------|              analyzers/
     |                                                    |	        
     |----report_helper.file_type()                       |         --base_analyzer.py—

@@ -1,14 +1,19 @@
-import re, os
+import os, re
+from analyzers import base_analyzer
+import logging
 
 csv_data = []
 
 def process_line_for_csv(file_list):
-    function_pattern = r"^function\s+|const\s+\w+\s*=\s*\(.*\)\s*=>"
-    variable_pattern = r"^var\s+|^let\s+|^const\s+"
-    event_pattern = r"\.addEventListener\("
-    api_call_pattern = r"fetch|axios"
-    import_pattern = r"^import\s+|^require\("
-    
+    import_pattern = r"^(from\s+\w+\s+)?import\s+(\w+(,\s*\w+)*)?"
+    function_pattern = r"\bfunction\s+(\w+)\s*\("
+    class_pattern = r"\bclass\s+(\w+)\s*{"
+    todo_pattern = r"^//TODO"
+    comment_pattern = r"^(\/\/.*)|(^\/\*.*?\*\/)"
+    main_entry_pattern = r"^\s*if\s+__name__\s*==\s*['\"]__main__['\"]:"
+    return_pattern = r"\breturn\s+[\w\s,]+;"
+    exception_handling_pattern = r"^(try:|catch:|finally:)"
+
     for file in file_list:
         try:
             file_part = os.path.normpath(file).split(os.sep)
@@ -16,45 +21,66 @@ def process_line_for_csv(file_list):
             file_name = file_part[-1]
             file_type = file_name.split('.')[-1]
 
-            if file_type != "js":
-                # Skip files that are not .js
-                continue
-            
             with open(file, 'r', encoding='utf-8') as f:
                 for line in f:
                     try:
-                        # Initialize a dictionary for each line's data
                         line = line.strip()
                         row = {
                             "FileType": file_type,
                             "File": file,
                             "Directory": directory,
                             "FileName": file_name,
-                            "Type": None,  # The type of line content (e.g., function, variable)
+                            "Type": None,  # all data is named and collected in Type
                             "Content": line.strip()
                         }
 
-                        # Classify line content
-                        if re.match(function_pattern, line):
-                            row["Type"] = "function"
-                        elif re.match(variable_pattern, line):
-                            row["Type"] = "variable"
-                        elif re.search(event_pattern, line):
-                            row["Type"] = "event_listener"
-                        elif re.search(api_call_pattern, line):
-                            row["Type"] = "api_call"
-                        elif re.match(import_pattern, line):
-                            row["Type"] = "import"
-                        else:
-                            continue
+                        if re.match(import_pattern, line):
+                            row["Type"] = "Import"
+                            matches = re.findall(r'\b\w+\b', line)
+                            row["Content"] = ', '.join(matches)
 
-                        # Add the row to the CSV data list
+                        elif re.match(function_pattern, line):
+                            match = re.search(r'function\s+(\w+)\s*\(', line)
+                            if match:
+                                row["Type"] = "Function"
+                                row["Content"] = match.group(1)
+
+                        elif re.match(class_pattern, line):
+                            match = re.search(r'class\s+(\w+)\s*{', line)
+                            if match:
+                                row["Type"] = "Class"
+                                row["Content"] = match.group(1)
+
+                        elif re.match(todo_pattern, line):
+                            row["Type"] = "Todo"
+                            row["Content"] = line
+
+                        elif re.match(comment_pattern, line):
+                            row["Type"] = "Comment"
+                            row["Content"] = line
+
+                        elif re.match(main_entry_pattern, line):
+                            row["Type"] = "Main Entry"
+                            row["Content"] = line
+
+                        elif re.match(return_pattern, line):
+                            row["Type"] = "Return"
+                            row["Content"] = line
+
+                        elif re.match(exception_handling_pattern, line):
+                            row["Type"] = "Exception Handling"
+                            row["Content"] = line
+
                         csv_data.append(row)
-                    except Exception:
-                        # Skip problematic lines quietly
-                        continue
-        except Exception:
-            # Skip the entire file if there are issues
-            continue
-    
-    return csv_data
+
+                    except Exception as e:
+                        logging.error(f"Error processing line in {file}: {e}")
+
+        except FileNotFoundError:
+            logging.error(f"File not found: {file}")
+        except PermissionError:
+            logging.error(f"Permission denied for file: {file}")
+        except Exception as e:
+            logging.error(f"An error occurred while processing {file}: {e}")
+
+    base_analyzer.write_csv_summary(csv_data, "reports/csv_files/js_summary.csv")

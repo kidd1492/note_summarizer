@@ -1,20 +1,18 @@
+from analyzers import base_analyzer
 import os
 import re
-
+import logging
 csv_data = []
 
 def process_line_for_csv(file_list):
-    import_pattern = r"^import\s+|^from\s+\w+\s+import"
-    function_pattern = r"^def\s+"
-    class_pattern = r"^class\s+"
+    import_pattern = r"^(from\s+\w+\s+)?import\s+(\w+(,\s*\w+)*)?"
+    function_pattern = r"^\s*def\s+(\w+)\s*\("
+    class_pattern = r"^\s*class\s+(\w+)\s*:"
     todo_pattern = r"^#TODO"
-    comment_pattern = r"^#|^[\"']{3}"
-    main_entry_pattern = r"^if\s+__name__\s*==\s*['\"]__main__['\"]:"
-    return_pattern = r"^return"
-    exception_handling_pattern = r"^try:|^except:|^finally:"
-
-    
-  
+    comment_pattern = r"^\s*(\"{3}.*?\"|\'{3}.*?\')|^#"
+    main_entry_pattern = r"^\s*if\s+__name__\s*==\s*['\"]__main__['\"]:"
+    return_pattern = r"^\s*return\s+[\w\s,]+;"
+    exception_handling_pattern = r"^\s*(try|except|finally):"
 
     for file in file_list:
         try:
@@ -36,32 +34,53 @@ def process_line_for_csv(file_list):
                             "Content": line.strip()
                         }
 
-                        # Classify line content
                         if re.match(import_pattern, line):
-                            row["Type"] = "import"
-                        elif re.match(function_pattern, line):
-                            row["Type"] = "function"
-                        elif re.match(class_pattern, line):
-                            row["Type"] = "class"
-                        elif re.match(todo_pattern, line):
-                            row["Type"] = "todo"
-                        elif re.match(comment_pattern, line):
-                            row["Type"] = "comment"
-                        elif re.match(main_entry_pattern, line):
-                            row["Type"] = "main_entry"
-                        elif re.match(return_pattern, line):
-                            row["Type"] = "return"
-                        elif re.match(exception_handling_pattern, line):
-                            row["Type"] = "exception_handling"
-                        else:
-                            continue
-                        # Add the row to the CSV data list
-                        csv_data.append(row)
-                    except Exception:
-                        # Skip problematic lines quietly
-                        continue
-        except Exception:
-            # Skip the entire file if there are issues
-            continue
+                            row["Type"] = "Import"
+                            matches = re.findall(r'\b\w+\b', line)
+                            row["Content"] = ', '.join(matches)
 
-    return csv_data
+                        elif re.match(function_pattern, line):
+                            match = re.search(r'(\w+)\s*\(', line)
+                            if match:
+                                row["Type"] = "Function"
+                                row["Content"] = match.group(1)
+
+                        elif re.match(class_pattern, line):
+                            match = re.search(r'(\w+):', line)
+                            if match:
+                                row["Type"] = "Class"
+                                row["Content"] = match.group(1)
+
+                        elif re.match(todo_pattern, line):
+                            row["Type"] = "Todo"
+                            row["Content"] = line
+
+                        elif re.match(comment_pattern, line):
+                            row["Type"] = "Comment"
+                            row["Content"] = line
+
+                        elif re.match(main_entry_pattern, line):
+                            row["Type"] = "Main Entry"
+                            row["Content"] = line
+
+                        elif re.match(return_pattern, line):
+                            row["Type"] = "Return"
+                            row["Content"] = line
+
+                        elif re.match(exception_handling_pattern, line):
+                            row["Type"] = "Exception Handling"
+                            row["Content"] = line
+
+                        csv_data.append(row)
+
+                    except Exception as e:
+                        logging.error(f"Error processing line in {file}: {e}")
+
+        except FileNotFoundError:
+            logging.error(f"File not found: {file}")
+        except PermissionError:
+            logging.error(f"Permission denied for file: {file}")
+        except Exception as e:
+            logging.error(f"An error occurred while processing {file}: {e}")
+
+    base_analyzer.write_csv_summary(csv_data, "reports/csv_files/python_summary.csv")
