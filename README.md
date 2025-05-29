@@ -1,52 +1,46 @@
-# Note Summarizer Project
+# AI-Powered Code Security Scanner
 
-The **Note Summarizer** is a Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate a CSV reports with each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, ) in the future.
-
+## Overview
+This project is a **security-focused code analyzer** designed to scan **Python, HTML, and JavaScript** projects for **potential vulnerabilities** before they enter production. It aims to help **developers and non-programmers** catch security flaws in AI-generated code, ensuring safe and secure software development.  Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate a CSV reports with each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, ) in the future.
 
 ## Features
-- The program collects all file paths in the specified directory for the supported file types (currently Python, HTML, js).
-- Analyzer parse the file content, extract relevant information, and generate a CSV report including each file type.
-- CSV report is saved in the csv_file directory as file_summary.
-- The CSV files can be used for generating detailed reports, visualization, or further analysis.
-- Easily integrates with projects built using frameworks like Django and Flask.
+- ✅ **Multi-language analysis** (Python, HTML, JavaScript)
+- ✅ **Structured extraction** using regex-based analyzers
+- ✅ **Automated security scanning** for common risks
+- ✅ **CSV-based reporting** for easy review
+- ✅ **AI-driven security analysis** using a custom **Ollama model**
+- ✅ **Simple CLI-based execution** with directory scanning
 
 
 ## Program Flow
 ```	
 		                                     note_summarizer/
 -—main.py--
-                     
-    -base_analyzer.generate_csv(directory_name):---------|              analyzers/
-    |                                                    |	        
-    |----report_helper.file_type()                       |         --base_analyzer.py—
-    |                                                    |-----gather_categorized_files(directory)    
-    |                                                             -gather_categorized_files(directory)
-    |---reports/                                                  -create_csv_summary()
-    |  csv_files/                                                 -analyzer.process_line_for_csv(file_list)-|
-    |     * file_summary.csv                                      -write_csv_summary(csv_data)              |
-    |                                                                                                       |
-    |  saved_reports/                                                                                       |
-    |                                                                     --python_analyzer.py-_            |
-    |  --report_helper.py--                                           -def process_line_for_csv(file_list)--|
-    |                                                                                                       |
-    |----file_type():                                                     --html_analyzer.py--              |
-    |  def select_file(df, selected_file_type)                       --def process_line_for_csv(file_list)--|         
-    |---base_report_gen.generate_summary_report()                     
-    |    def select_data(df, selected_file, selected_file_type, type)                                       
-    |                                                                                 
-    |                                                                 
-    |
-    |    This will save a report to txt file working in interaction
-    |     to print a full report on all files for selected file types
-    |      --------------------------------------------------------
-    |        
-    |  --base_report_gen.py--
-    |                       
-    |-----def base_report_gen.generate_summary_report(report_type, file_out)    
-        
-                                                            
-
+    -gather_categorized_files(directory)                
+    -base_analyzer.generate_csv(categorized_files):--|                         analyzers/
+    |                                                |	        
+    |                                                |         --base_analyzer.py—
+    |                                                |-------------gather_categorized_files(categorized_files)    
+    |---reports/                                                   -create_csv_summary()
+    |  csv_files/                                                  -analyzer.process_line_for_csv(file_list)|
+    |     * pythonm_summary.csv                                    -write_csv_summary(csv_data, out_file)   |
+                                                                                                            |
+                                                                          --python_analyzer.py-_            |
+                                                                    -def process_line_for_csv(file_list)----|
+                                                                                                            |
+                                                                          --html_analyzer.py--              |
+                                                                    --def process_line_for_csv(file_list)---|
+                                                                                                                                                                                                    --html_analyzer.py--              |
+                                                                    --def process_line_for_csv(file_list)--=|     
 ```
+
+Future Enhancements
+🚀 Expand detection for more security vulnerabilities
+🚀 Support additional programming languages
+🚀 Integrate CI/CD automated security scans
+🚀 Improve AI model's security understandin
+
+
 ## Installation
 Clone this repository:
 
@@ -59,13 +53,10 @@ pip install requirements.txt (pandas)
 
 ### Run the program:
 bash
-- python main.py # will give back enter report or directory path
+- python main.py # will give back enter directory path
 
 1. run main.py with a directory path to analyze the files...
 python main.py C:/Desktop/SomeDirectory  # if valid directory will generate the csv
-
-2. To see the analyzed info...
-python main.py report  # will show interaction for reports generated by csv. 
 
 
 License
