@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def generate_summary_report(file_type, report_file):
-    csv_file = "reports/csv_files/file_summary.csv"
+    csv_file = "reports/csv_files/python_summary.csv"
     
     # Read CSV
     df = pd.read_csv(csv_file)

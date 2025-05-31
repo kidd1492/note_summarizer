@@ -24,6 +24,7 @@ def write_csv_summary(csv_data, out_file):
     try:
         with open(out_file, "w", newline='', encoding="utf-8") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=["FileType", "File", "Directory", "FileName", "Type", "Content"])
+            writer.writeheader()  # Write column headers
             writer.writerows(csv_data)  # Write all rows
     except Exception as e:
         logging.error(f"An error occurred while writing to the CSV summary file: {e}")

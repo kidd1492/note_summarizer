@@ -1,16 +1,14 @@
-from analyzers import base_analyzer
+import pandas as pd
 import os
-import sys
-import logging
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, filename='app.log', format='%(asctime)s - %(levelname)s - %(message)s')
+directory = "C:\\Users\\chris\\Desktop\\notes_app"
 
 '''function to walk through a directory pick what kinds of file it wants
 ignoring directories like venv, .git, it then saves the type of file and a list of
 files for that type into a dict. returns catagorized files'''
+
 def gather_categorized_files(directory):
-    allowed_extensions = [".py", ".html", ".js", ".md", ".txt", ".db"]  # Update to add more file types
+    allowed_extensions = ["py", "html", "js", "md", "txt", "db"]  # Update to add more file types
     ignored_directories = [".git", "env", "venv"]
     categorized_files = {}
 
@@ -28,27 +26,31 @@ def gather_categorized_files(directory):
                     # Append the file path to the appropriate list
                     categorized_files[ext].append(os.path.abspath(os.path.join(root, file)))
     except Exception as e:
-        logging.error(f"An error occurred while gathering files: {e}")
+        print(f"An error occurred while gathering files: {e}")
 
-    return categorized_files
+
+    for file_type, file_list in categorized_files.items():
+        for file in file_list: print(file)
+
 
 
 if __name__ == "__main__":
-    args = sys.argv
+     categorized_files = gather_categorized_files(directory)
 
-    if len(args) == 1:
-        print("Please enter a directory path.")
-        sys.exit(1)
 
-    elif len(args) == 2:
 
-        directory_name = os.path.normpath(args[1])
-        if not os.path.exists(directory_name):
-            logging.error(f"The specified directory does not exist: {directory_name}")
-            sys.exit(1)
 
-        categorized_files = gather_categorized_files(directory_name)
-        base_analyzer.generate_csv(categorized_files)
-    else:
-        print("Invalid number of arguments. Please provide exactly one directory path.")
-        sys.exit(1)
+'''
+csv_file = "reports/csv_files/python_summary.csv"
+
+# Read CSV
+df = pd.read_csv(csv_file)
+
+
+comments = df[df["Type"] == "Comment"]
+comment_content = comments["Content"].unique()
+print(comment_content)
+
+files = df["FileName"].unique()
+print(files)
+'''
