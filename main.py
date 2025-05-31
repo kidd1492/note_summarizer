@@ -1,4 +1,4 @@
-from analyzers import base_analyzer
+from base_analyzer import generate_json
 import os
 import sys
 import logging
@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, filename='app.log', format='%(asctime)s 
 ignoring directories like venv, .git, it then saves the type of file and a list of
 files for that type into a dict. returns catagorized files'''
 def gather_categorized_files(directory):
-    allowed_extensions = [".py", ".html", ".js", ".md", ".txt", ".db"]  # Update to add more file types
+    allowed_extensions = [".py", ".html", ".js", ".md", ".txt", ".db" ".css"]  # Update to add more file types
     ignored_directories = [".git", "env", "venv"]
     categorized_files = {}
 
@@ -48,7 +48,7 @@ if __name__ == "__main__":
             sys.exit(1)
 
         categorized_files = gather_categorized_files(directory_name)
-        base_analyzer.generate_csv(categorized_files)
+        generate_json(categorized_files)
     else:
         print("Invalid number of arguments. Please provide exactly one directory path.")
         sys.exit(1)

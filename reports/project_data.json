@@ -1,0 +1,35 @@
+{
+    "file_count": 5,
+    "file_types": [
+        "py",
+        "md",
+        "txt"
+    ],
+    "files": [
+        "C:\\Users\\chris\\Desktop\\project_security_scanner\\base_analyzer.py",
+        "C:\\Users\\chris\\Desktop\\project_security_scanner\\main.py",
+        "C:\\Users\\chris\\Desktop\\project_security_scanner\\__init__.py",
+        "C:\\Users\\chris\\Desktop\\project_security_scanner\\README.md",
+        "C:\\Users\\chris\\Desktop\\project_security_scanner\\requirements.txt"
+    ],
+    "readme_content": "# AI-Powered Code Security Scanner\n\n## Overview\nThis project is a **security-focused code analyzer** designed to scan **Python, HTML, and JavaScript** projects for **potential vulnerabilities** before they enter production. It aims to help **developers and non-programmers** catch security flaws in AI-generated code, ensuring safe and secure software development.  Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate a CSV reports with each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, ) in the future.\n\n## Features\n- \u2705 **Multi-language analysis** (Python, HTML, JavaScript)\n- \u2705 **Structured extraction** using regex-based analyzers\n- \u2705 **Automated security scanning** for common risks\n- \u2705 **CSV-based reporting** for easy review\n- \u2705 **AI-driven security analysis** using a custom **Ollama model**\n- \u2705 **Simple CLI-based execution** with directory scanning\n\n\n## Program Flow\n```\t\n\t\t                                     note_summarizer/\n-\u2014main.py--\n    -gather_categorized_files(directory)                \n    -base_analyzer.generate_csv(categorized_files):--|                         analyzers/\n    |                                                |\t        \n    |                                                |         --base_analyzer.py\u2014\n    |                                                |-------------gather_categorized_files(categorized_files)    \n    |---reports/                                                   -create_csv_summary()\n    |  csv_files/                                                  -analyzer.process_line_for_csv(file_list)|\n    |     * pythonm_summary.csv                                    -write_csv_summary(csv_data, out_file)   |\n                                                                                                            |\n                                                                          --python_analyzer.py-_            |\n                                                                    -def process_line_for_csv(file_list)----|\n                                                                                                            |\n                                                                          --html_analyzer.py--              |\n                                                                    --def process_line_for_csv(file_list)---|\n                                                                                                                                                                                                    --html_analyzer.py--              |\n                                                                    --def process_line_for_csv(file_list)--=|     \n```\n\nFuture Enhancements\n\ud83d\ude80 Expand detection for more security vulnerabilities\n\ud83d\ude80 Support additional programming languages\n\ud83d\ude80 Integrate CI/CD automated security scans\n\ud83d\ude80 Improve AI model's security understandin\n\n\n## Installation\nClone this repository:\n\nbash\ngit clone https://github.com/kidd1492/note_summarizer.git\nNavigate to the project directory:\nSet up your venv\npip install requirements.txt (pandas)\n\n\n### Run the program:\nbash\n- python main.py # will give back enter directory path\n\n1. run main.py with a directory path to analyze the files...\npython main.py C:/Desktop/SomeDirectory  # if valid directory will generate the csv\n\n\nLicense\nThis project is licensed under the MIT License. See the LICENSE file for more details.",
+    "requirements_content": "contourpy==1.3.1\ncycler==0.12.1\nfonttools==4.56.0\nkiwisolver==1.4.8\nmatplotlib==3.10.1\nnumpy==2.2.4\npackaging==24.2\npandas==2.2.3\npillow==11.1.0\npyparsing==3.2.3\npython-dateutil==2.9.0.post0\npytz==2025.1\nsix==1.17.0\ntzdata==2025.2",
+    "comments": [
+        "# Define comment patterns",
+        "\"\"\" Reads full content of a given file \"\"\"",
+        "\"\"\" Collects project file metadata and full content of README & requirements.txt \"\"\"",
+        "\"\"\" Extracts comments from each file \"\"\"",
+        "# Check for matching patterns",
+        "\"\"\" Compiles all project data and writes to a JSON file \"\"\"",
+        "# Configure logging",
+        "# Check if the file's extension is in the allowed list",
+        "# Initialize the list for this file type if not already present",
+        "# Append the file path to the appropriate list",
+        "# AI-Powered Code Security Scanner",
+        "## Overview",
+        "## Features",
+        "## Program Flow",
+        "## Installation",
+        "### Run the program:"
+    ]
+}
