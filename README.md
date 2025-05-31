@@ -1,63 +1,45 @@
 # AI-Powered Code Security Scanner
 
 ## Overview
-This project is a **security-focused code analyzer** designed to scan **Python, HTML, and JavaScript** projects for **potential vulnerabilities** before they enter production. It aims to help **developers and non-programmers** catch security flaws in AI-generated code, ensuring safe and secure software development.  Python-based project analyzer designed to parse and analyze the structure of Python and Web base files could be great for Flask and Django projects. It will generate a CSV reports with each file type, and provide insights into the analyzed codebase. The project is structured to be easily extensible, supporting additional analyzers for other file types (e.g., CSS, ) in the future.
+**AI-Powered Code Security Scanner** is an advanced security-focused tool designed to **analyze, classify, and assess** software projects. It leverages **structured extraction** and a **custom Ollama AI model** to identify the **project type** (Flask, Django, Node.js, etc.), generate an **overview**, and recommend **security scans** tailored to the project's architecture.
+
+Beyond just classification, this tool **executes security scans** using tools like **Bandit, OWASP ZAP, JSLint, and others**, refining a project's security posture. The final stage involves a **comprehensive AI-driven security review**, providing **detailed recommendations** for improving the project's safety—ensuring non-coders and AI-generated code users understand security flaws and how to fix them.
 
 ## Features
-- ✅ **Multi-language analysis** (Python, HTML, JavaScript)
-- ✅ **Structured extraction** using regex-based analyzers
-- ✅ **Automated security scanning** for common risks
-- ✅ **CSV-based reporting** for easy review
-- ✅ **AI-driven security analysis** using a custom **Ollama model**
-- ✅ **Simple CLI-based execution** with directory scanning
+- ✅ **Project type classification** (Flask, Django, Node.js, etc.)
+- ✅ **Structured data extraction** generating insightful **JSON reports**
+- ✅ **AI-generated project summary** for better visibility
+- ✅ **Intelligent security scan recommendations** based on project type
+- ✅ **Execution of security scans** using tools like Bandit, OWASP, JSLint
+- ✅ **AI-driven security evaluation** for actionable improvements
+- ✅ **User-friendly CLI execution** for seamless analysis
 
-
-## Program Flow
-```	
-		                                     note_summarizer/
--—main.py--
-    -gather_categorized_files(directory)                
-    -base_analyzer.generate_csv(categorized_files):--|                         analyzers/
-    |                                                |	        
-    |                                                |         --base_analyzer.py—
-    |                                                |-------------gather_categorized_files(categorized_files)    
-    |---reports/                                                   -create_csv_summary()
-    |  csv_files/                                                  -analyzer.process_line_for_csv(file_list)|
-    |     * pythonm_summary.csv                                    -write_csv_summary(csv_data, out_file)   |
-                                                                                                            |
-                                                                          --python_analyzer.py-_            |
-                                                                    -def process_line_for_csv(file_list)----|
-                                                                                                            |
-                                                                          --html_analyzer.py--              |
-                                                                    --def process_line_for_csv(file_list)---|
-                                                                                                                                                                                                    --html_analyzer.py--              |
-                                                                    --def process_line_for_csv(file_list)--=|     
-```
-
-Future Enhancements
-🚀 Expand detection for more security vulnerabilities
-🚀 Support additional programming languages
-🚀 Integrate CI/CD automated security scans
-🚀 Improve AI model's security understandin
-
+## Next Steps 🚀
+- 🔹 Execute the **recommended security scans** and **generate an overall report**
+- 🔹 Leverage AI to **evaluate security findings**, suggest **improvements**, and explain **why and how** fixes should be implemented
+- 🔹 Expand **language support** and security checks for broader usability
+- 🔹 Automate AI-driven security assessments **within CI/CD pipelines**
 
 ## Installation
 Clone this repository:
+```bash
+git clone https://github.com/kidd1492/project_security_scanner.git
+```
 
-bash
-git clone https://github.com/kidd1492/note_summarizer.git
-Navigate to the project directory:
-Set up your venv
-pip install requirements.txt (pandas)
-
+Navigate to the project directory and set up the virtual environment:
+```bash
+cd project_security_scanner
+pip install -r requirements.txt
+```
 
 ### Run the program:
-bash
-- python main.py # will give back enter directory path
+```bash
+python main.py  # prompts for directory path input
+```
+Analyze files in a specific directory:
+```bash
+python main.py Path/to/ProjectDirectory  # Generates JSON report
+```
 
-1. run main.py with a directory path to analyze the files...
-python main.py C:/Desktop/SomeDirectory  # if valid directory will generate the csv
-
-
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+## License
+This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
